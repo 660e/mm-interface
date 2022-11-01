@@ -13,7 +13,10 @@
 export default {
   data() {
     return {
-      nav: [{ label: 'message', value: '/message' }]
+      nav: [
+        { label: 'message', value: '/message' },
+        { label: 'map', value: '/map' }
+      ]
     };
   }
 };

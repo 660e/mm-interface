@@ -9,3 +9,51 @@ $pink: #d84060;
 $brown: #d7ccc8;
 $shade: #7f7f7f;
 $white: #f5f5f5;
+.flex {
+  display: flex;
+}
+.col {
+  flex: 1;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.text-center {
+  text-align: center;
+}
+.w-1 {
+  width: $xl * 1;
+}
+.w-2 {
+  width: $xl * 2;
+}
+.w-3 {
+  width: $xl * 3;
+}
+.w-4 {
+  width: $xl * 4;
+}
+.w-5 {
+  width: $xl * 5;
+}
+.w-6 {
+  width: $xl * 6;
+}
+.w-7 {
+  width: $xl * 7;
+}
+.w-8 {
+  width: $xl * 8;
+}
+.w-9 {
+  width: $xl * 9;
+}
+.w-10 {
+  width: $xl * 10;
+}
+.w-11 {
+  width: $xl * 11;
+}
+.w-12 {
+  width: $xl * 12;
+}
