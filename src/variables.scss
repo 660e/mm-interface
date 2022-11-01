@@ -21,6 +21,17 @@ $white: #f5f5f5;
 .text-center {
   text-align: center;
 }
+.absolute-center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .w-1 {
   width: $xl * 1;
 }
