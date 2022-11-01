@@ -1,6 +1,23 @@
 <template>
-  <div class="app"></div>
+  <div class="app">
+    <section>
+      <router-view />
+    </section>
+    <nav>
+      <router-link v-for="n in nav" :key="n.value" :to="{ path: n.value }">{{ n.label }}</router-link>
+    </nav>
+  </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      nav: [{ label: 'message', value: '/message' }]
+    };
+  }
+};
+</script>
 
 <style lang="scss">
 * {
@@ -13,9 +30,32 @@
   user-select: none;
 }
 .app {
-  background-color: #ccc;
+  background-color: $brown;
   font-family: consolas, monaco, 'microsoft yahei';
   height: 100vh;
   display: flex;
+  & > section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  & > nav {
+    font-size: $md;
+    padding: $md;
+    a {
+      color: $blue;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      margin-bottom: $md;
+      &:hover {
+        text-decoration: underline;
+      }
+      &.router-link-active {
+        color: $pink;
+      }
+    }
+  }
 }
 </style>
