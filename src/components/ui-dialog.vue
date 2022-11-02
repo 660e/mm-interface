@@ -2,14 +2,7 @@
   <div v-if="command" class="absolute-center">
     <!-- options -->
     <ui-border v-if="command === 'options'" class="w-4">
-      <ui-item
-        v-for="(o, i) in [command === 'options' ? '使用' : '装备', '交给', '丢弃']"
-        v-text="o"
-        :key="i"
-        @click="$emit('selected', i)"
-        class="text-center"
-        clickable
-      />
+      <ui-item v-for="(o, i) in ['使用/装备', '交给', '丢弃']" v-text="o" :key="i" @click="$emit('selected', i)" class="text-center" clickable />
     </ui-border>
     <!-- confirm -->
     <ui-border v-if="command === 'confirm'" class="w-4">
