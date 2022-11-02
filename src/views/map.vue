@@ -17,6 +17,7 @@
   </ui-border>
 
   <div v-if="step > 0" class="absolute-center">
+    <!-- 道具 -->
     <div v-if="scene === 'items' && step === 1" class="w-10">
       <ui-border>
         <ui-grid :grid="[5, 2]">
@@ -40,6 +41,7 @@ export default {
   data() {
     return {
       items: data.items,
+      actors: data.actors,
       scene: null,
       command: null,
       type: 0,
@@ -52,6 +54,14 @@ export default {
         case '道具':
           this.scene = 'items';
           this.command = 'team';
+          break;
+        case '乘降':
+          this.scene = 'get-on/off';
+          this.command = 'get-on/off';
+          break;
+        case '传真':
+          this.scene = 'navigate';
+          this.command = 'navigate';
           break;
       }
     },
@@ -78,7 +88,17 @@ export default {
           }
           break;
         }
+        case 'get-on/off':
+        case 'navigate':
+          this.clear();
+          break;
       }
+    },
+    clear() {
+      this.scene = null;
+      this.command = null;
+      this.type = 0;
+      this.step = 0;
     }
   }
 };
