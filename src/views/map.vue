@@ -1,24 +1,26 @@
 <template>
-  <div class="flex">
-    <ui-border class="col">
-      <ui-item>地图名称</ui-item>
+  <template v-if="!command && step === 0">
+    <div class="flex">
+      <ui-border class="col">
+        <ui-item>地图名称</ui-item>
+      </ui-border>
+      <ui-border class="w-5">
+        <ui-item class="flex justify-between">
+          <div>G:</div>
+          <div>{{ Math.floor(Math.random() * 123456789) }}</div>
+        </ui-item>
+      </ui-border>
+    </div>
+    <ui-border>
+      <ui-grid :grid="[1, 5]">
+        <ui-item v-for="m in ['装备', '道具', '乘降', '传真', '系统']" v-text="m" :key="m" @click="menu(m)" class="text-center" clickable />
+      </ui-grid>
     </ui-border>
-    <ui-border class="w-5">
-      <ui-item class="flex justify-between">
-        <div>G:</div>
-        <div>{{ Math.floor(Math.random() * 123456789) }}</div>
-      </ui-item>
-    </ui-border>
-  </div>
-  <ui-border>
-    <ui-grid :grid="[1, 5]">
-      <ui-item v-for="m in ['装备', '道具', '乘降', '传真', '系统']" v-text="m" :key="m" @click="menu(m)" class="text-center" clickable />
-    </ui-grid>
-  </ui-border>
+  </template>
 
   <div v-if="step > 0" class="absolute-center">
     <!-- 装备 -->
-    <div v-if="scene === 'equipments' && step === 1" class="flex column">
+    <div v-if="scene === 'equipments'" class="flex column">
       <div class="flex">
         <ui-border v-if="type" class="w-7">
           <ui-item>LEOPARD</ui-item>
@@ -60,7 +62,7 @@
       </ui-border>
     </div>
     <!-- 道具 -->
-    <div v-if="scene === 'items' && step === 1" class="w-10">
+    <div v-if="scene === 'items'" class="w-12">
       <ui-border>
         <ui-grid :grid="[5, 2]">
           <ui-item v-for="i in items[type]" v-text="i" :key="i" @click="command = 'options'" clickable />
@@ -72,7 +74,7 @@
     </div>
   </div>
 
-  <ui-dialog :command="command" @selected="selected" />
+  <ui-dialog :text="text" :command="command" @selected="selected" />
 </template>
 
 <script>
@@ -85,6 +87,7 @@ export default {
       actors: data.actors,
       equipments: data.equipments,
       items: data.items,
+      text: null,
       scene: null,
       command: null,
       type: 0,
@@ -93,6 +96,7 @@ export default {
   },
   methods: {
     menu(menu) {
+      this.text = menu;
       switch (menu) {
         case '装备':
           this.scene = 'equipments';
@@ -113,6 +117,7 @@ export default {
       }
     },
     selected(type) {
+      this.text = null;
       switch (this.scene) {
         case 'equipments': {
           switch (this.command) {
@@ -121,6 +126,21 @@ export default {
               this.type = type;
               this.step = 1;
               break;
+            case 'options':
+              switch (type) {
+                case 0:
+                  this.command = null;
+                  break;
+                case 1:
+                  this.command = this.type ? 'tank' : 'human';
+                  break;
+                case 2:
+                  this.command = 'confirm';
+                  break;
+              }
+              break;
+            default:
+              this.command = null;
           }
           break;
         }
@@ -132,15 +152,17 @@ export default {
               this.step = 1;
               break;
             case 'options':
-              if (type === 2) {
-                this.command = 'confirm';
-              } else {
-                this.step = 0;
-                this.command = this.type ? 'tank' : 'human';
+              switch (type) {
+                case 0:
+                case 1:
+                  this.command = this.type ? 'tank' : 'human';
+                  break;
+                case 2:
+                  this.command = 'confirm';
+                  break;
               }
               break;
             default:
-              this.step = 1;
               this.command = null;
           }
           break;
@@ -152,6 +174,7 @@ export default {
       }
     },
     clear() {
+      this.text = null;
       this.scene = null;
       this.command = null;
       this.type = 0;
