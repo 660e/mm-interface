@@ -72,6 +72,25 @@
         <ui-item>道具说明</ui-item>
       </ui-border>
     </div>
+    <!-- 乘降 -->
+    <div v-if="scene === 'get-on/off'" class="relative">
+      <div class="title">乘降</div>
+      <ui-border class="w-8">
+        <ui-grid :grid="[3, 2]" column>
+          <ui-item v-for="c in ['全员上车', '全员下车', '牵引/脱钩']" v-text="c" :key="c" @click="clear" clickable />
+          <ui-item v-for="a in actors[0]" v-text="a" :key="a" @click="clear" clickable />
+        </ui-grid>
+      </ui-border>
+    </div>
+    <!-- 传真 -->
+    <div v-if="scene === 'navigate'" class="relative">
+      <div class="title">传真</div>
+      <ui-border class="w-12">
+        <ui-grid :grid="[5, 3]">
+          <ui-item v-for="n in 15" v-text="`城镇-${n}`" :key="n" @click="clear" clickable />
+        </ui-grid>
+      </ui-border>
+    </div>
   </div>
 
   <ui-dialog :text="text" :command="command" @selected="selected" />
@@ -108,11 +127,11 @@ export default {
           break;
         case '乘降':
           this.scene = 'get-on/off';
-          this.command = 'get-on/off';
+          this.step = 1;
           break;
         case '传真':
           this.scene = 'navigate';
-          this.command = 'navigate';
+          this.step = 1;
           break;
       }
     },
@@ -167,10 +186,6 @@ export default {
           }
           break;
         }
-        case 'get-on/off':
-        case 'navigate':
-          this.clear();
-          break;
       }
     },
     clear() {

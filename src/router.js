@@ -14,6 +14,10 @@ export default createRouter({
         {
           path: '/message',
           component: () => import('@/views/message.vue')
+        },
+        {
+          path: '/shop',
+          component: () => import('@/views/shop.vue')
         }
       ]
     }
