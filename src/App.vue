@@ -16,7 +16,8 @@ export default {
       nav: [
         { label: 'message', value: '/message' },
         { label: 'map', value: '/map' },
-        { label: 'shop', value: '/shop' }
+        { label: 'shop-1', value: '/shop-1' },
+        { label: 'shop-2', value: '/shop-2' }
       ]
     };
   }

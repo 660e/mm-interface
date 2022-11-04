@@ -16,8 +16,12 @@ export default createRouter({
           component: () => import('@/views/message.vue')
         },
         {
-          path: '/shop',
-          component: () => import('@/views/shop.vue')
+          path: '/shop-1',
+          component: () => import('@/views/shop-1.vue')
+        },
+        {
+          path: '/shop-2',
+          component: () => import('@/views/shop-2.vue')
         }
       ]
     }

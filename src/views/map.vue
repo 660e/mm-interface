@@ -20,7 +20,8 @@
 
   <div v-if="step > 0" class="absolute-center">
     <!-- 装备 -->
-    <div v-if="scene === 'equipments'" class="flex column">
+    <div v-if="scene === 'equipments'" class="flex column relative">
+      <div class="title">装备</div>
       <div class="flex">
         <ui-border v-if="type" class="w-7">
           <ui-item>LEOPARD</ui-item>
@@ -62,7 +63,8 @@
       </ui-border>
     </div>
     <!-- 道具 -->
-    <div v-if="scene === 'items'" class="w-12">
+    <div v-if="scene === 'items'" class="w-12 relative">
+      <div class="title">道具</div>
       <ui-border>
         <ui-grid :grid="[5, 2]">
           <ui-item v-for="i in items[type]" v-text="i" :key="i" @click="command = 'options'" clickable />
