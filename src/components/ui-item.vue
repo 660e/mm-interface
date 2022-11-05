@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss" scoped>
 .ui-item {
-  height: $lg;
+  min-height: $lg;
   padding: $sm;
   white-space: pre;
   &.clickable:hover {

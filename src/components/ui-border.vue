@@ -64,6 +64,8 @@ export default {
       border-color: $shade $shade $white $white;
       background-color: $dark;
       padding: $md;
+      display: flex;
+      flex-direction: column;
     }
   }
 }

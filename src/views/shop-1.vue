@@ -3,15 +3,12 @@
     <ui-border class="col">
       <ui-item>装备店/道具店</ui-item>
     </ui-border>
-    <ui-border class="w-5">
-      <ui-item class="flex justify-between">
-        <div>G:</div>
-        <div>{{ Math.floor(Math.random() * 123456789) }}</div>
-      </ui-item>
+    <ui-border class="w-4">
+      <ui-item class="text-right">{{ Math.floor(Math.random() * 12345678) }}G</ui-item>
     </ui-border>
   </div>
   <div class="col flex">
-    <div class="w-5 flex column justify-between">
+    <div class="w-4 flex column justify-between">
       <ui-border>
         <ui-item @click="scene = 'buy'" clickable>购买装备</ui-item>
         <ui-item @click="scene = 'sell'" clickable>售卖道具</ui-item>
@@ -29,7 +26,7 @@
         <ui-border class="col">
           <ui-item v-for="e in equipments" :key="e" class="flex justify-between" clickable>
             <div>{{ e }}</div>
-            <div>{{ Math.floor(Math.random() * 123456) }}</div>
+            <div>{{ Math.floor(Math.random() * 123456) }}G</div>
           </ui-item>
         </ui-border>
         <ui-border>
@@ -37,8 +34,8 @@
             <ui-item>攻击：800</ui-item>
             <ui-item>范围：一体</ui-item>
             <ui-item>重量：10.00t</ui-item>
-            <ui-item>防御：86</ui-item>
-            <ui-item>载弹：62</ui-item>
+            <ui-item>守备：86</ui-item>
+            <ui-item>弹仓：62</ui-item>
             <ui-item style="color: #555">载重：---</ui-item>
           </ui-grid>
         </ui-border>
@@ -47,7 +44,7 @@
         <ui-border class="col">
           <ui-item v-for="i in items" :key="i" @click="command = 'confirm'" class="flex justify-between" clickable>
             <div>{{ i }}</div>
-            <div>{{ Math.floor(Math.random() * 1234) }}</div>
+            <div>{{ Math.floor(Math.random() * 1234) }}G</div>
           </ui-item>
         </ui-border>
         <ui-border>
@@ -57,6 +54,11 @@
       </template>
     </div>
   </div>
+  <ui-border v-if="!scene">
+    <ui-item>Lorem ipsum dolor, sit amet.</ui-item>
+    <ui-item>Aliquam, officiis, facere. Atque, adipisci?</ui-item>
+    <ui-item>Nobis rerum corrupti, qui incidunt.</ui-item>
+  </ui-border>
   <ui-dialog :command="command" @selected="command = null" />
 </template>
 

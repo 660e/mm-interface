@@ -1,14 +1,11 @@
 <template>
-  <template v-if="!command && step === 0">
+  <template v-if="!scene && !command">
     <div class="flex">
       <ui-border class="col">
         <ui-item>地图名称</ui-item>
       </ui-border>
-      <ui-border class="w-5">
-        <ui-item class="flex justify-between">
-          <div>G:</div>
-          <div>{{ Math.floor(Math.random() * 123456789) }}</div>
-        </ui-item>
+      <ui-border class="w-4">
+        <ui-item class="text-right">{{ Math.floor(Math.random() * 12345678) }}G</ui-item>
       </ui-border>
     </div>
     <ui-border>
@@ -17,8 +14,7 @@
       </ui-grid>
     </ui-border>
   </template>
-
-  <div v-if="step > 0" class="absolute-center">
+  <div v-if="scene && command !== 'team'" class="absolute-center">
     <!-- 装备 -->
     <div v-if="scene === 'equipments'" class="flex column relative">
       <div class="title">装备</div>
@@ -27,22 +23,24 @@
           <ui-item>LEOPARD</ui-item>
           <ui-item class="flex justify-between"><span>SP</span><span>1234/9999</span></ui-item>
           <ui-item />
-          <ui-item class="flex justify-between"><span>NW</span><span>58.00t</span></ui-item>
-          <ui-item class="flex justify-between"><span>MAX</span><span>58.00t</span></ui-item>
-          <ui-item class="flex justify-between"><span>DI</span><span>0.00t</span></ui-item>
+          <ui-item class="flex justify-between"><span>载重</span><span>58.00t</span></ui-item>
+          <ui-item class="flex justify-between"><span>重量</span><span>58.00t</span></ui-item>
+          <ui-item class="flex justify-between"><span>主炮</span><span>开启</span></ui-item>
+          <ui-item class="flex justify-between" style="color: #555"><span>副炮</span><span>封闭</span></ui-item>
+          <ui-item class="flex justify-between"><span>S-E</span><span>开启</span></ui-item>
         </ui-border>
         <ui-border v-else class="w-7">
-          <ui-item>雷班纳</ui-item>
-          <ui-item class="flex justify-between"><span>LV</span><span>35</span></ui-item>
+          <ui-item class="flex justify-between"><span>雷班纳</span><span>LV 35</span></ui-item>
           <ui-item class="flex justify-between"><span>HP</span><span>1234/5000</span></ui-item>
+          <ui-item class="flex justify-between"><span>EXP</span><span>38116/260396</span></ui-item>
           <ui-item />
           <ui-item>攻击：354</ui-item>
-          <ui-item>防御：479</ui-item>
+          <ui-item>守备：479</ui-item>
           <ui-grid :grid="[2, 2]">
-            <ui-item>强度：104</ui-item>
+            <ui-item>力量：104</ui-item>
             <ui-item>回避：85</ui-item>
-            <ui-item>速度：188</ui-item>
             <ui-item>体力：151</ui-item>
+            <ui-item>速度：188</ui-item>
           </ui-grid>
         </ui-border>
         <ui-border class="w-5">
@@ -56,8 +54,8 @@
           <ui-item>攻击：800</ui-item>
           <ui-item>范围：一体</ui-item>
           <ui-item>重量：10.00t</ui-item>
-          <ui-item>防御：86</ui-item>
-          <ui-item>载弹：62</ui-item>
+          <ui-item>守备：86</ui-item>
+          <ui-item>弹仓：62</ui-item>
           <ui-item style="color: #555">载重：---</ui-item>
         </ui-grid>
       </ui-border>
@@ -94,7 +92,6 @@
       </ui-border>
     </div>
   </div>
-
   <ui-dialog :text="text" :command="command" @selected="selected" />
 </template>
 
@@ -111,8 +108,7 @@ export default {
       text: null,
       scene: null,
       command: null,
-      type: 0,
-      step: 0
+      type: 0
     };
   },
   methods: {
@@ -129,11 +125,9 @@ export default {
           break;
         case '乘降':
           this.scene = 'get-on/off';
-          this.step = 1;
           break;
         case '传真':
           this.scene = 'navigate';
-          this.step = 1;
           break;
       }
     },
@@ -145,7 +139,6 @@ export default {
             case 'team':
               this.command = null;
               this.type = type;
-              this.step = 1;
               break;
             case 'options':
               switch (type) {
@@ -170,7 +163,6 @@ export default {
             case 'team':
               this.command = null;
               this.type = type;
-              this.step = 1;
               break;
             case 'options':
               switch (type) {
@@ -195,7 +187,6 @@ export default {
       this.scene = null;
       this.command = null;
       this.type = 0;
-      this.step = 0;
     }
   }
 };
