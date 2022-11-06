@@ -1,5 +1,5 @@
 <template>
-  <div v-if="command" class="ui-dialog absolute-center">
+  <div v-if="command" :style="right ? style : {}" class="ui-dialog absolute-center">
     <div class="relative">
       <div v-if="text" class="title">{{ text }}</div>
       <!-- options -->
@@ -37,12 +37,22 @@ export default {
   emits: ['selected'],
   props: {
     command: String,
-    text: String
+    text: String,
+    right: Boolean
   },
   data() {
     return {
       actors: data.actors
     };
+  },
+  computed: {
+    style() {
+      return {
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end',
+        paddingBottom: '156px'
+      };
+    }
   }
 };
 </script>

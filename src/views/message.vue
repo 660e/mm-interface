@@ -5,6 +5,7 @@
     <ui-item>Aliquam, officiis, facere. Atque, adipisci?</ui-item>
     <ui-item>Nobis rerum corrupti, qui incidunt.</ui-item>
   </ui-border>
+  <ui-dialog command="confirm" right />
 </template>
 
 <script>

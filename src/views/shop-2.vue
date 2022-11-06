@@ -19,7 +19,7 @@
         <ui-item @click="(scene = null), (command = null)" clickable>离开</ui-item>
       </ui-border>
       <ui-border v-if="scene === 'bar'">
-        <ui-item v-for="a in actors" v-text="a" :key="a" @click="command = 'confirm'" class="flex justify-between" clickable />
+        <ui-item v-for="a in actors" v-text="a" :key="a" @click="(scene = null), (command = 'confirm')" class="flex justify-between" clickable />
       </ui-border>
     </div>
     <ui-border v-if="scene === 'bar'" class="col">
@@ -29,19 +29,19 @@
       </ui-item>
     </ui-border>
     <ui-border v-if="scene === 'inn'" class="col">
-      <ui-item v-for="r in rooms" :key="r" @click="command = 'confirm'" class="flex justify-between" clickable>
+      <ui-item v-for="r in rooms" :key="r" @click="(scene = null), (command = 'confirm')" class="flex justify-between" clickable>
         <div>{{ r }}</div>
         <div>{{ Math.floor(Math.random() * 12) }}G</div>
       </ui-item>
     </ui-border>
     <ui-border v-if="scene === 'info'" class="col">
-      <ui-item v-for="w in wanted" :key="w" class="flex justify-between" clickable>
+      <ui-item v-for="w in wanted" :key="w" @click="scene = null" class="flex justify-between" clickable>
         <div>{{ w }}</div>
         <div>{{ Math.floor(Math.random() * 123456) }}G</div>
       </ui-item>
     </ui-border>
     <ui-border v-if="scene === 'save'" class="col flex column">
-      <ui-item v-for="n in 4" :key="n" class="col" clickable>存档-{{ n }}</ui-item>
+      <ui-item v-for="n in 4" :key="n" @click="(scene = null), (command = 'confirm')" class="col" clickable>存档-{{ n }}</ui-item>
     </ui-border>
   </div>
   <ui-border v-if="!scene">
@@ -49,7 +49,7 @@
     <ui-item>Aliquam, officiis, facere. Atque, adipisci?</ui-item>
     <ui-item>Nobis rerum corrupti, qui incidunt.</ui-item>
   </ui-border>
-  <ui-dialog :command="command" @selected="command = null" />
+  <ui-dialog :command="command" @selected="command = null" right />
 </template>
 
 <script>
