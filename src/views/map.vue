@@ -4,7 +4,7 @@
       <ui-border class="col">
         <ui-item>地图名称</ui-item>
       </ui-border>
-      <ui-border class="w-4">
+      <ui-border class="w-5">
         <ui-item class="text-right">{{ Math.floor(Math.random() * 12345678) }}G</ui-item>
       </ui-border>
     </div>
@@ -19,7 +19,7 @@
     <div v-if="scene === 'equipments'" class="flex column relative">
       <div class="title">装备</div>
       <div class="flex">
-        <ui-border v-if="type" class="w-7">
+        <ui-border v-if="type" class="w-8">
           <ui-item>LEOPARD</ui-item>
           <ui-item class="flex justify-between"><span>SP</span><span>1234/9999</span></ui-item>
           <ui-item />
@@ -29,7 +29,7 @@
           <ui-item class="flex justify-between" style="color: #555"><span>副炮</span><span>封闭</span></ui-item>
           <ui-item class="flex justify-between"><span>S-E</span><span>开启</span></ui-item>
         </ui-border>
-        <ui-border v-else class="w-7">
+        <ui-border v-else class="w-8">
           <ui-item class="flex justify-between"><span>雷班纳</span><span>LV 35</span></ui-item>
           <ui-item class="flex justify-between"><span>HP</span><span>1234/5000</span></ui-item>
           <ui-item class="flex justify-between"><span>EXP</span><span>38116/260396</span></ui-item>
@@ -61,7 +61,7 @@
       </ui-border>
     </div>
     <!-- 道具 -->
-    <div v-if="scene === 'items'" class="w-12 relative">
+    <div v-if="scene === 'items'" class="w-13 relative">
       <div class="title">道具</div>
       <ui-border>
         <ui-grid :grid="[5, 2]">
@@ -85,7 +85,7 @@
     <!-- 传真 -->
     <div v-if="scene === 'navigate'" class="relative">
       <div class="title">传真</div>
-      <ui-border class="w-12">
+      <ui-border class="w-13">
         <ui-grid :grid="[5, 3]">
           <ui-item v-for="n in 15" v-text="`城镇-${n}`" :key="n" @click="clear" clickable />
         </ui-grid>

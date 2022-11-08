@@ -3,7 +3,7 @@
     <ui-border class="col">
       <ui-item>酒吧/旅店/猎人事务所/记录中心</ui-item>
     </ui-border>
-    <ui-border class="w-4">
+    <ui-border class="w-5">
       <ui-item class="text-right">{{ Math.floor(Math.random() * 12345678) }}G</ui-item>
     </ui-border>
   </div>

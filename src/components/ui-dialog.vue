@@ -8,7 +8,7 @@
       </ui-border>
       <!-- confirm -->
       <ui-border v-if="command === 'confirm'" class="w-4">
-        <ui-item v-for="(o, i) in ['是', '否']" v-text="o" :key="i" @click="$emit('selected', i)" class="text-center" clickable />
+        <ui-item v-for="(o, i) in ['确定', '取消']" v-text="o" :key="i" @click="$emit('selected', i)" class="text-center" clickable />
       </ui-border>
       <!-- team -->
       <ui-border v-if="command === 'team'" class="w-8">

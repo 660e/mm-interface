@@ -3,7 +3,7 @@
     <ui-border class="col">
       <ui-item>装备店/道具店</ui-item>
     </ui-border>
-    <ui-border class="w-4">
+    <ui-border class="w-5">
       <ui-item class="text-right">{{ Math.floor(Math.random() * 12345678) }}G</ui-item>
     </ui-border>
   </div>
@@ -15,10 +15,7 @@
         <ui-item @click="(scene = null), (command = null)" clickable>离开</ui-item>
       </ui-border>
       <ui-border v-if="scene === 'buy' || scene === 'sell'">
-        <ui-item v-for="a in actors" :key="a" class="flex justify-between" clickable>
-          <div>{{ a }}</div>
-          <div>满</div>
-        </ui-item>
+        <ui-item v-for="a in actors" v-text="a" :key="a" class="flex justify-between" clickable />
       </ui-border>
     </div>
     <div class="col flex column">
