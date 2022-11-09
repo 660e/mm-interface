@@ -22,6 +22,10 @@ export default createRouter({
         {
           path: '/shop-2',
           component: () => import('@/views/shop-2.vue')
+        },
+        {
+          path: '/shop-3',
+          component: () => import('@/views/shop-3.vue')
         }
       ]
     }
