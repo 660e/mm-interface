@@ -10,10 +10,10 @@
   <div class="col flex">
     <div class="w-4 flex column justify-between">
       <ui-border>
-        <ui-item @click="scene = 'refit'" clickable>改装底盘</ui-item>
-        <ui-item @click="scene = 'upgrade'" clickable>升级引擎</ui-item>
-        <ui-item @click="scene = 'rent'" clickable>租赁战车</ui-item>
-        <ui-item @click="scene = 'return'" clickable>归还战车</ui-item>
+        <ui-item @click="scene = 'refit'" clickable>改底盘</ui-item>
+        <ui-item @click="scene = 'upgrade'" clickable>改引擎</ui-item>
+        <ui-item @click="scene = 'rent'" clickable>租借</ui-item>
+        <ui-item @click="scene = 'return'" clickable>归还</ui-item>
         <ui-item @click="scene = null" clickable>离开</ui-item>
       </ui-border>
       <ui-border v-if="scene === 'refit' || scene === 'upgrade' || scene === 'rent'">

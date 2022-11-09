@@ -10,11 +10,11 @@
   <div class="col flex">
     <div class="w-4 flex column justify-between">
       <ui-border>
-        <ui-item @click="scene = 'buy'" clickable>购买装备</ui-item>
-        <ui-item @click="scene = 'sell'" clickable>售卖道具</ui-item>
-        <ui-item @click="scene = 'repair'" clickable>检修车辆</ui-item>
-        <ui-item @click="(scene = 'full'), (command = 'confirm')" clickable>全部补满</ui-item>
-        <ui-item @click="scene = 'supply'" clickable>部分补给</ui-item>
+        <ui-item @click="scene = 'buy'" clickable>买装备</ui-item>
+        <ui-item @click="scene = 'sell'" clickable>卖道具</ui-item>
+        <ui-item @click="scene = 'repair'" clickable>修理</ui-item>
+        <!-- <ui-item @click="(scene = 'full'), (command = 'confirm')" clickable>全部补满</ui-item> -->
+        <ui-item @click="scene = 'supply'" clickable>补给</ui-item>
         <ui-item @click="scene = null" clickable>离开</ui-item>
       </ui-border>
       <ui-border v-if="scene === 'buy' || scene === 'sell' || scene === 'repair' || scene === 'supply'">
@@ -82,13 +82,17 @@
       </template>
       <template v-if="scene === 'supply'">
         <ui-border class="col">
-          <ui-item @click="command = 'number'" class="flex justify-between" clickable><span>装甲片</span><span>1234/9999</span></ui-item>
+          <ui-item @click="command = 'confirm'" class="flex justify-between" clickable>
+            <div>全部</div>
+            <div>{{ Math.floor(Math.random() * 1234) }}G</div>
+          </ui-item>
+          <ui-item @click="command = 'number'" class="flex justify-between" clickable><span>红狼</span><span>1234/9999</span></ui-item>
           <ui-item @click="command = 'number'" class="flex justify-between" clickable><span>220mm盖亚炮</span><span>12/62</span></ui-item>
           <ui-item @click="command = 'number'" class="flex justify-between" clickable><span>S-龙卷风</span><span>9/16</span></ui-item>
         </ui-border>
         <ui-border>
           <ui-grid :grid="[2, 1]">
-            <ui-item>单价：{{ Math.floor(Math.random() * 1234) }}G</ui-item>
+            <ui-item>单价：{{ Math.floor(Math.random() * 1234) }}G/枚</ui-item>
           </ui-grid>
         </ui-border>
       </template>

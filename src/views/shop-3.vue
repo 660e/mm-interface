@@ -13,8 +13,8 @@
         <ui-item @click="scene = 'bar'" clickable>喝一杯</ui-item>
         <ui-item @click="scene = null" clickable>闲聊</ui-item>
         <ui-item @click="scene = 'inn'" clickable>住宿</ui-item>
-        <ui-item @click="scene = 'info'" clickable>打听情报</ui-item>
-        <ui-item @click="scene = null" clickable>领取赏金</ui-item>
+        <ui-item @click="scene = 'info'" clickable>听情报</ui-item>
+        <ui-item @click="scene = null" clickable>领赏金</ui-item>
         <ui-item @click="scene = 'save'" clickable>保存</ui-item>
         <ui-item @click="(scene = null), (command = null)" clickable>离开</ui-item>
       </ui-border>
