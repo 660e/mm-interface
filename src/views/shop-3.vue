@@ -45,9 +45,9 @@
     </ui-border>
   </div>
   <ui-border v-if="!scene">
-    <ui-item>Lorem ipsum dolor, sit amet.</ui-item>
-    <ui-item>Aliquam, officiis, facere. Atque, adipisci?</ui-item>
-    <ui-item>Nobis rerum corrupti, qui incidunt.</ui-item>
+    <ui-grid :grid="[3, 1]">
+      <ui-item>「欢迎光临！</ui-item>
+    </ui-grid>
   </ui-border>
   <ui-dialog :command="command" @selected="command = null" right />
 </template>

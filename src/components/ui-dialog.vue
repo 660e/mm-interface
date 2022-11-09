@@ -25,6 +25,11 @@
           <div>4/10 {{ command === 'tank' ? 'SP' : 'HP' }} 1234/9999</div>
         </ui-item>
       </ui-border>
+      <!-- number -->
+      <ui-border v-if="command === 'number'" @click="$emit('selected')" class="w-5 text-right">
+        <ui-item>0000/9999</ui-item>
+        <ui-item>{{ Math.floor(Math.random() * 1234) }}G</ui-item>
+      </ui-border>
     </div>
   </div>
 </template>

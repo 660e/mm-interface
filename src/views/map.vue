@@ -9,8 +9,8 @@
       </ui-border>
     </div>
     <ui-border>
-      <ui-grid :grid="[1, 5]">
-        <ui-item v-for="m in ['装备', '道具', '乘降', '传真', '系统']" v-text="m" :key="m" @click="menu(m)" class="text-center" clickable />
+      <ui-grid :grid="[1, 6]">
+        <ui-item v-for="m in ['装备', '道具', '乘降', '传真', '战车', '系统']" v-text="m" :key="m" @click="menu(m)" class="text-center" clickable />
       </ui-grid>
     </ui-border>
   </template>
@@ -26,21 +26,21 @@
           <ui-item class="flex justify-between"><span>载重</span><span>58.00t</span></ui-item>
           <ui-item class="flex justify-between"><span>重量</span><span>58.00t</span></ui-item>
           <ui-item class="flex justify-between"><span>主炮</span><span>开启</span></ui-item>
-          <ui-item class="flex justify-between" style="color: #555"><span>副炮</span><span>封闭</span></ui-item>
-          <ui-item class="flex justify-between"><span>S-E</span><span>开启</span></ui-item>
+          <ui-item class="flex justify-between disabled"><span>副炮</span><span>封闭</span></ui-item>
+          <ui-item class="flex justify-between"><span>特殊</span><span>开启</span></ui-item>
         </ui-border>
         <ui-border v-else class="w-8">
           <ui-item class="flex justify-between"><span>雷班纳</span><span>LV 35</span></ui-item>
           <ui-item class="flex justify-between"><span>HP</span><span>1234/5000</span></ui-item>
           <ui-item class="flex justify-between"><span>EXP</span><span>38116/260396</span></ui-item>
           <ui-item />
-          <ui-item>攻击：354</ui-item>
-          <ui-item>守备：479</ui-item>
-          <ui-grid :grid="[2, 2]">
+          <ui-grid :grid="[4, 2]" column>
             <ui-item>力量：104</ui-item>
-            <ui-item>回避：85</ui-item>
             <ui-item>体力：151</ui-item>
+            <ui-item>回避：85</ui-item>
             <ui-item>速度：188</ui-item>
+            <ui-item>攻击：354</ui-item>
+            <ui-item>守备：479</ui-item>
           </ui-grid>
         </ui-border>
         <ui-border class="w-5">
@@ -50,13 +50,18 @@
         </ui-border>
       </div>
       <ui-border>
-        <ui-grid :grid="[2, 3]">
+        <ui-grid v-if="type" :grid="[2, 3]">
           <ui-item>攻击：800</ui-item>
           <ui-item>范围：一体</ui-item>
           <ui-item>重量：10.00t</ui-item>
           <ui-item>守备：86</ui-item>
           <ui-item>弹仓：62</ui-item>
-          <ui-item style="color: #555">载重：---</ui-item>
+          <ui-item class="disabled">载重：---</ui-item>
+        </ui-grid>
+        <ui-grid v-else :grid="[2, 3]">
+          <ui-item>攻击：255</ui-item>
+          <ui-item class="disabled">守备：---</ui-item>
+          <ui-item>范围：一体</ui-item>
         </ui-grid>
       </ui-border>
     </div>
@@ -64,12 +69,14 @@
     <div v-if="scene === 'items'" class="w-13 relative">
       <div class="title">道具</div>
       <ui-border>
-        <ui-grid :grid="[5, 2]">
+        <ui-grid :grid="[8, 2]">
           <ui-item v-for="i in items[type]" v-text="i" :key="i" @click="command = 'options'" clickable />
         </ui-grid>
       </ui-border>
       <ui-border>
-        <ui-item>道具说明</ui-item>
+        <ui-grid :grid="[2, 1]">
+          <ui-item>道具说明...</ui-item>
+        </ui-grid>
       </ui-border>
     </div>
     <!-- 乘降 -->
