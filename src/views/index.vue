@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="index" :class="[$route.path === '/battle' && 'index-battle']">
     <router-view />
   </div>
 </template>
@@ -21,5 +21,9 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  &.index-battle {
+    background-image: none;
+    background-color: $dark;
+  }
 }
 </style>

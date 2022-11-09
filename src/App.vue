@@ -18,7 +18,8 @@ export default {
         { label: 'map', value: '/map' },
         { label: 'shop-1', value: '/shop-1' },
         { label: 'shop-2', value: '/shop-2' },
-        { label: 'shop-3', value: '/shop-3' }
+        { label: 'shop-3', value: '/shop-3' },
+        { label: 'battle', value: '/battle' }
       ]
     };
   }

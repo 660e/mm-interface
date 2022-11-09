@@ -26,6 +26,10 @@ export default createRouter({
         {
           path: '/shop-3',
           component: () => import('@/views/shop-3.vue')
+        },
+        {
+          path: '/battle',
+          component: () => import('@/views/battle.vue')
         }
       ]
     }
