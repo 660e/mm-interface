@@ -13,7 +13,6 @@
         <ui-item @click="scene = 'buy'" clickable>买装备</ui-item>
         <ui-item @click="scene = 'sell'" clickable>卖道具</ui-item>
         <ui-item @click="scene = 'repair'" clickable>修理</ui-item>
-        <!-- <ui-item @click="(scene = 'full'), (command = 'confirm')" clickable>全部补满</ui-item> -->
         <ui-item @click="scene = 'supply'" clickable>补给</ui-item>
         <ui-item @click="scene = null" clickable>离开</ui-item>
       </ui-border>
@@ -75,7 +74,6 @@
         </ui-border>
         <ui-border>
           <ui-grid :grid="[2, 1]">
-            <ui-item>所属：1号战车</ui-item>
             <ui-item>状态：破损</ui-item>
           </ui-grid>
         </ui-border>

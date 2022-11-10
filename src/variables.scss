@@ -15,6 +15,10 @@ $white: #e0e0e0;
 .flex {
   display: flex;
 }
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
 .column {
   flex-direction: column;
 }
@@ -32,6 +36,9 @@ $white: #e0e0e0;
 }
 .relative {
   position: relative;
+}
+.absolute {
+  position: absolute;
 }
 .absolute-center {
   position: absolute;
