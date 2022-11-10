@@ -30,6 +30,7 @@ export default {
   display: flex;
   flex-direction: column;
   & > div:last-child {
+    margin-top: 3px;
     flex: 1;
     display: flex;
     span {
@@ -53,6 +54,9 @@ export default {
         background-color: #73fff7;
       }
     }
+  }
+  & + .ui-bar {
+    margin-left: $lg;
   }
 }
 </style>
