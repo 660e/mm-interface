@@ -21,7 +21,7 @@
       <div class="flex">
         <ui-border v-if="type" class="w-8">
           <ui-item>LEOPARD</ui-item>
-          <ui-item class="flex justify-between"><span>SP</span><span>1234/9999</span></ui-item>
+          <ui-item><ui-bar type="sp" /></ui-item>
           <ui-item />
           <ui-item class="flex justify-between"><span>载重</span><span>58.00t</span></ui-item>
           <ui-item class="flex justify-between"><span>重量</span><span>58.00t</span></ui-item>
@@ -31,8 +31,8 @@
         </ui-border>
         <ui-border v-else class="w-8">
           <ui-item class="flex justify-between"><span>雷班纳</span><span>LV 35</span></ui-item>
-          <ui-item class="flex justify-between"><span>HP</span><span>1234/5000</span></ui-item>
-          <ui-item class="flex justify-between"><span>EXP</span><span>38116/260396</span></ui-item>
+          <ui-item><ui-bar type="hp" /></ui-item>
+          <ui-item><ui-bar type="exp" /></ui-item>
           <ui-item />
           <ui-grid :grid="[4, 2]" column>
             <ui-item>力量：104</ui-item>
