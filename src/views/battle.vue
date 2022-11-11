@@ -1,13 +1,13 @@
 <template>
-  <div class="col flex flex-center">
+  <div class="flex">
     <div class="relative">
-      <ui-grid :grid="[8, 15]">
-        <div v-for="n in 120" :key="n" class="grid flex flex-center">{{ (n - 1) % 15 }}-{{ Math.floor(n / 15) }}</div>
+      <ui-grid :grid="[9, 17]">
+        <div v-for="n in 153" :key="n" class="grid flex flex-center">{{ (n - 1) % 17 }}-{{ Math.floor(n / 17 - (n % 17 ? 0 : 1)) }}</div>
       </ui-grid>
-      <img :style="position(13, 1)" src="@/assets/actor-1.png" class="absolute" />
-      <img :style="position(13, 3)" src="@/assets/actor-2.png" class="absolute" />
-      <img :style="position(13, 5)" src="@/assets/actor-3.png" class="absolute" />
-      <img :style="position(0, 3)" src="@/assets/enemy.png" class="absolute" />
+      <img :style="position(14, 2)" src="@/assets/actor-1.png" class="absolute" />
+      <img :style="position(14, 4)" src="@/assets/actor-2.png" class="absolute" />
+      <img :style="position(14, 6)" src="@/assets/actor-3.png" class="absolute" />
+      <img :style="position(1, 4)" src="@/assets/enemy.png" class="absolute" />
     </div>
   </div>
   <div class="flex">
@@ -53,6 +53,7 @@ export default {
   width: $xl;
   height: $xl;
   font-size: $md;
+  color: $shade;
   &:nth-child(2n) {
     background-color: rgba(255, 255, 255, 0.06);
   }
