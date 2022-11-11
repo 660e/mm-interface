@@ -52,7 +52,7 @@
       <ui-border>
         <ui-grid v-if="type" :grid="[2, 3]">
           <ui-item>攻击：800</ui-item>
-          <ui-item>范围：一体</ui-item>
+          <ui-item>范围：单体</ui-item>
           <ui-item>重量：10.00t</ui-item>
           <ui-item>守备：86</ui-item>
           <ui-item>弹仓：62</ui-item>
@@ -61,7 +61,7 @@
         <ui-grid v-else :grid="[2, 3]">
           <ui-item>攻击：255</ui-item>
           <ui-item class="disabled">守备：---</ui-item>
-          <ui-item>范围：一体</ui-item>
+          <ui-item>范围：单体</ui-item>
         </ui-grid>
       </ui-border>
     </div>
