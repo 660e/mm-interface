@@ -8,11 +8,22 @@
         <ui-item class="text-right">{{ Math.floor(Math.random() * 12345678) }}G</ui-item>
       </ui-border>
     </div>
-    <ui-border>
-      <ui-grid :grid="[1, 6]">
-        <ui-item v-for="m in ['装备', '道具', '乘降', '传真', '战车', '系统']" v-text="m" :key="m" @click="menu(m)" class="text-center" clickable />
-      </ui-grid>
-    </ui-border>
+    <div class="flex">
+      <ui-border>
+        <ui-grid :grid="[3, 2]" column>
+          <ui-item v-for="m in ['道具', '装备', '战车', '乘降', '传真', '系统']" v-text="m" :key="m" @click="menu(m)" class="text-center" clickable />
+        </ui-grid>
+      </ui-border>
+      <ui-border class="col">
+        <ui-item v-for="a in actors[0]" :key="a" class="flex justify-between">
+          <div>{{ a }}</div>
+          <div class="flex">
+            <ui-bar class="w-3" type="hp" />
+            <ui-bar class="w-3" type="sp" />
+          </div>
+        </ui-item>
+      </ui-border>
+    </div>
   </template>
   <div v-if="scene && command !== 'team'" class="absolute-center">
     <!-- 装备 -->

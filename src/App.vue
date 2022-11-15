@@ -1,8 +1,6 @@
 <template>
   <div class="app">
-    <section>
-      <router-view />
-    </section>
+    <router-view />
     <nav>
       <router-link v-for="n in nav" :key="n.value" :to="{ path: n.value }">{{ n.label }}</router-link>
     </nav>
@@ -41,15 +39,15 @@ export default {
   font-family: consolas, monaco, 'microsoft yahei';
   height: 100vh;
   display: flex;
-  & > section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  justify-content: center;
+  align-items: center;
+  position: relative;
   & > nav {
     font-size: $md;
     padding: $md;
+    position: absolute;
+    top: 0;
+    right: 0;
     a {
       color: $blue;
       cursor: pointer;
