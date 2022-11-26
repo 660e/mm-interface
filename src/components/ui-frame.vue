@@ -14,7 +14,7 @@ export default {
 .ui-frame {
   background-color: rgba(29, 29, 29, 160/255);
   border: 2px $grey solid;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
   box-sizing: border-box;
   padding: $md;
 }

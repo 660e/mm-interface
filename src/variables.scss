@@ -6,7 +6,6 @@ $blue: #2196f3;
 $dark: #1d1d1d;
 $grey: #bcbcbc;
 $pink: #d84060;
-$brown: #d7ccc8;
 $shade: #7f7f7f;
 $white: #e0e0e0;
 .disabled {
@@ -70,6 +69,41 @@ $white: #e0e0e0;
   left: 50%;
   z-index: 30;
   transform: translateX(-50%);
+}
+.face {
+  padding-left: $md;
+  display: flex;
+  align-items: center;
+  &::before {
+    content: '';
+    background-image: url('@/assets/faces.png');
+    height: 32px;
+    width: 32px;
+  }
+  &.face-1-1::before {
+    background-position: 0 0;
+  }
+  &.face-2-1::before {
+    background-position: 0 -32px;
+  }
+  &.face-3-1::before {
+    background-position: 0 -64px;
+  }
+  &.face-4-1::before {
+    background-position: 0 -96px;
+  }
+  &.face-1-2::before {
+    background-position: 32px 0;
+  }
+  &.face-2-2::before {
+    background-position: 32px -32px;
+  }
+  &.face-3-2::before {
+    background-position: 32px -64px;
+  }
+  &.face-4-2::before {
+    background-position: 32px -96px;
+  }
 }
 .w-150 {
   width: 150px;

@@ -36,7 +36,7 @@ export default {
   user-select: none;
 }
 .app {
-  background-color: $brown;
+  background-color: $dark;
   font-family: consolas, monaco, 'microsoft yahei';
   height: 100vh;
   display: flex;
