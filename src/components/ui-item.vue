@@ -16,7 +16,7 @@ export default {
 <style lang="scss" scoped>
 .ui-item {
   min-height: $lg;
-  padding: $sm $md;
+  padding: $md;
   white-space: pre;
   &.clickable:hover {
     background-color: rgba(255, 255, 255, 0.5);

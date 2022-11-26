@@ -14,8 +14,8 @@ export default {
 .index {
   background: url('@/assets/bg.png') no-repeat center center;
   color: $white;
-  width: $xl * 17;
-  height: $xl * 13;
+  width: 48px * 23;
+  height: 48px * 13;
   font-size: $lg;
   display: flex;
   flex-direction: column;

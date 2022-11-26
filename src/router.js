@@ -8,6 +8,10 @@ export default createRouter({
       component: () => import('@/views'),
       children: [
         {
+          path: '/menu',
+          component: () => import('@/views/menu.vue')
+        },
+        {
           path: '/map',
           component: () => import('@/views/map.vue')
         },

@@ -1,4 +1,4 @@
-$sm: 6px;
+$sm: 5px;
 $md: $sm * 2;
 $lg: $sm * 4;
 $xl: $sm * 8;
@@ -30,6 +30,9 @@ $white: #e0e0e0;
 }
 .justify-end {
   justify-content: flex-end;
+}
+.justify-center {
+  justify-content: center;
 }
 .text-center {
   text-align: center;
@@ -67,6 +70,12 @@ $white: #e0e0e0;
   left: 50%;
   z-index: 30;
   transform: translateX(-50%);
+}
+.w-150 {
+  width: 150px;
+}
+.w-250 {
+  width: 250px;
 }
 .w-1 {
   width: $xl * 1;
@@ -115,4 +124,25 @@ $white: #e0e0e0;
 }
 .w-16 {
   width: $xl * 16;
+}
+.w-17 {
+  width: $xl * 17;
+}
+.w-18 {
+  width: $xl * 18;
+}
+.w-19 {
+  width: $xl * 19;
+}
+.w-20 {
+  width: $xl * 20;
+}
+.w-21 {
+  width: $xl * 21;
+}
+.w-22 {
+  width: $xl * 22;
+}
+.w-23 {
+  width: $xl * 23;
 }

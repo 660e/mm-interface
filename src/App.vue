@@ -12,6 +12,7 @@ export default {
   data() {
     return {
       nav: [
+        { label: 'menu', value: '/menu' },
         { label: 'message', value: '/message' },
         { label: 'map', value: '/map' },
         { label: 'shop-1', value: '/shop-1' },
