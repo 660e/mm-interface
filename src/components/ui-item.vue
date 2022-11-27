@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-item" :class="{ clickable }">
+  <div class="ui-item" :class="{ clickable, 'no-padding': noPadding }">
     <slot />
   </div>
 </template>
@@ -8,7 +8,8 @@
 export default {
   name: 'ui-item',
   props: {
-    clickable: Boolean
+    clickable: Boolean,
+    noPadding: Boolean
   }
 };
 </script>
@@ -20,6 +21,9 @@ export default {
   white-space: pre;
   &.clickable:hover {
     background-color: rgba(255, 255, 255, 0.5);
+  }
+  &.no-padding {
+    padding: 0;
   }
   * {
     white-space: pre;

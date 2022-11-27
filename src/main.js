@@ -9,9 +9,10 @@ import UiBorder from '@/components/ui-border.vue';
 import UiDialog from '@/components/ui-dialog.vue';
 import UiFrame from '@/components/ui-frame.vue';
 import UiGrid from '@/components/ui-grid.vue';
+import UiIcon from '@/components/ui-icon.vue';
 import UiItem from '@/components/ui-item.vue';
 
-const components = [UiBar, UiBorder, UiDialog, UiFrame, UiGrid, UiItem];
+const components = [UiBar, UiBorder, UiDialog, UiFrame, UiGrid, UiIcon, UiItem];
 
 components.forEach(c => app.component(c.name, c));
 

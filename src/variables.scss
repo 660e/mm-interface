@@ -8,6 +8,28 @@ $grey: #bcbcbc;
 $pink: #d84060;
 $shade: #7f7f7f;
 $white: #e0e0e0;
+$space: 4px;
+hr {
+  border: 0;
+  background-color: $grey;
+  height: 1px;
+  margin: $md 0;
+}
+.q-pl {
+  padding-left: $md !important;
+}
+.space-top {
+  margin-top: $space;
+}
+.space-left {
+  margin-left: $space;
+}
+.space-right {
+  margin-right: $space;
+}
+.space-bottom {
+  margin-bottom: $space;
+}
 .disabled {
   color: #555;
 }
@@ -33,6 +55,9 @@ $white: #e0e0e0;
 .justify-center {
   justify-content: center;
 }
+.align-center {
+  align-items: center;
+}
 .text-center {
   text-align: center;
 }
@@ -56,127 +81,12 @@ $white: #e0e0e0;
   justify-content: center;
   align-items: center;
 }
-.title {
-  background-color: $grey;
-  color: $dark;
-  padding: $sm 0;
-  width: $xl * 4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: -$xl;
-  left: 50%;
-  z-index: 30;
-  transform: translateX(-50%);
-}
-.face {
-  padding-left: $md;
-  display: flex;
-  align-items: center;
-  &::before {
-    content: '';
-    background-image: url('@/assets/faces.png');
-    height: 32px;
-    width: 32px;
-  }
-  &.face-1-1::before {
-    background-position: 0 0;
-  }
-  &.face-2-1::before {
-    background-position: 0 -32px;
-  }
-  &.face-3-1::before {
-    background-position: 0 -64px;
-  }
-  &.face-4-1::before {
-    background-position: 0 -96px;
-  }
-  &.face-1-2::before {
-    background-position: 32px 0;
-  }
-  &.face-2-2::before {
-    background-position: 32px -32px;
-  }
-  &.face-3-2::before {
-    background-position: 32px -64px;
-  }
-  &.face-4-2::before {
-    background-position: 32px -96px;
-  }
-}
 .w-150 {
   width: 150px;
 }
 .w-250 {
   width: 250px;
 }
-.w-1 {
-  width: $xl * 1;
-}
-.w-2 {
-  width: $xl * 2;
-}
-.w-3 {
-  width: $xl * 3;
-}
-.w-4 {
-  width: $xl * 4;
-}
-.w-5 {
-  width: $xl * 5;
-}
-.w-6 {
-  width: $xl * 6;
-}
-.w-7 {
-  width: $xl * 7;
-}
-.w-8 {
-  width: $xl * 8;
-}
-.w-9 {
-  width: $xl * 9;
-}
-.w-10 {
-  width: $xl * 10;
-}
-.w-11 {
-  width: $xl * 11;
-}
-.w-12 {
-  width: $xl * 12;
-}
-.w-13 {
-  width: $xl * 13;
-}
-.w-14 {
-  width: $xl * 14;
-}
-.w-15 {
-  width: $xl * 15;
-}
-.w-16 {
-  width: $xl * 16;
-}
-.w-17 {
-  width: $xl * 17;
-}
-.w-18 {
-  width: $xl * 18;
-}
-.w-19 {
-  width: $xl * 19;
-}
-.w-20 {
-  width: $xl * 20;
-}
-.w-21 {
-  width: $xl * 21;
-}
-.w-22 {
-  width: $xl * 22;
-}
-.w-23 {
-  width: $xl * 23;
+.w-400 {
+  width: 400px;
 }

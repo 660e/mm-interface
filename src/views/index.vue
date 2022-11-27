@@ -13,9 +13,11 @@ export default {
 <style lang="scss" scoped>
 .index {
   background: url('@/assets/bg.png') no-repeat center center;
+  box-sizing: border-box;
   color: $white;
   width: 48px * 23;
   height: 48px * 13;
+  padding: $space;
   font-size: $lg;
   display: flex;
   flex-direction: column;
