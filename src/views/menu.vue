@@ -39,10 +39,22 @@
             <span v-if="type">4/10</span>
           </ui-item>
           <hr />
-          <ui-item v-for="n in 10" :key="n" class="flex justify-between" clickable>
-            <span>{{ items[type][n - 1] }}</span>
-            <span>{{ type ? '00.00t' : Math.ceil(Math.random() * 10) }}</span>
-          </ui-item>
+          <div class="h-400">
+            <ui-item v-for="n in 4" :key="n" class="flex justify-between" clickable>
+              <div class="flex align-center">
+                <ui-icon :type="[16, type, 6]" />
+                <span class="q-pl">{{ items[type][n - 1] }}</span>
+              </div>
+              <span>{{ type ? '0.10t' : `x${Math.ceil(Math.random() * 9)}` }}</span>
+            </ui-item>
+            <ui-item class="flex justify-between" clickable>
+              <div class="flex align-center">
+                <ui-icon :type="[16, type, type ? 3 : 0]" />
+                <span class="q-pl">{{ equipments[type][0] }}</span>
+              </div>
+              <span>{{ type ? '10.00t' : 'x3' }}</span>
+            </ui-item>
+          </div>
           <hr />
           <ui-item>道具说明...</ui-item>
         </ui-frame>
@@ -91,7 +103,7 @@
         </ui-frame>
       </div>
       <div class="w-400 flex justify-end">
-        <ui-frame v-if="scene === 3" class="w-250">
+        <ui-frame v-if="scene === 0 || scene === 3" class="w-250">
           <ui-item class="text-right">{{ Math.ceil(Math.random() * 100000000) }}G</ui-item>
           <hr />
           <ui-item v-for="(a, i) in actors[0]" :key="i" class="q-mb" clickable no-padding>
@@ -116,7 +128,33 @@
             </div>
           </ui-item>
         </ui-frame>
-        <ui-frame v-if="scene === 4" class="col"></ui-frame>
+        <ui-frame v-if="scene === 4" class="col">
+          <ui-item>{{ type ? '大炮' : '武器' }}</ui-item>
+          <hr />
+          <div class="h-320">
+            <ui-item class="flex justify-between" clickable>
+              <div class="flex align-center">
+                <ui-icon :type="[16, type, type ? 3 : 0]" />
+                <span class="q-pl">{{ equipments[type][0] }}</span>
+              </div>
+              <span>{{ type ? 800 : 'x3' }}</span>
+            </ui-item>
+          </div>
+          <hr />
+          <ui-grid v-if="type" :grid="[3, 2]">
+            <ui-item>攻击：800</ui-item>
+            <ui-item>范围：单体</ui-item>
+            <ui-item>守备：86</ui-item>
+            <ui-item>弹仓：62/62</ui-item>
+            <ui-item>状态：正常</ui-item>
+            <ui-item>重量：10.00t</ui-item>
+            <ui-item>持有：MERKAVA</ui-item>
+          </ui-grid>
+          <ui-grid v-else :grid="[1, 2]">
+            <ui-item>攻击：255</ui-item>
+            <ui-item>范围：单体</ui-item>
+          </ui-grid>
+        </ui-frame>
       </div>
     </div>
   </div>
@@ -134,6 +172,7 @@ export default {
       equipments: data.equipments,
       scene: 0,
       type: 0,
+      command: null,
       current: ''
     };
   }
