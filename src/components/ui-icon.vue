@@ -24,8 +24,8 @@ export default {
       }
       return {
         backgroundImage: `url(${image})`,
-        backgroundPositionX: `${this.type[2] * this.type[0]}px`,
-        backgroundPositionY: `${this.type[1] * -this.type[0]}px`,
+        backgroundPositionX: `-${this.type[2] * this.type[0]}px`,
+        backgroundPositionY: `-${this.type[1] * this.type[0]}px`,
         width: `${this.type[0]}px`,
         height: `${this.type[0]}px`
       };
