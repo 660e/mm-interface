@@ -47,13 +47,13 @@
       <ui-frame v-if="[3].includes(scene)" class="col">
         <ui-item class="flex justify-between">
           <span>{{ current }}</span>
-          <span v-if="type">4/8</span>
+          <span v-if="type">8/10/12</span>
         </ui-item>
         <hr />
         <div class="h-320">
           <ui-item v-for="n in 4" :key="n" class="flex justify-between" clickable>
             <div class="flex align-center">
-              <ui-icon :type="[16, type, 6]" />
+              <ui-icon />
               <span class="q-pl">{{ items[type][n - 1] }}</span>
             </div>
             <span>{{ type ? '0.10t' : `x${Math.ceil(Math.random() * 9)}` }}</span>
@@ -152,6 +152,12 @@
         <ui-item>{{ type ? '大炮' : '武器' }}</ui-item>
         <hr />
         <div class="h-320">
+          <ui-item clickable>
+            <div class="flex align-center">
+              <ui-icon />
+              <span class="q-pl">卸下</span>
+            </div>
+          </ui-item>
           <ui-item class="flex justify-between" clickable>
             <div class="flex align-center">
               <ui-icon :type="[16, type, type ? 3 : 0]" />
