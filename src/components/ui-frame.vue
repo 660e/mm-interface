@@ -15,8 +15,8 @@ export default {
 
 <style lang="scss" scoped>
 .ui-frame {
-  background-color: $dark;
-  border: 1px $grey solid;
+  background-color: $bg;
+  border: 1px $border solid;
   backdrop-filter: blur(4px);
   box-sizing: border-box;
   padding: $md;

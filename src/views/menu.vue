@@ -124,7 +124,7 @@
     <!-- R -->
     <div class="w-400 flex justify-end">
       <ui-frame v-if="[0, 3].includes(scene)" class="w-250">
-        <ui-item class="text-right">{{ Math.ceil(Math.random() * 100000000) }}G</ui-item>
+        <ui-item class="text-right">{{ Math.ceil(Math.random() * 100000000) }}<s>G</s></ui-item>
         <hr />
         <ui-item v-for="(a, i) in actors[0]" :key="i" class="q-mb" clickable no-padding>
           <ui-item class="flex justify-between">

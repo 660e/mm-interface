@@ -14,7 +14,7 @@ export default {
 .index {
   background: url('@/assets/bg.png') no-repeat center center;
   box-sizing: border-box;
-  color: $white;
+  color: #fff;
   width: 48px * 23;
   height: 48px * 13;
   padding: $space;
@@ -25,7 +25,7 @@ export default {
   position: relative;
   &.index-battle {
     background-image: none;
-    background-color: $dark;
+    background-color: $bg;
   }
 }
 </style>

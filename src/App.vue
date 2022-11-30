@@ -32,6 +32,7 @@ export default {
   line-height: 1;
   font-style: normal;
   font-weight: normal;
+  text-decoration: none;
   cursor: default;
   user-select: none;
 }

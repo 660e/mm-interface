@@ -26,7 +26,7 @@ export default {
   display: flex;
   flex-direction: column;
   & > div:last-child {
-    border: 1px $dark solid;
+    border: 1px $bg solid;
     box-sizing: border-box;
     &.hp {
       background-color: #ef0000;

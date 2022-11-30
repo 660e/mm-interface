@@ -93,8 +93,8 @@ export default {
   }
 }
 .tooltip {
-  background-color: $grey;
-  color: $dark;
+  background-color: $border;
+  color: $bg;
   padding: $sm $md;
   font-size: $md + $sm;
   display: flex;
