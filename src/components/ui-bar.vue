@@ -5,7 +5,7 @@
       <span>{{ Math.ceil(Math.random() * 9999) }}/9999</span>
     </div>
     <div class="col flex" :class="[type]">
-      <span :style="{ width: `${Math.ceil(Math.random() * 99)}%` }"></span>
+      <span :style="{ width: `${Math.ceil(Math.random() * 50) + 40}%` }"></span>
     </div>
   </div>
 </template>

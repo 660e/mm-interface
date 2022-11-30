@@ -84,6 +84,9 @@ hr {
   justify-content: center;
   align-items: center;
 }
+.w-60 {
+  width: 60px;
+}
 .w-150 {
   width: 150px;
 }
@@ -93,9 +96,12 @@ hr {
 .w-400 {
   width: 400px;
 }
-.h-320 {
-  height: 320px;
+.w-550 {
+  width: 550px;
 }
-.h-400 {
-  height: 400px;
+.h-60 {
+  height: 60px;
+}
+.h-320 {
+  height: $xl * 8;
 }
