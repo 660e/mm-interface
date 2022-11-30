@@ -67,7 +67,7 @@
           </ui-item>
         </div>
         <hr />
-        <ui-grid v-if="type" :grid="[3, 2]">
+        <ui-grid v-if="type" :grid="[4, 2]">
           <ui-item v-for="(n, i) in ['攻击', '范围', '守备', '弹仓', '状态', '重量']" :key="i" class="flex justify-between">
             <div class="flex align-center">
               <ui-icon /><span class="q-pl">{{ n }}</span>
@@ -101,7 +101,7 @@
           </ui-item>
         </ui-item>
         <hr />
-        <ui-grid v-if="type" :grid="[3, 2]">
+        <ui-grid v-if="type" :grid="[4, 2]">
           <ui-item v-for="(n, i) in ['攻击', '范围', '守备', '弹仓', '状态', '重量']" :key="i" class="flex justify-between">
             <div class="flex align-center">
               <ui-icon /><span class="q-pl">{{ n }}</span>
@@ -111,7 +111,7 @@
             </span>
           </ui-item>
         </ui-grid>
-        <ui-grid v-else :grid="[1, 2]" column>
+        <ui-grid v-else :grid="[4, 2]">
           <ui-item v-for="(n, i) in ['攻击', '范围']" :key="i" class="flex justify-between">
             <div class="flex align-center">
               <ui-icon /><span class="q-pl">{{ n }}</span>
@@ -175,7 +175,7 @@
             <span>{{ [800, '单体', 86, '48/62', '正常', '10.00t', 'MERKAVA'][i] }}</span>
           </ui-item>
         </ui-grid>
-        <ui-grid v-else :grid="[2, 2]">
+        <ui-grid v-else :grid="[4, 2]">
           <ui-item v-for="(n, i) in ['攻击', '范围', '数量']" :key="i" class="flex justify-between">
             <div class="flex align-center">
               <ui-icon /><span class="q-pl">{{ n }}</span>
