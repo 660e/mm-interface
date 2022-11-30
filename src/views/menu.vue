@@ -3,11 +3,15 @@
     <!-- L -->
     <div class="col flex column justify-between">
       <div>
-        <ui-frame @click="(scene = 0), (type = 0), (current = '')" class="h-60 w-60 space-bottom flex flex-center">B</ui-frame>
+        <div class="flex space-bottom">
+          <ui-frame>
+            <ui-item @click="(scene = 0), (type = 0), (current = '')" clickable>返回</ui-item>
+          </ui-frame>
+        </div>
         <div class="flex justify-between">
           <div>
             <ui-frame class="w-150">
-              <ui-item>地图</ui-item>
+              <ui-item @click="scene = 1" clickable>地图</ui-item>
               <ui-item>乘降</ui-item>
               <ui-item @click="(scene = 3), (current = '道具')" clickable>道具</ui-item>
               <ui-item @click="(scene = 4), (current = actors[0][0])" clickable>装备</ui-item>
@@ -43,6 +47,15 @@
       </ui-frame>
     </div>
     <!-- C -->
+    <ui-frame v-if="[1].includes(scene)" class="w-550 space-left space-right flex column">
+      <ui-item />
+      <hr />
+      <div class="col" style="background-color: rgba(0, 0, 0, 0.5)"></div>
+      <hr />
+      <ui-item class="flex">
+        <div v-for="n in 5" :key="n" style="width: 20px; margin-right: 10px; background-color: red"></div>
+      </ui-item>
+    </ui-frame>
     <div v-if="[0, 3, 4].includes(scene)" class="w-400 space-left space-right flex">
       <ui-frame v-if="[3].includes(scene)" class="col">
         <ui-item class="flex justify-between">
@@ -122,7 +135,16 @@
       </ui-frame>
     </div>
     <!-- R -->
-    <div class="w-400 flex justify-end">
+    <ui-frame v-if="[1].includes(scene)" class="w-250 flex column">
+      <ui-item>犬系统</ui-item>
+      <hr />
+      <div class="col">
+        <ui-item v-for="n in 9" :key="n" clickable>村镇-{{ n }}</ui-item>
+      </div>
+      <hr />
+      <ui-item />
+    </ui-frame>
+    <div v-if="[0, 3, 4].includes(scene)" class="w-400 flex justify-end">
       <ui-frame v-if="[0, 3].includes(scene)" class="w-250">
         <ui-item class="text-right">{{ Math.ceil(Math.random() * 100000000) }}G</ui-item>
         <hr />
