@@ -68,12 +68,12 @@
         </div>
         <hr />
         <ui-grid v-if="type" :grid="[3, 2]">
-          <ui-item>攻击：800</ui-item>
-          <ui-item>范围：单体</ui-item>
-          <ui-item>守备：86</ui-item>
-          <ui-item>弹仓：62/62</ui-item>
-          <ui-item>状态：正常</ui-item>
-          <ui-item>重量：10.00t</ui-item>
+          <ui-item v-for="(n, i) in ['攻击', '范围', '守备', '弹仓', '状态', '重量']" :key="i" class="flex justify-between">
+            <div class="flex align-center">
+              <ui-icon /><span class="q-pl">{{ n }}</span>
+            </div>
+            <span>{{ [800, '单体', 86, '48/62', '正常', '10.00t'][i] }}</span>
+          </ui-item>
         </ui-grid>
         <ui-item v-else>道具说明...</ui-item>
       </ui-frame>
@@ -101,30 +101,30 @@
           </ui-item>
         </ui-item>
         <hr />
-        <ui-grid v-if="type" :grid="[4, 2]" column>
-          <ui-item>装甲：9999</ui-item>
-          <ui-item>守备：255</ui-item>
-          <ui-item>命中：95%</ui-item>
-          <ui-item>回避：95%</ui-item>
-          <ui-item>载重：58.00t</ui-item>
-          <ui-item>重量：58.00t</ui-item>
+        <ui-grid v-if="type" :grid="[3, 2]">
+          <ui-item v-for="(n, i) in ['攻击', '范围', '守备', '弹仓', '状态', '重量']" :key="i" class="flex justify-between">
+            <div class="flex align-center">
+              <ui-icon /><span class="q-pl">{{ n }}</span>
+            </div>
+            <span :class="{ 'text-positive': [0, 2].includes(i), 'text-negative': [1, 5].includes(i) }">
+              {{ [800, '单体', 86, '48/62', '正常', '10.00t'][i] }}
+            </span>
+          </ui-item>
         </ui-grid>
-        <ui-grid v-else :grid="[4, 2]" column>
-          <ui-item>生命：9999</ui-item>
-          <ui-item>攻击：354</ui-item>
-          <ui-item>守备：479</ui-item>
-          <ui-item />
-          <ui-item>力量：104</ui-item>
-          <ui-item>体力：151</ui-item>
-          <ui-item>回避：85</ui-item>
-          <ui-item>速度：188</ui-item>
+        <ui-grid v-else :grid="[1, 2]" column>
+          <ui-item v-for="(n, i) in ['攻击', '范围']" :key="i" class="flex justify-between">
+            <div class="flex align-center">
+              <ui-icon /><span class="q-pl">{{ n }}</span>
+            </div>
+            <span>{{ [255, '单体'][i] }}</span>
+          </ui-item>
         </ui-grid>
       </ui-frame>
     </div>
     <!-- R -->
     <div class="w-400 flex justify-end">
       <ui-frame v-if="[0, 3].includes(scene)" class="w-250">
-        <ui-item class="text-right">{{ Math.ceil(Math.random() * 100000000) }}<s>G</s></ui-item>
+        <ui-item class="text-right">{{ Math.ceil(Math.random() * 100000000) }}G</ui-item>
         <hr />
         <ui-item v-for="(a, i) in actors[0]" :key="i" class="q-mb" clickable no-padding>
           <ui-item class="flex justify-between">
@@ -168,18 +168,20 @@
         </div>
         <hr />
         <ui-grid v-if="type" :grid="[4, 2]">
-          <ui-item>攻击：800</ui-item>
-          <ui-item>范围：单体</ui-item>
-          <ui-item>守备：86</ui-item>
-          <ui-item>弹仓：62/62</ui-item>
-          <ui-item>状态：正常</ui-item>
-          <ui-item>重量：10.00t</ui-item>
-          <ui-item>持有：MERKAVA</ui-item>
+          <ui-item v-for="(n, i) in ['攻击', '范围', '守备', '弹仓', '状态', '重量', '持有']" :key="i" class="flex justify-between">
+            <div class="flex align-center">
+              <ui-icon /><span class="q-pl">{{ n }}</span>
+            </div>
+            <span>{{ [800, '单体', 86, '48/62', '正常', '10.00t', 'MERKAVA'][i] }}</span>
+          </ui-item>
         </ui-grid>
-        <ui-grid v-else :grid="[1, 2]">
-          <ui-item>攻击：255</ui-item>
-          <ui-item>范围：单体</ui-item>
-          <ui-item>数量：3</ui-item>
+        <ui-grid v-else :grid="[2, 2]">
+          <ui-item v-for="(n, i) in ['攻击', '范围', '数量']" :key="i" class="flex justify-between">
+            <div class="flex align-center">
+              <ui-icon /><span class="q-pl">{{ n }}</span>
+            </div>
+            <span>{{ [255, '单体', 3][i] }}</span>
+          </ui-item>
         </ui-grid>
       </ui-frame>
     </div>
