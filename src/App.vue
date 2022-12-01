@@ -11,57 +11,10 @@
 export default {
   data() {
     return {
-      nav: [
-        { label: 'menu', value: '/menu' },
-        { label: 'message', value: '/message' },
-        { label: 'map', value: '/map' },
-        { label: 'shop-1', value: '/shop-1' },
-        { label: 'shop-2', value: '/shop-2' },
-        { label: 'shop-3', value: '/shop-3' },
-        { label: 'battle', value: '/battle' }
-      ]
+      nav: []
     };
   }
 };
 </script>
 
-<style lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  font-style: normal;
-  font-weight: normal;
-  cursor: default;
-  user-select: none;
-}
-.app {
-  background-color: #000;
-  font-family: consolas, monaco, 'microsoft yahei';
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  & > nav {
-    font-size: $md;
-    padding: $md;
-    position: absolute;
-    top: 0;
-    right: 0;
-    a {
-      color: #00f;
-      cursor: pointer;
-      text-decoration: none;
-      display: block;
-      margin-bottom: $md;
-      &:hover {
-        text-decoration: underline;
-      }
-      &.router-link-active {
-        color: #f00;
-      }
-    }
-  }
-}
-</style>
+<style lang="scss"></style>
