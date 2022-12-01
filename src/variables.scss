@@ -2,12 +2,8 @@ $sm: 5px;
 $md: $sm * 2;
 $lg: $sm * 4;
 $xl: $sm * 8;
-$blue: #2196f3;
-$pink: #d84060;
-$shade: #7f7f7f;
 $border: rgba(188, 188, 188, 160/255);
 $bg: rgba(0, 0, 0, 160/255);
-$space: 4px;
 hr {
   border: 0;
   background-color: $border;
@@ -27,16 +23,16 @@ hr {
   margin-bottom: $md !important;
 }
 .space-top {
-  margin-top: $space;
+  margin-top: $sm;
 }
 .space-left {
-  margin-left: $space;
+  margin-left: $sm;
 }
 .space-right {
-  margin-right: $space;
+  margin-right: $sm;
 }
 .space-bottom {
-  margin-bottom: $space;
+  margin-bottom: $sm;
 }
 .disabled {
   color: #555;
@@ -101,6 +97,6 @@ hr {
 .w-550 {
   width: 550px;
 }
-.h-320 {
-  height: $xl * 8;
+.h-400 {
+  height: $xl * 10;
 }

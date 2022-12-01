@@ -1,50 +1,38 @@
 <template>
   <div class="col flex">
     <!-- L -->
-    <div class="col flex column justify-between">
+    <div class="col flex justify-between" style="padding-top: 60px">
       <div>
-        <div class="flex space-bottom">
-          <ui-frame>
-            <ui-item @click="(scene = 0), (type = 0), (current = '')" clickable>返回</ui-item>
-          </ui-frame>
-        </div>
-        <div class="flex justify-between">
-          <div>
-            <ui-frame class="w-150">
-              <ui-item @click="scene = 1" clickable>地图</ui-item>
-              <ui-item>乘降</ui-item>
-              <ui-item @click="(scene = 3), (current = '道具')" clickable>道具</ui-item>
-              <ui-item @click="(scene = 4), (current = actors[0][0])" clickable>装备</ui-item>
-              <ui-item>状态</ui-item>
-              <ui-item>战车</ui-item>
-              <ui-item>选项</ui-item>
-            </ui-frame>
-          </div>
-          <div>
-            <ui-frame v-if="[3, 4].includes(scene)" no-padding>
-              <template v-if="[3].includes(scene)">
-                <ui-item @click="(type = 0), (current = '道具')" focusable>
-                  <ui-icon :type="[32, 2, 0]" />
-                </ui-item>
-                <ui-item @click="(type = 0), (current = '重要道具')" focusable>
-                  <ui-icon :type="[32, 2, 1]" />
-                </ui-item>
-              </template>
-              <template v-if="[4].includes(scene)">
-                <ui-item v-for="n in 3" :key="n" @click="(type = 0), (current = actors[type][n - 1])" focusable>
-                  <ui-icon :type="[32, 0, n - 1]" />
-                </ui-item>
-              </template>
-              <ui-item v-for="n in 4" :key="n" @click="(type = 1), (current = actors[type][n - 1])" focusable>
-                <ui-icon :type="[32, 1, n - 1]" />
-              </ui-item>
-            </ui-frame>
-          </div>
-        </div>
+        <ui-frame class="w-150">
+          <ui-item @click="scene = 1" clickable>地图</ui-item>
+          <ui-item>乘降</ui-item>
+          <ui-item @click="(scene = 3), (current = '道具')" clickable>道具</ui-item>
+          <ui-item @click="(scene = 4), (current = actors[0][0])" clickable>装备</ui-item>
+          <ui-item>状态</ui-item>
+          <ui-item>战车</ui-item>
+          <ui-item @click="(scene = 0), (type = 0), (current = '')" clickable>选项</ui-item>
+        </ui-frame>
       </div>
-      <ui-frame>
-        <ui-item>地图名称</ui-item>
-      </ui-frame>
+      <div>
+        <ui-frame v-if="[3, 4].includes(scene)" no-padding>
+          <template v-if="[3].includes(scene)">
+            <ui-item @click="(type = 0), (current = '道具')" focusable>
+              <ui-icon :type="[32, 2, 0]" />
+            </ui-item>
+            <ui-item @click="(type = 0), (current = '重要道具')" focusable>
+              <ui-icon :type="[32, 2, 1]" />
+            </ui-item>
+          </template>
+          <template v-if="[4].includes(scene)">
+            <ui-item v-for="n in 3" :key="n" @click="(type = 0), (current = actors[type][n - 1])" focusable>
+              <ui-icon :type="[32, 0, n - 1]" />
+            </ui-item>
+          </template>
+          <ui-item v-for="n in 4" :key="n" @click="(type = 1), (current = actors[type][n - 1])" focusable>
+            <ui-icon :type="[32, 1, n - 1]" />
+          </ui-item>
+        </ui-frame>
+      </div>
     </div>
     <!-- C -->
     <ui-frame v-if="[1].includes(scene)" class="w-550 space-left space-right flex column">
@@ -63,7 +51,7 @@
           <span v-if="type">8/10/12</span>
         </ui-item>
         <hr />
-        <div class="h-320">
+        <div class="h-400">
           <ui-item v-for="n in 4" :key="n" class="flex justify-between" clickable>
             <div class="flex align-center">
               <ui-icon />
@@ -80,7 +68,7 @@
           </ui-item>
         </div>
         <hr />
-        <ui-grid v-if="type" :grid="[4, 2]">
+        <ui-grid v-if="type" :grid="[3, 2]">
           <ui-item v-for="(n, i) in ['攻击', '范围', '守备', '弹仓', '状态', '重量']" :key="i" class="flex justify-between">
             <div class="flex align-center">
               <ui-icon /><span class="q-pl">{{ n }}</span>
@@ -94,7 +82,9 @@
         <ui-item>{{ current }}</ui-item>
         <hr />
         <ui-item
-          v-for="(e, i) in type ? ['大炮', '机枪', 'S-E', null, null, 'C装置', '引擎', '底盘'] : ['武器', null, null, '头', '身', '腕', '足', '其他']"
+          v-for="(e, i) in type
+            ? ['大炮', '机枪', 'S-E', null, null, 'C装置', '引擎', '底盘', null, null]
+            : ['武器', null, null, '头', '身', '腕', '足', '甲', null, null]"
           :key="i"
           :clickable="!!e"
           class="flex"
@@ -114,7 +104,7 @@
           </ui-item>
         </ui-item>
         <hr />
-        <ui-grid v-if="type" :grid="[4, 2]">
+        <ui-grid v-if="type" :grid="[3, 2]">
           <ui-item v-for="(n, i) in ['攻击', '范围', '守备', '弹仓', '状态', '重量']" :key="i" class="flex justify-between">
             <div class="flex align-center">
               <ui-icon /><span class="q-pl">{{ n }}</span>
@@ -124,7 +114,7 @@
             </span>
           </ui-item>
         </ui-grid>
-        <ui-grid v-else :grid="[4, 2]">
+        <ui-grid v-else :grid="[3, 2]">
           <ui-item v-for="(n, i) in ['攻击', '范围']" :key="i" class="flex justify-between">
             <div class="flex align-center">
               <ui-icon /><span class="q-pl">{{ n }}</span>
@@ -173,7 +163,7 @@
       <ui-frame v-if="[4].includes(scene)" class="col">
         <ui-item>{{ type ? '大炮' : '武器' }}</ui-item>
         <hr />
-        <div class="h-320">
+        <div class="h-400">
           <ui-item clickable>
             <div class="flex align-center">
               <ui-icon />
@@ -185,24 +175,24 @@
               <ui-icon :type="[16, type, type ? 3 : 0]" />
               <span class="q-pl">{{ equipments[type][0] }}</span>
             </div>
-            <span>{{ type ? 800 : 255 }}</span>
+            <span>{{ type ? 'MERKAVA' : 'x3' }}</span>
           </ui-item>
         </div>
         <hr />
-        <ui-grid v-if="type" :grid="[4, 2]">
-          <ui-item v-for="(n, i) in ['攻击', '范围', '守备', '弹仓', '状态', '重量', '持有']" :key="i" class="flex justify-between">
+        <ui-grid v-if="type" :grid="[3, 2]">
+          <ui-item v-for="(n, i) in ['攻击', '范围', '守备', '弹仓', '状态', '重量']" :key="i" class="flex justify-between">
             <div class="flex align-center">
               <ui-icon /><span class="q-pl">{{ n }}</span>
             </div>
-            <span>{{ [800, '单体', 86, '48/62', '正常', '10.00t', 'MERKAVA'][i] }}</span>
+            <span>{{ [800, '单体', 86, '48/62', '正常', '10.00t'][i] }}</span>
           </ui-item>
         </ui-grid>
-        <ui-grid v-else :grid="[4, 2]">
-          <ui-item v-for="(n, i) in ['攻击', '范围', '数量']" :key="i" class="flex justify-between">
+        <ui-grid v-else :grid="[3, 2]">
+          <ui-item v-for="(n, i) in ['攻击', '范围']" :key="i" class="flex justify-between">
             <div class="flex align-center">
               <ui-icon /><span class="q-pl">{{ n }}</span>
             </div>
-            <span>{{ [255, '单体', 3][i] }}</span>
+            <span>{{ [255, '单体'][i] }}</span>
           </ui-item>
         </ui-grid>
       </ui-frame>

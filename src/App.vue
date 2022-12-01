@@ -36,7 +36,7 @@ export default {
   user-select: none;
 }
 .app {
-  background-color: #1d1d1d;
+  background-color: #000;
   font-family: consolas, monaco, 'microsoft yahei';
   height: 100vh;
   display: flex;
@@ -50,7 +50,7 @@ export default {
     top: 0;
     right: 0;
     a {
-      color: $blue;
+      color: #00f;
       cursor: pointer;
       text-decoration: none;
       display: block;
@@ -59,7 +59,7 @@ export default {
         text-decoration: underline;
       }
       &.router-link-active {
-        color: $pink;
+        color: #f00;
       }
     }
   }

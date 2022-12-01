@@ -17,7 +17,7 @@ export default {
 <style lang="scss" scoped>
 .ui-border {
   border: 2px solid;
-  border-color: $shade $shade $shade $shade;
+  border-color: #7f7f7f #7f7f7f #7f7f7f #7f7f7f;
   box-sizing: border-box;
   display: flex;
   position: relative;
@@ -61,7 +61,7 @@ export default {
     & > div {
       flex: 1;
       border: 2px solid;
-      border-color: $shade $shade $shade $shade;
+      border-color: #7f7f7f #7f7f7f #7f7f7f #7f7f7f;
       background-color: $bg;
       padding: $md;
       display: flex;

@@ -17,7 +17,6 @@ export default {
   color: #fff;
   width: 48px * 23;
   height: 48px * 13;
-  padding: $space;
   font-size: $lg;
   display: flex;
   flex-direction: column;
@@ -25,7 +24,7 @@ export default {
   position: relative;
   &.index-battle {
     background-image: none;
-    background-color: $bg;
+    background-color: #000;
   }
 }
 </style>

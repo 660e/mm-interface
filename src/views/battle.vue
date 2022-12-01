@@ -84,7 +84,7 @@ export default {
   width: $xl;
   height: $xl;
   font-size: $md;
-  color: $shade;
+  color: #7f7f7f;
   &:nth-child(2n) {
     background-color: rgba(255, 255, 255, 0.06);
   }

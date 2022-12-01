@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .ui-bar {
-  font-size: $md + $sm;
+  font-size: 14px;
   height: $lg;
   display: flex;
   flex-direction: column;
