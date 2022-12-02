@@ -1,6 +1,6 @@
 <template>
   <div class="ui-thead">
-    <div v-for="t in th" :key="t">{{ t }}</div>
+    <div v-for="t in th" :key="t" class="text-negative">{{ t }}</div>
   </div>
 </template>
 
@@ -18,6 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 .ui-thead {
+  padding: $padding 0;
   display: flex;
   div {
     background-color: $dark;
@@ -28,6 +29,7 @@ export default {
     }
     &:nth-child(2) {
       margin-left: 1px;
+      text-align: right;
       width: 60px;
     }
   }

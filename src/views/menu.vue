@@ -1,5 +1,5 @@
 <template>
-  <div class="col flex justify-between" style="padding-top: 60px">
+  <div class="col flex justify-between" style="padding-top: 80px">
     <div>
       <ui-window class="w-150">
         <ui-item>地图</ui-item>
@@ -11,16 +11,13 @@
     </div>
     <div>
       <ui-window>
-        <ui-actor focusable />
-        <ui-actor :type="[3, 2]" class="q-mt" focusable />
-        <ui-actor v-for="(a, i) in actors[1]" :key="i" :type="[2, i + 1]" class="q-mt" focusable />
+        <ui-actor @click="current = '道具'" focusable />
+        <ui-actor :type="[3, 2]" @click="current = '重要道具'" class="q-mt" focusable />
+        <ui-actor v-for="(a, i) in actors[1]" :key="i" :type="[2, i + 1]" @click="current = a" class="q-mt" focusable />
       </ui-window>
     </div>
   </div>
-  <ui-window class="w-400 q-gap">
-    <ui-item>道具</ui-item>
-    <ui-thead :th="['名称', '持有数']" />
-  </ui-window>
+  <menu-items :current="current" class="w-400 q-gap" />
   <div class="w-400 flex justify-end">
     <ui-window class="w-250"></ui-window>
   </div>
@@ -29,11 +26,17 @@
 <script>
 import data from '@/data.json';
 
+import MenuItems from './menus/items.vue';
+
 export default {
   name: 'scene-menu',
+  components: { MenuItems },
   data() {
     return {
-      actors: data.actors
+      actors: data.actors,
+
+      scene: 0,
+      current: undefined
     };
   }
 };
