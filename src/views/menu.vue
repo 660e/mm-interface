@@ -17,7 +17,10 @@
       </ui-window>
     </div>
   </div>
-  <div class="w-400"></div>
+  <ui-window class="w-400 q-gap">
+    <ui-item>道具</ui-item>
+    <ui-thead :th="['名称', '持有数']" />
+  </ui-window>
   <div class="w-400 flex justify-end">
     <ui-window class="w-250"></ui-window>
   </div>

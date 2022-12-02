@@ -1,5 +1,6 @@
 $dark: rgba(0, 0, 0, 0.618);
 $border: rgba(200, 200, 200, 0.618);
+$gap: 5px;
 $padding: 10px;
 $size: 16px;
 .flex {
@@ -25,6 +26,9 @@ $size: 16px;
 }
 .w-550 {
   width: 550px;
+}
+.q-gap {
+  margin: 0 $gap;
 }
 .q-mt {
   margin-top: $padding;

@@ -8,7 +8,11 @@
 export default {
   name: 'ui-item',
   props: {
+    icon: [Array, Boolean],
     hoverable: Boolean
+  },
+  mounted() {
+    console.log(this.icon);
   }
 };
 </script>
