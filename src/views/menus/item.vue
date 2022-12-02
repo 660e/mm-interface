@@ -19,9 +19,9 @@
     </div>
     <ui-thead :th="['道具说明/装备属性']" />
     <ui-grid :grid="[3, 2]">
-      <ui-item v-for="(n, i) in ['攻击', '范围', '守备', '弹仓', '状态', '重量']" :key="i" class="flex justify-between" icon>
+      <ui-item v-for="(n, i) in dict[0]" :key="i" class="flex justify-between" icon>
         <span>{{ n }}</span>
-        <span>{{ [800, '单体', 86, '48/62', '正常', '10.00t'][i] }}</span>
+        <span>{{ dict[1][i] }}</span>
       </ui-item>
     </ui-grid>
   </ui-window>
@@ -40,7 +40,8 @@ export default {
     return {
       $r: mockjs.Random,
       items: data.items,
-      equipments: data.equipments
+      equipments: data.equipments,
+      dict: data.dict
     };
   }
 };

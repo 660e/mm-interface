@@ -11,9 +11,14 @@
     </div>
     <div v-if="[3, 4].includes(scene)">
       <ui-window>
-        <ui-actor focusable />
-        <ui-actor :type="[3, 2]" class="q-mt" focusable />
-        <ui-actor v-for="n in 4" :key="n" :type="[2, n]" class="q-mt" focusable />
+        <template v-if="scene === 3">
+          <ui-actor class="q-mb" focusable />
+          <ui-actor :type="[3, 2]" class="q-mb" focusable />
+        </template>
+        <template v-if="scene === 4">
+          <ui-actor v-for="n in 3" :key="n" :type="[1, n]" class="q-mb" focusable />
+        </template>
+        <ui-actor v-for="n in 4" :key="n" :type="[2, n]" :class="{ 'q-mb': n < 4 }" focusable />
       </ui-window>
     </div>
   </div>
