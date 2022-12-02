@@ -1,5 +1,5 @@
 <template>
-  <ui-window class="flex column">
+  <ui-window class="w-400 q-gap flex column">
     <div class="col"></div>
     <ui-item>道具/重要道具</ui-item>
     <ui-thead :th="['名称', '持有数/重量']" />
@@ -25,6 +25,9 @@
       </ui-item>
     </ui-grid>
   </ui-window>
+  <div class="w-400 flex justify-end">
+    <ui-window class="w-250"></ui-window>
+  </div>
 </template>
 
 <script>
@@ -32,7 +35,7 @@ import data from '@/data.json';
 import mockjs from 'mockjs';
 
 export default {
-  name: 'menu-items',
+  name: 'menu-item',
   data() {
     return {
       $r: mockjs.Random,

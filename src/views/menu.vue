@@ -1,15 +1,15 @@
 <template>
-  <div class="col flex justify-between" style="padding-top: 80px">
-    <div>
+  <div class="col flex" style="padding-top: 80px">
+    <div class="col">
       <ui-window class="w-150">
         <ui-item>地图</ui-item>
         <ui-item>乘降</ui-item>
         <ui-item @click="scene = 3" hoverable>道具</ui-item>
-        <ui-item>装备</ui-item>
+        <ui-item @click="scene = 4" hoverable>装备</ui-item>
         <ui-item>选项</ui-item>
       </ui-window>
     </div>
-    <div v-if="[3].includes(scene)">
+    <div v-if="[3, 4].includes(scene)">
       <ui-window>
         <ui-actor focusable />
         <ui-actor :type="[3, 2]" class="q-mt" focusable />
@@ -17,23 +17,20 @@
       </ui-window>
     </div>
   </div>
-  <div class="w-400 q-gap flex">
-    <menu-items v-if="[3].includes(scene)" class="col" />
-  </div>
-  <div class="w-400 flex justify-end">
-    <ui-window class="w-250"></ui-window>
-  </div>
+  <menu-item v-if="scene === 3" />
+  <menu-equip v-if="scene === 4" />
 </template>
 
 <script>
-import MenuItems from './menus/items.vue';
+import MenuItem from './menus/item.vue';
+import MenuEquip from './menus/equip.vue';
 
 export default {
   name: 'scene-menu',
-  components: { MenuItems },
+  components: { MenuItem, MenuEquip },
   data() {
     return {
-      scene: 0
+      scene: 4
     };
   }
 };
