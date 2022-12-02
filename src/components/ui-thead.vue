@@ -30,7 +30,7 @@ export default {
     &:nth-child(2) {
       margin-left: 1px;
       text-align: right;
-      width: 60px;
+      width: 80px;
     }
   }
 }
