@@ -3,7 +3,20 @@
     <div class="col"></div>
     <ui-item>角色名/战车名</ui-item>
     <ui-thead :th="['装备部位']" />
-    <div class="line-9"></div>
+    <div class="line-9">
+      <ui-grid v-for="(d, i) in dict[type ? 2 : 3]" :key="i" :grid="[1, 2]" :class="{ hoverable: d }">
+        <ui-item>{{ d }}</ui-item>
+        <ui-item v-if="i === 0 && d" :icon="type ? [1, 1] : [2, 1]">{{ type ? equipments[0][0] : equipments[1][0] }}</ui-item>
+        <ui-item v-if="i === 1 && d" :icon="[2, 2]">{{ equipments[1][1] }}</ui-item>
+        <ui-item v-if="i === 2 && d" :icon="[2, 3]">{{ equipments[1][2] }}</ui-item>
+        <ui-item v-if="i === 3 && d" :icon="[1, 2]">{{ equipments[0][1] }}</ui-item>
+        <ui-item v-if="i === 4 && d" :icon="[1, 3]">{{ equipments[0][2] }}</ui-item>
+        <ui-item v-if="i === 5 && d" :icon="type ? [1, 4] : [2, 4]">{{ type ? equipments[0][3] : equipments[1][3] }}</ui-item>
+        <ui-item v-if="i === 6 && d" :icon="[1, 5]">{{ equipments[0][4] }}</ui-item>
+        <ui-item v-if="i === 7 && d" :icon="type ? [1, 6] : [2, 5]">{{ type ? equipments[0][5] : equipments[1][4] }}</ui-item>
+        <ui-item v-if="i === 8 && d" :icon="[2, 6]">{{ equipments[1][5] }}</ui-item>
+      </ui-grid>
+    </div>
     <ui-thead :th="['说明']" />
     <ui-grid :grid="[4, 2]">
       <ui-item v-for="(d, i) in dict[0]" :key="i" class="flex justify-between" icon>
