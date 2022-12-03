@@ -12,18 +12,18 @@
     <div v-if="[3, 4].includes(scene)">
       <ui-window>
         <template v-if="scene === 3">
-          <ui-actor class="q-mb" focusable />
-          <ui-actor :type="[3, 2]" class="q-mb" focusable />
+          <ui-actor @click="type = true" class="q-mb" focusable />
+          <ui-actor :icon="[3, 2]" @click="type = true" class="q-mb" focusable />
         </template>
         <template v-if="scene === 4">
-          <ui-actor v-for="n in 3" :key="n" :type="[1, n]" class="q-mb" focusable />
+          <ui-actor v-for="n in 3" :key="n" :icon="[1, n]" @click="type = true" class="q-mb" focusable />
         </template>
-        <ui-actor v-for="n in 4" :key="n" :type="[2, n]" :class="{ 'q-mb': n < 4 }" focusable />
+        <ui-actor v-for="n in 4" :key="n" :icon="[2, n]" :class="{ 'q-mb': n < 4 }" @click="type = false" focusable />
       </ui-window>
     </div>
   </div>
-  <menu-item v-if="scene === 3" />
-  <menu-equip v-if="scene === 4" />
+  <menu-item v-if="scene === 3" :type="type" />
+  <menu-equip v-if="scene === 4" :type="type" />
 </template>
 
 <script>
@@ -35,7 +35,8 @@ export default {
   components: { MenuItem, MenuEquip },
   data() {
     return {
-      scene: 4
+      scene: 4,
+      type: true
     };
   }
 };

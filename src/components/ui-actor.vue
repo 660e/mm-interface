@@ -7,7 +7,7 @@ export default {
   name: 'ui-actor',
   props: {
     focusable: Boolean,
-    type: {
+    icon: {
       type: Array,
       default: () => [3, 1]
     }
@@ -15,8 +15,8 @@ export default {
   computed: {
     style() {
       return {
-        backgroundPositionX: `${(1 - this.type[1]) * 32}px`,
-        backgroundPositionY: `${(1 - this.type[0]) * 32}px`
+        backgroundPositionX: `${(1 - this.icon[1]) * 32}px`,
+        backgroundPositionY: `${(1 - this.icon[0]) * 32}px`
       };
     }
   }

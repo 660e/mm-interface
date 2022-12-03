@@ -30,8 +30,8 @@ $size: 16px;
 .w-550 {
   width: 550px;
 }
-.h-360 {
-  height: 360px;
+.line-9 {
+  height: ($size + $padding * 2) * 9;
 }
 .q-gap {
   margin: 0 $gap;
