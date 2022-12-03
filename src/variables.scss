@@ -39,18 +39,36 @@ $size: 16px;
 .q-mb {
   margin-bottom: $padding;
 }
+.q-ml {
+  margin-left: $padding;
+}
+.q-mx {
+  margin-left: $padding;
+  margin-right: $padding;
+}
+.pad {
+  height: 14px;
+}
 .text-positive {
   color: #22cbd9;
 }
 .text-negative {
   color: #7e7e7e;
 }
+.text-right {
+  text-align: right;
+}
 .hoverable:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 .focusable {
   opacity: 0.3;
   &:hover {
     opacity: 1;
   }
+}
+hr {
+  background-color: $border;
+  border: 0;
+  height: 1px;
 }

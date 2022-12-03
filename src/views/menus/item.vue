@@ -30,7 +30,7 @@
     </ui-grid>
   </ui-window>
   <div class="w-400 flex justify-end">
-    <ui-window class="w-250"></ui-window>
+    <menu-actors class="w-250" />
   </div>
 </template>
 

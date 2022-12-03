@@ -14,6 +14,7 @@ export default {
 .ui-window {
   border: 1px $border solid;
   background-color: $dark;
+  backdrop-filter: blur($gap);
   box-sizing: border-box;
   padding: $padding;
 }

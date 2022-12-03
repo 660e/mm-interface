@@ -22,20 +22,17 @@
       </ui-window>
     </div>
   </div>
+  <menu-actors v-if="scene === 0" class="w-250" />
   <menu-item v-if="scene === 3" :type="type" />
   <menu-equip v-if="scene === 4" :type="type" />
 </template>
 
 <script>
-import MenuItem from './menus/item.vue';
-import MenuEquip from './menus/equip.vue';
-
 export default {
   name: 'scene-menu',
-  components: { MenuItem, MenuEquip },
   data() {
     return {
-      scene: 4,
+      scene: 0,
       type: true
     };
   }
