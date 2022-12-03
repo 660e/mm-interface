@@ -2,7 +2,7 @@
   <div class="col flex" style="padding-top: 80px">
     <div class="col">
       <ui-window class="w-150">
-        <ui-item>地图</ui-item>
+        <ui-item @click="scene = 1" hoverable>地图</ui-item>
         <ui-item>乘降</ui-item>
         <ui-item @click="scene = 3" hoverable>道具</ui-item>
         <ui-item @click="scene = 4" hoverable>装备</ui-item>
@@ -23,6 +23,7 @@
     </div>
   </div>
   <menu-actors v-if="scene === 0" class="w-250" />
+  <menu-map v-if="scene === 1" />
   <menu-item v-if="scene === 3" :type="type" />
   <menu-equip v-if="scene === 4" :type="type" />
 </template>
