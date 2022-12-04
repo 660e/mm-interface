@@ -5,6 +5,7 @@ import router from './router.js';
 const app = createApp(App);
 
 import MenuActors from '@/views/menus/actors.vue';
+import MenuAssets from '@/views/menus/assets.vue';
 import MenuEquip from '@/views/menus/equip.vue';
 import MenuItem from '@/views/menus/item.vue';
 import MenuMap from '@/views/menus/map.vue';
@@ -17,7 +18,7 @@ import UiItem from '@/components/ui-item.vue';
 import UiThead from '@/components/ui-thead.vue';
 import UiWindow from '@/components/ui-window.vue';
 
-const components = [MenuActors, MenuEquip, MenuItem, MenuMap, MenuStatus, UiActor, UiBar, UiGrid, UiItem, UiThead, UiWindow];
+const components = [MenuActors, MenuAssets, MenuEquip, MenuItem, MenuMap, MenuStatus, UiActor, UiBar, UiGrid, UiItem, UiThead, UiWindow];
 
 components.forEach(c => app.component(c.name, c));
 

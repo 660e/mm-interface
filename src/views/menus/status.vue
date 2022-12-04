@@ -43,9 +43,6 @@ import mockjs from 'mockjs';
 
 export default {
   name: 'menu-status',
-  props: {
-    type: Boolean
-  },
   data() {
     return {
       $r: mockjs.Random,
