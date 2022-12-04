@@ -3,7 +3,7 @@
     <div class="pad-14"></div>
     <ui-item class="text-right q-mb">{{ $r.integer(1, 100000000) }}G</ui-item>
     <div v-for="(a, i) in actors[0]" :key="i" class="hoverable q-mb">
-      <ui-item class="flex justify-between">
+      <ui-item between>
         <span>{{ a }}</span>
         <span>LV.{{ $r.integer(1, 99) }}</span>
       </ui-item>

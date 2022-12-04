@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-item" :class="{ hoverable }" :style="{ paddingLeft: icon ? '36px' : '10px' }">
+  <div class="ui-item" :class="{ between, hoverable }" :style="{ paddingLeft: icon ? '36px' : '10px' }">
     <div v-if="icon" class="icon" :style="style"></div>
     <slot />
   </div>
@@ -9,8 +9,9 @@
 export default {
   name: 'ui-item',
   props: {
-    icon: [Array, Boolean],
-    hoverable: Boolean
+    between: Boolean,
+    hoverable: Boolean,
+    icon: [Array, Boolean]
   },
   computed: {
     style() {
@@ -31,6 +32,10 @@ export default {
   font-size: $size;
   padding: $padding;
   position: relative;
+  &.between {
+    display: flex;
+    justify-content: space-between;
+  }
   & > .icon {
     height: $size;
     width: $size;

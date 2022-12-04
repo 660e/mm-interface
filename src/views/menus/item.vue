@@ -5,17 +5,17 @@
     <ui-thead :th="['名称', type ? '持有数' : '重量']" />
     <div class="line-9">
       <template v-if="type">
-        <ui-item v-for="i in items[0]" :key="i" class="flex justify-between" icon hoverable>
+        <ui-item v-for="i in items[0]" :key="i" between hoverable icon>
           <span>{{ i }}</span>
           <span>{{ $r.integer(1, 10) }}</span>
         </ui-item>
-        <ui-item class="flex justify-between" :icon="[1, 1]" hoverable>
+        <ui-item :icon="[1, 1]" between hoverable>
           <span>{{ equipments[0][0] }}</span>
           <span>{{ $r.integer(1, 10) }}</span>
         </ui-item>
       </template>
       <template v-else>
-        <ui-item v-for="(e, i) in equipments[1].slice(0, 3)" :key="i" class="flex justify-between" :icon="[2, i + 1]" hoverable>
+        <ui-item v-for="(e, i) in equipments[1].slice(0, 3)" :key="i" :icon="[2, i + 1]" between hoverable>
           <span>{{ e }}</span>
           <span>{{ $r.integer(5, 15) }}.00t</span>
         </ui-item>
@@ -23,7 +23,7 @@
     </div>
     <ui-thead :th="['说明']" />
     <ui-grid :grid="[4, 2]">
-      <ui-item v-for="(n, i) in dict[0]" :key="i" class="flex justify-between" icon>
+      <ui-item v-for="(n, i) in dict[0]" :key="i" between icon>
         <span>{{ n }}</span>
         <span>{{ dict[1][i] }}</span>
       </ui-item>
