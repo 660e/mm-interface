@@ -1,5 +1,5 @@
 <template>
-  <div class="col flex" style="padding-top: 80px">
+  <div class="col flex" style="padding-top: 100px">
     <div class="col">
       <ui-window class="w-150">
         <ui-item @click="scene = 1" hoverable>地图</ui-item>

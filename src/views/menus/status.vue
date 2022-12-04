@@ -1,6 +1,6 @@
 <template>
   <ui-window class="w-400 q-gap flex column">
-    <div class="pad-14"></div>
+    <div class="pad-26"></div>
     <ui-item between>
       <span>{{ actors[0][0] }}</span>
       <span>LV.{{ $r.integer(1, 99) }}</span>

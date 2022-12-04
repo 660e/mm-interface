@@ -1,6 +1,6 @@
 <template>
   <ui-window class="flex column">
-    <div class="pad-14"></div>
+    <div class="pad-26"></div>
     <ui-item class="text-right q-mb">{{ $r.integer(1, 100000000) }}G</ui-item>
     <div v-for="(a, i) in actors[0]" :key="i" class="hoverable q-mb">
       <ui-item between>
