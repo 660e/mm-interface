@@ -48,6 +48,12 @@ $size: 16px;
 .line-9 {
   height: ($size + $padding * 2) * 9;
 }
+.table-td {
+  text-align: right;
+  box-sizing: border-box;
+  padding-right: $padding;
+  width: 100px;
+}
 .q-gap-l {
   margin-left: $gap;
 }
@@ -66,9 +72,6 @@ $size: 16px;
 .q-mx {
   margin-left: $padding;
   margin-right: $padding;
-}
-.q-pr {
-  padding-right: $padding;
 }
 .text-positive {
   color: #22cbd9;

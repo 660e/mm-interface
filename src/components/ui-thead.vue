@@ -1,6 +1,6 @@
 <template>
   <div class="ui-thead">
-    <div v-for="(t, i) in th" :key="i" :style="style(i)" class="text-negative">{{ t }}</div>
+    <div v-for="t in th" :key="t" class="text-negative">{{ t }}</div>
   </div>
 </template>
 
@@ -11,18 +11,6 @@ export default {
     th: {
       type: Array,
       default: () => ['-']
-    },
-    width: {
-      type: Array,
-      default: () => [0]
-    }
-  },
-  methods: {
-    style(i) {
-      return {
-        flex: this.width[i] === 0 ? 1 : '0 1 auto',
-        width: this.width[i] === 0 ? 'auto' : `${this.width[i] ? this.width[i] - 1 : 99}px`
-      };
     }
   }
 };
@@ -39,10 +27,13 @@ export default {
     text-align: right;
     padding: 2px $padding;
     margin-left: 1px;
+    width: 99px;
     &:first-child {
+      flex: 1;
       text-align: left;
       padding-left: $padding;
       margin-left: 0;
+      width: auto;
     }
   }
 }

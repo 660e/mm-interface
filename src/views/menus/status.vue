@@ -12,6 +12,7 @@
         <span>{{ $r.integer(1, 999999) }}EXP</span>
       </ui-item>
     </ui-grid>
+    <div class="flex-center"><img src="@/assets/actor-1.png" /></div>
     <ui-thead :th="['能力值']" />
     <ui-grid :grid="[5, 2]" column>
       <ui-item between icon><span>最大HP</span><span>9999</span></ui-item>
@@ -25,14 +26,17 @@
         <span>{{ $r.integer(100, 255) }}</span>
       </ui-item>
     </ui-grid>
-    <ui-thead :th="['特殊技能']" />
-    <ui-grid :grid="[4, 1]">
-      <ui-item icon>驾驶：可以驾驶车辆</ui-item>
+    <ui-thead :th="['技能']" />
+    <ui-grid :grid="[4, 2]">
+      <ui-item icon>车辆驾驶</ui-item>
+      <ui-item icon>猎人之眼</ui-item>
+      <ui-item icon />
+      <ui-item icon />
+      <ui-item icon />
       <ui-item icon />
       <ui-item icon />
       <ui-item icon />
     </ui-grid>
-    <div class="flex-center"><img src="@/assets/actor-1.png" /></div>
   </ui-window>
   <div class="w-400"></div>
 </template>
