@@ -1,10 +1,10 @@
 <template>
   <div class="ui-bar">
-    <div class="flex justify-between">
+    <div>
       <span>{{ type.toUpperCase() }}</span>
       <span>{{ value }}/9999</span>
     </div>
-    <div :class="[type]" class="col flex">
+    <div :class="[type]">
       <span :style="{ width: `${(value / 9999) * 100}%` }"></span>
     </div>
   </div>
@@ -30,10 +30,16 @@ export default {
 .ui-bar {
   display: flex;
   flex-direction: column;
+  & > div:first-child {
+    display: flex;
+    justify-content: space-between;
+  }
   & > div:last-child {
+    flex: 1;
     border: 1px $dark solid;
     box-sizing: border-box;
     margin-top: $gap;
+    display: flex;
     &.hp span {
       background-color: #166c18;
     }

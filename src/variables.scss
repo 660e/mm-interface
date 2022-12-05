@@ -6,20 +6,17 @@ $size: 16px;
 .flex {
   display: flex;
 }
-.column {
-  flex-direction: column;
-}
-.col {
-  flex: 1;
-}
 .flex-center {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.justify-between {
-  justify-content: space-between;
+.column {
+  flex-direction: column;
+}
+.col {
+  flex: 1;
 }
 .justify-end {
   justify-content: flex-end;
@@ -30,6 +27,7 @@ $size: 16px;
 .w-250 {
   width: 250px;
 }
+//
 .w-400 {
   width: 400px;
 }

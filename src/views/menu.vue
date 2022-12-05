@@ -2,6 +2,20 @@
   <div class="col flex" style="padding-top: 100px">
     <div class="col">
       <ui-window class="w-150">
+        <ui-item>地图</ui-item>
+        <ui-item>乘降</ui-item>
+        <ui-item>道具</ui-item>
+        <ui-item @click="scene = 4" hoverable>装备</ui-item>
+        <ui-item>状态</ui-item>
+        <ui-item>车库</ui-item>
+        <ui-item>选项</ui-item>
+      </ui-window>
+    </div>
+  </div>
+  <!--
+  <div class="col flex" style="padding-top: 100px">
+    <div class="col">
+      <ui-window class="w-150">
         <ui-item @click="scene = 1" hoverable>地图</ui-item>
         <ui-item>乘降</ui-item>
         <ui-item @click="scene = 3" hoverable>道具</ui-item>
@@ -27,12 +41,14 @@
       </ui-window>
     </div>
   </div>
-  <menu-actors v-if="scene === 0" class="w-250" />
+ 
   <menu-map v-if="scene === 1" />
   <menu-item v-if="scene === 3" :type="type" />
   <menu-equip v-if="scene === 4" :type="type" />
   <menu-status v-if="scene === 5" />
   <menu-assets v-if="scene === 6" :type="type" />
+  -->
+  <menu-actors v-if="scene === 0" class="w-250" />
 </template>
 
 <script>
@@ -40,7 +56,7 @@ export default {
   name: 'scene-menu',
   data() {
     return {
-      scene: 6,
+      scene: 0,
       type: true
     };
   }
