@@ -1,6 +1,6 @@
 <template>
-  <ui-window class="w-400 q-gap-x flex column">
-    <div class="col"></div>
+  <ui-window class="w-530 q-gap-x">
+    <div class="pad-26"></div>
     <ui-item>角色名/战车名</ui-item>
     <ui-thead :th="['装备部位']" />
     <div class="line-9">
@@ -21,32 +21,31 @@
     <ui-grid :grid="[4, 2]">
       <ui-item v-for="(d, i) in dict[0]" :key="i" between icon>
         <span>{{ d }}</span>
-        <span :class="{ 'text-positive': [0, 2].includes(i), 'text-negative': [1, 5].includes(i) }">{{ dict[1][i] }}</span>
+        <div class="flex">
+          <span>{{ dict[1][i] }}</span>
+          <span class="text-right" style="width: 70px">
+            <b v-if="i === 0" class="text-positive">+50</b>
+            <b v-if="i === 2" class="text-positive">+20</b>
+            <b v-if="i === 3" class="text-negative">-10</b>
+            <b v-if="i === 5" class="text-positive">-10.00</b>
+          </span>
+        </div>
       </ui-item>
     </ui-grid>
   </ui-window>
-  <ui-window class="w-400 flex column">
-    <div class="col"></div>
-    <ui-item>武器/大炮/机枪/S-E/C装置/引擎</ui-item>
-    <ui-thead :th="['名称', '攻/守/载']" />
-    <div class="line-9">
-      <ui-item icon hoverable>卸除</ui-item>
-      <ui-item :icon="[2, 1]" between hoverable>
-        <span>{{ equipments[1][0] }}</span>
-        <span>{{ dict[1][0] }}</span>
-      </ui-item>
-    </div>
-    <ui-thead :th="['说明']" />
-    <ui-grid :grid="[4, 2]">
-      <ui-item v-for="(d, i) in dict[0]" :key="i" between icon>
-        <span>{{ d }}</span>
-        <span>{{ dict[1][i] }}</span>
-      </ui-item>
-      <ui-item between icon>
-        <span>持有</span>
-        <span>{{ actors[1][3] }}</span>
-      </ui-item>
-    </ui-grid>
+  <ui-window class="w-282">
+    <div class="pad-26"></div>
+    <ui-item>武器</ui-item>
+    <ui-thead :th="['名称', type ? '数量' : '持有者']" />
+    <ui-item icon hoverable>卸除</ui-item>
+    <ui-item v-if="type" :icon="[1, 1]" between hoverable>
+      <span>{{ equipments[0][0] }}</span>
+      <span>x3</span>
+    </ui-item>
+    <ui-item v-else :icon="[2, 1]" between hoverable>
+      <span>{{ equipments[1][0] }}</span>
+      <span>{{ actors[1][0] }}</span>
+    </ui-item>
   </ui-window>
 </template>
 
