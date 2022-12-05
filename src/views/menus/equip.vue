@@ -1,5 +1,5 @@
 <template>
-  <ui-window class="w-400 q-gap flex column">
+  <ui-window class="w-400 q-gap-x flex column">
     <div class="col"></div>
     <ui-item>角色名/战车名</ui-item>
     <ui-thead :th="['装备部位']" />

@@ -36,6 +36,9 @@ $size: 16px;
 .w-550 {
   width: 550px;
 }
+.w-805 {
+  width: 805px;
+}
 .pad-26 {
   height: 26px;
 }
@@ -45,7 +48,10 @@ $size: 16px;
 .line-9 {
   height: ($size + $padding * 2) * 9;
 }
-.q-gap {
+.q-gap-l {
+  margin-left: $gap;
+}
+.q-gap-x {
   margin: 0 $gap;
 }
 .q-mt {
@@ -60,6 +66,9 @@ $size: 16px;
 .q-mx {
   margin-left: $padding;
   margin-right: $padding;
+}
+.q-pr {
+  padding-right: $padding;
 }
 .text-positive {
   color: #22cbd9;

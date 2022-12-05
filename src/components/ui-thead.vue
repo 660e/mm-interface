@@ -21,7 +21,7 @@ export default {
     style(i) {
       return {
         flex: this.width[i] === 0 ? 1 : '0 1 auto',
-        width: this.width[i] === 0 ? 'auto' : `${this.width[i] ? this.width[i] - 1 : 100}px`
+        width: this.width[i] === 0 ? 'auto' : `${this.width[i] ? this.width[i] - 1 : 99}px`
       };
     }
   }

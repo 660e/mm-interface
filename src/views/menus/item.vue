@@ -1,5 +1,5 @@
 <template>
-  <ui-window class="w-400 q-gap flex column">
+  <ui-window class="w-400 q-gap-x flex column">
     <div class="col"></div>
     <ui-item>道具/贵重物品</ui-item>
     <ui-thead :th="['名称', type ? '持有数' : '重量']" />

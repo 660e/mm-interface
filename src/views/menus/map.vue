@@ -1,5 +1,5 @@
 <template>
-  <ui-window class="w-550 q-gap flex column">
+  <ui-window class="w-550 q-gap-x flex column">
     <div class="pad-72"></div>
     <div class="col" style="background-color: rgba(0, 0, 0, 0.618)"></div>
     <div class="pad-72"></div>
