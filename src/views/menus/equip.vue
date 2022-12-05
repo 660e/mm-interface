@@ -36,7 +36,7 @@
   <ui-window class="w-282">
     <div class="pad-26"></div>
     <ui-item>武器</ui-item>
-    <ui-thead :th="['名称', type ? '数量' : '持有者']" />
+    <ui-thead :th="['名称', type ? '持有数' : '持有者']" />
     <ui-item icon hoverable>卸除</ui-item>
     <ui-item v-if="type" :icon="[1, 1]" between hoverable>
       <span>{{ equipments[0][0] }}</span>

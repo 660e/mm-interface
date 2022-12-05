@@ -1,6 +1,6 @@
 <template>
-  <ui-window class="w-400 q-gap-x flex column">
-    <div class="col"></div>
+  <ui-window class="w-530 q-gap-x">
+    <div class="pad-26"></div>
     <ui-item>道具/贵重物品</ui-item>
     <ui-thead :th="['名称', type ? '持有数' : '重量']" />
     <div class="line-9">
@@ -17,7 +17,7 @@
       <template v-else>
         <ui-item v-for="(e, i) in equipments[1].slice(0, 3)" :key="i" :icon="[2, i + 1]" between hoverable>
           <span>{{ e }}</span>
-          <span>{{ $r.integer(5, 15) }}.00t</span>
+          <span>{{ $r.integer(5, 15) }}.00</span>
         </ui-item>
       </template>
     </div>
@@ -29,9 +29,7 @@
       </ui-item>
     </ui-grid>
   </ui-window>
-  <div class="w-400 flex justify-end">
-    <menu-actors class="w-250" />
-  </div>
+  <menu-actors class="w-282" />
 </template>
 
 <script>

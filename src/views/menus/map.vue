@@ -1,10 +1,10 @@
 <template>
-  <ui-window class="w-550 q-gap-x flex column">
+  <ui-window class="w-530 q-gap-x flex column">
     <div class="pad-72"></div>
     <div class="col" style="background-color: rgba(0, 0, 0, 0.618)"></div>
     <div class="pad-72"></div>
   </ui-window>
-  <ui-window class="w-250 flex column">
+  <ui-window class="w-282 flex column">
     <div class="pad-26"></div>
     <ui-item>犬系统</ui-item>
     <ui-thead :th="['地点']" />
