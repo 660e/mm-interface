@@ -1,5 +1,5 @@
 <template>
-  <ui-window class="w-400 q-gap-x flex column">
+  <ui-window class="w-530 q-gap-x flex column">
     <div class="pad-26"></div>
     <ui-item between>
       <span>{{ actors[0][0] }}</span>
@@ -16,7 +16,7 @@
     <ui-thead :th="['能力值']" />
     <ui-grid :grid="[5, 2]" column>
       <ui-item between icon><span>最大HP</span><span>9999</span></ui-item>
-      <ui-item v-for="n in ['战斗', '驾驶', '命中', '回避']" :key="n" between icon>
+      <ui-item v-for="n in ['战斗等级', '驾驶等级', '命中', '回避']" :key="n" between icon>
         <span>{{ n }}</span>
         <span>{{ $r.integer(100, 255) }}</span>
       </ui-item>
@@ -38,7 +38,6 @@
       <ui-item icon />
     </ui-grid>
   </ui-window>
-  <div class="w-400"></div>
 </template>
 
 <script>

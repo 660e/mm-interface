@@ -3,6 +3,11 @@ $border: rgba(200, 200, 200, 0.618);
 $gap: 5px;
 $padding: 10px;
 $size: 16px;
+hr {
+  background-color: $border;
+  border: 0;
+  height: 1px;
+}
 .flex {
   display: flex;
 }
@@ -18,28 +23,6 @@ $size: 16px;
 .column {
   flex-direction: column;
 }
-.w-150 {
-  width: 150px;
-}
-.w-282 {
-  width: 282px;
-}
-.w-530 {
-  width: 530px;
-}
-.q-gap-x {
-  margin: 0 $gap;
-}
-//
-.w-400 {
-  width: 400px;
-}
-.w-550 {
-  width: 550px;
-}
-.w-805 {
-  width: 805px;
-}
 .pad-26 {
   height: 26px;
 }
@@ -54,6 +37,21 @@ $size: 16px;
   box-sizing: border-box;
   padding-right: $padding;
   width: 100px;
+}
+.w-150 {
+  width: 150px;
+}
+.w-282 {
+  width: 282px;
+}
+.w-400 {
+  width: 400px;
+}
+.w-530 {
+  width: 530px;
+}
+.q-gap-x {
+  margin: 0 $gap;
 }
 .q-gap-l {
   margin-left: $gap;
@@ -88,9 +86,4 @@ $size: 16px;
   &:hover {
     opacity: 1;
   }
-}
-hr {
-  background-color: $border;
-  border: 0;
-  height: 1px;
 }

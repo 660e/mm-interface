@@ -1,5 +1,5 @@
 <template>
-  <ui-window class="w-805 q-gap-l flex column">
+  <ui-window class="col q-gap-l">
     <div class="pad-26"></div>
     <ui-item between>
       <span>{{ actors[1][3] }}</span>
@@ -16,9 +16,9 @@
           <ui-item between icon><span>底盘特性</span><span>会心一击</span></ui-item>
           <ui-item icon />
           <ui-item icon />
-          <ui-item between icon><span>最大载重</span><span>115.36t</span></ui-item>
-          <ui-item between icon><span>装甲重量</span><span>32.00t</span></ui-item>
-          <ui-item between icon><span>装备重量</span><span>83.36t</span></ui-item>
+          <ui-item between icon><span>最大载重</span><span>115.36</span></ui-item>
+          <ui-item between icon><span>装甲重量</span><span>32.00</span></ui-item>
+          <ui-item between icon><span>装备重量</span><span>83.36</span></ui-item>
         </ui-grid>
       </div>
     </div>
@@ -29,7 +29,7 @@
       <span class="table-td">41/62</span>
       <span class="table-td">86</span>
       <span class="table-td">正常</span>
-      <span class="table-td">10.00t</span>
+      <span class="table-td">10.00</span>
     </ui-item>
     <ui-item :icon="[2, 2]" class="flex" style="padding-right: 0">
       <span class="col">{{ equipments[1][1] }}</span>
@@ -37,7 +37,7 @@
       <span class="table-td">∞</span>
       <span class="table-td">45</span>
       <span class="table-td">正常</span>
-      <span class="table-td">3.00t</span>
+      <span class="table-td">3.00</span>
     </ui-item>
     <ui-item :icon="[2, 3]" class="flex" style="padding-right: 0">
       <span class="col">{{ equipments[1][2] }}</span>
@@ -45,7 +45,7 @@
       <span class="table-td">8/16</span>
       <span class="table-td">600</span>
       <span class="table-td">正常</span>
-      <span class="table-td">11.00t</span>
+      <span class="table-td">11.00</span>
     </ui-item>
     <ui-item />
     <ui-item />
@@ -56,16 +56,16 @@
       <span class="table-td">-</span>
       <span class="table-td">190</span>
       <span class="table-td">正常</span>
-      <span class="table-td">2.00t</span>
+      <span class="table-td">2.00</span>
     </ui-item>
     <ui-item />
     <ui-item :icon="[2, 5]" class="flex" style="padding-right: 0">
       <span class="col">{{ equipments[1][4] }}</span>
       <span class="table-td">-</span>
-      <span class="table-td">58.00t</span>
+      <span class="table-td">58.00</span>
       <span class="table-td">115</span>
       <span class="table-td">正常</span>
-      <span class="table-td">1.00t</span>
+      <span class="table-td">1.00</span>
     </ui-item>
     <ui-item :icon="[2, 6]" class="flex" style="padding-right: 0">
       <span class="col">{{ equipments[1][5] }}</span>
@@ -73,7 +73,7 @@
       <span class="table-td">-</span>
       <span class="table-td">150</span>
       <span class="table-td">正常</span>
-      <span class="table-td">13.00t</span>
+      <span class="table-td">13.00</span>
     </ui-item>
   </ui-window>
 </template>
