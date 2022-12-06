@@ -44,7 +44,7 @@ export default {
   name: 'scene-menu',
   data() {
     return {
-      scene: 0,
+      scene: 6,
       type: true
     };
   }
