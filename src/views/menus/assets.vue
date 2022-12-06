@@ -1,28 +1,29 @@
 <template>
-  <ui-window class="col q-gap-l">
+  <ui-window :class="command === 'equip' ? ['col', 'q-gap-l'] : ['w-530', 'q-gap-x']" class="flex column">
     <div class="pad-26"></div>
-    <ui-item between>
-      <span>{{ actors[1][3] }}</span>
-      <span>徽章</span>
-    </ui-item>
     <div class="flex">
-      <div class="w-352 flex column">
-        <ui-item />
-        <div class="col flex">
-          <div>
-            <ui-item />
-            <ui-item @click="command = 'equip'" hoverable icon>装备</ui-item>
-            <ui-item @click="command = 'item'" hoverable icon>货架</ui-item>
+      <div>
+        <ui-item>{{ actors[1][3] }}</ui-item>
+        <ui-item>梅卡瓦主战坦克</ui-item>
+        <div class="flex">
+          <div class="w-120 flex">
+            <div>
+              <ui-item />
+              <ui-item @click="command = 'equip'" hoverable icon>装备</ui-item>
+              <ui-item @click="command = 'item'" hoverable icon>货架</ui-item>
+            </div>
+            <div class="col"></div>
           </div>
-          <div class="flex-center"><img src="@/assets/tank-3.png" /></div>
+          <div class="w-268 flex-center"><img src="@/assets/tank-3.png" /></div>
         </div>
       </div>
       <div class="col">
-        <ui-thead :th="['性能']" />
-        <ui-grid :grid="[3, 2]" column>
+        <ui-item />
+        <ui-item />
+        <ui-grid v-if="command === 'equip'" :grid="[3, 2]" column>
           <ui-item between icon><span>底盘特性</span><span>会心一击</span></ui-item>
-          <ui-item icon />
-          <ui-item icon />
+          <ui-item between icon><span>备用弹仓</span><span>10/128</span></ui-item>
+          <ui-item between icon><span>货架容量</span><span>4/20</span></ui-item>
           <ui-item between icon><span>最大载重</span><span>115.36</span></ui-item>
           <ui-item between icon><span>装甲重量</span><span>32.00</span></ui-item>
           <ui-item between icon><span>装备重量</span><span>83.36</span></ui-item>
@@ -84,6 +85,34 @@
         <span class="table-td">13.00</span>
       </ui-item>
     </template>
+    <div v-if="command === 'item'" class="col flex">
+      <div class="col">
+        <ui-thead :th="['名称', '重量']" />
+        <ui-item v-for="i in items[1]" :key="i" between icon>
+          <span>{{ i }}</span>
+          <span>10.00</span>
+        </ui-item>
+      </div>
+      <div class="col q-ml">
+        <ui-thead :th="['名称', '重量']" />
+        <ui-item v-for="n in 10" :key="n" between icon>
+          <span>{{ n }}</span>
+          <span>10.00</span>
+        </ui-item>
+      </div>
+    </div>
+  </ui-window>
+  <ui-window v-if="command === 'item'" class="w-282">
+    <div class="pad-26"></div>
+    <ui-item between>
+      <span>备用弹仓</span>
+      <span>10/128</span>
+    </ui-item>
+    <ui-thead :th="['名称', '持有数']" />
+    <ui-item between icon>
+      <span>备用弹</span>
+      <span>10</span>
+    </ui-item>
   </ui-window>
 </template>
 
@@ -99,6 +128,7 @@ export default {
     return {
       actors: data.actors,
       equipments: data.equipments,
+      items: data.items,
       dict: data.dict,
       command: 'equip'
     };
