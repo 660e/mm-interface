@@ -12,6 +12,10 @@ export default createRouter({
           component: () => import('@/views/menu.vue')
         },
         {
+          path: '/shop/:id',
+          component: () => import('@/views/shop.vue')
+        },
+        {
           path: '/battle',
           component: () => import('@/views/battle.vue')
         }

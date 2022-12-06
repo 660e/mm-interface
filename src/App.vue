@@ -2,7 +2,7 @@
   <div class="app">
     <router-view />
     <nav>
-      <router-link v-for="n in nav" :key="n.value" :to="{ path: n.value }">{{ n.label }}</router-link>
+      <div v-for="n in nav" :key="n.label" :class="{ active: $route.path === n.path }" @click="$router.push(n)">{{ n.label }}</div>
     </nav>
   </div>
 </template>
@@ -12,8 +12,10 @@ export default {
   data() {
     return {
       nav: [
-        { label: 'menu', value: '/menu' },
-        { label: 'battle', value: '/battle' }
+        { label: '菜单', path: '/menu' },
+        { label: '商店-人类装备', path: '/shop/1' },
+        { label: '商店-战车装备', path: '/shop/2' },
+        { label: '战斗', path: '/battle' }
       ]
     };
   }
@@ -44,13 +46,12 @@ export default {
     position: absolute;
     top: 20px;
     right: 20px;
-    a {
+    div {
       font-size: 20px;
-      display: block;
       cursor: pointer;
       margin-bottom: 20px;
       &:hover,
-      &.router-link-active {
+      &.active {
         color: #f00;
       }
     }
