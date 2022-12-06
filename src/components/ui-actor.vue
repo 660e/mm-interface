@@ -1,11 +1,12 @@
 <template>
-  <div class="ui-actor" :class="{ focusable }" :style="style"></div>
+  <div class="ui-actor" :class="{ empty, focusable }" :style="style"></div>
 </template>
 
 <script>
 export default {
   name: 'ui-actor',
   props: {
+    empty: Boolean,
     focusable: Boolean,
     icon: {
       type: Array,

@@ -1,5 +1,6 @@
-$dark: rgba(0, 0, 0, 0.618);
-$border: rgba(200, 200, 200, 0.618);
+$opacity: 0.618;
+$dark: rgba(0, 0, 0, $opacity);
+$border: rgba(200, 200, 200, $opacity);
 $gap: 5px;
 $padding: 10px;
 $size: 16px;
@@ -82,11 +83,19 @@ hr {
   text-align: right;
 }
 .hoverable:hover {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3));
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1 - $opacity));
 }
 .focusable {
-  opacity: 0.3;
+  opacity: 1 - $opacity;
   &:hover {
     opacity: 1;
+  }
+}
+.empty {
+  background-image: none;
+  background-color: $border;
+  opacity: 1 - $opacity;
+  & > * {
+    display: none !important;
   }
 }

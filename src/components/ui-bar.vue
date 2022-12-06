@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-bar">
+  <div class="ui-bar" :class="{ empty }">
     <div>
       <span>{{ type.toUpperCase() }}</span>
       <span>{{ value }}/9999</span>
@@ -16,6 +16,7 @@ import mockjs from 'mockjs';
 export default {
   name: 'ui-bar',
   props: {
+    empty: Boolean,
     type: String
   },
   data() {
