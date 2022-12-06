@@ -7,14 +7,24 @@
   <ui-window class="w-282 flex column">
     <div class="pad-26"></div>
     <ui-item>犬系统</ui-item>
-    <ui-thead :th="['地点']" />
-    <ui-item v-for="n in 12" :key="n" hoverable>村镇-{{ n }}</ui-item>
+    <ui-thead :th="['地点', '委托任务']" />
+    <ui-item v-for="n in 12" :key="n" between hoverable>
+      <span>村镇-{{ n }}</span>
+      <span>{{ $r.integer(1, 5) }}</span>
+    </ui-item>
     <div class="col"></div>
   </ui-window>
 </template>
 
 <script>
+import mockjs from 'mockjs';
+
 export default {
-  name: 'menu-map'
+  name: 'menu-map',
+  data() {
+    return {
+      $r: mockjs.Random
+    };
+  }
 };
 </script>

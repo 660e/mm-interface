@@ -13,7 +13,7 @@
       </ui-item>
     </ui-grid>
     <div class="flex-center"><img src="@/assets/actor-1.png" /></div>
-    <ui-thead :th="['能力值']" />
+    <ui-thead :th="['能力']" />
     <ui-grid :grid="[5, 2]" column>
       <ui-item between icon><span>最大HP</span><span>9999</span></ui-item>
       <ui-item v-for="n in ['战斗等级', '驾驶等级', '命中', '回避']" :key="n" between icon>

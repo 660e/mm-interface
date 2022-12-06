@@ -40,7 +40,7 @@
     <ui-item icon hoverable>卸除</ui-item>
     <ui-item v-if="type" :icon="[1, 1]" between hoverable>
       <span>{{ equipments[0][0] }}</span>
-      <span>x3</span>
+      <span>3</span>
     </ui-item>
     <ui-item v-else :icon="[2, 1]" between hoverable>
       <span>{{ equipments[1][0] }}</span>
