@@ -1,18 +1,25 @@
 <template>
   <ui-window class="w-530 q-gap-x flex column">
     <div class="pad-26"></div>
-    <ui-item between>
-      <span>{{ actors[0][0] }}</span>
-      <span>LV.{{ $r.integer(1, 99) }}</span>
-    </ui-item>
-    <ui-grid :grid="[1, 2]">
-      <ui-item>赏金猎人</ui-item>
-      <ui-item between>
-        <span>升级还需</span>
-        <span>{{ $r.integer(1, 999999) }}EXP</span>
-      </ui-item>
-    </ui-grid>
-    <div class="flex-center"><img src="@/assets/actor-1.png" /></div>
+    <ui-item>{{ actors[0][0] }}</ui-item>
+    <ui-item>赏金猎人</ui-item>
+    <div class="col flex">
+      <div class="flex-center"><img src="@/assets/actor-1.png" /></div>
+      <div class="col">
+        <ui-item between icon>
+          <span>当前等级</span>
+          <span>{{ $r.integer(1, 99) }}</span>
+        </ui-item>
+        <ui-item between icon>
+          <span>总经验值</span>
+          <span>{{ $r.integer(100000, 999999) }}</span>
+        </ui-item>
+        <ui-item between icon>
+          <span>升级还需</span>
+          <span>{{ $r.integer(1, 100000) }}</span>
+        </ui-item>
+      </div>
+    </div>
     <ui-thead :th="['能力']" />
     <ui-grid :grid="[5, 2]" column>
       <ui-item between icon><span>最大HP</span><span>9999</span></ui-item>
