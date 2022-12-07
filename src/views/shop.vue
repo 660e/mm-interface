@@ -17,11 +17,11 @@
     <ui-item>装备</ui-item>
     <ui-thead :th="['名称', '价格']" />
     <div class="line-9">
-      <ui-item v-for="(e, i) in equipments[0].slice(0, 3)" :key="i" :icon="[1, i + 1]" between hoverable>
+      <ui-item v-for="(e, i) in equipments[0].slice(0, 3)" :key="i" :icon="[1, i + 1]" @click="mode = 'actor'" between hoverable>
         <span>{{ e }}</span>
         <span>{{ $r.integer(1000, 10000) }}</span>
       </ui-item>
-      <ui-item v-for="(e, i) in equipments[1].slice(0, 3)" :key="i" :icon="[2, i + 1]" between hoverable>
+      <ui-item v-for="(e, i) in equipments[1].slice(0, 3)" :key="i" :icon="[2, i + 1]" @click="mode = 'tank'" between hoverable>
         <span>{{ e }}</span>
         <span>{{ $r.integer(10000, 100000) }}</span>
       </ui-item>
@@ -36,7 +36,7 @@
   </ui-window>
   <div v-else class="w-530 q-gap-x"></div>
 
-  <menu-actors class="w-282" />
+  <menu-actors class="w-282" :mode="mode" />
 </template>
 
 <script>
@@ -51,13 +51,15 @@ export default {
       equipments: data.equipments,
       dict: data.dict,
       scene: Number(this.$route.params.id),
-      command: null
+      command: null,
+      mode: null
     };
   },
   watch: {
     '$route.params.id'(n) {
       this.scene = Number(n);
       this.command = null;
+      this.mode = null;
     }
   }
 };
