@@ -17,7 +17,7 @@
       <template v-else>
         <ui-item v-for="(e, i) in equipments[1].slice(0, 3)" :key="i" :icon="[2, i + 1]" between hoverable>
           <span>{{ e }}</span>
-          <span>{{ $r.integer(5, 15) }}.00</span>
+          <span>{{ $r.integer(5, 15) }}.00t</span>
         </ui-item>
       </template>
     </div>

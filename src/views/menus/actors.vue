@@ -6,7 +6,7 @@
       <div v-for="(a, i) in actors[mode === 'actor' ? 0 : 1]" :key="i" :style="{ marginBottom: `${i === 3 ? 0 : 2}px` }" class="hoverable">
         <ui-item between>
           <span>{{ a }}</span>
-          <span v-if="mode === 'tank' && i === 3" style="color: #f00">-15.00t</span>
+          <span v-if="mode === 'tank' && i === 3" style="color: #e05000">+15.00t</span>
         </ui-item>
         <hr class="q-mx" />
         <ui-item class="flex">

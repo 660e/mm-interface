@@ -23,11 +23,11 @@
         <span>{{ d }}</span>
         <div class="flex">
           <span>{{ dict[1][i] }}</span>
-          <span class="text-right" style="width: 80px">
-            <b v-if="i === 0" class="text-positive">+50</b>
-            <b v-if="i === 2" class="text-positive">+20</b>
-            <b v-if="i === 3" class="text-negative">-10</b>
-            <b v-if="i === 5" class="text-positive">-10.00t</b>
+          <span class="text-right" style="width: 70px">
+            <b v-if="i === 0" class="text-positive">1000</b>
+            <b v-if="i === 1" class="text-negative">48</b>
+            <b v-if="i === 2" class="text-positive">120</b>
+            <b v-if="i === 3" class="text-positive">10.00t</b>
           </span>
         </div>
       </ui-item>

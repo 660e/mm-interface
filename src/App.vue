@@ -51,7 +51,7 @@ export default {
       margin-bottom: 20px;
       &:hover,
       &.active {
-        color: #f00;
+        color: #e05000;
       }
     }
   }
