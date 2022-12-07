@@ -7,6 +7,10 @@
           <ui-item @click="(command = 'sell'), (mode = null)" hoverable>卖</ui-item>
           <ui-item @click="(command = null), (mode = null)" hoverable>离开商店</ui-item>
         </template>
+        <template v-if="[2].includes(scene)">
+          <ui-item @click="command = 'inn'" hoverable>住宿</ui-item>
+          <ui-item>离开旅馆</ui-item>
+        </template>
       </ui-window>
     </div>
     <div>
@@ -22,6 +26,7 @@
   <div v-else class="w-530 q-gap-x"></div>
 
   <menu-actors class="w-282" :mode="mode" />
+  <ui-popup :command="command" />
 </template>
 
 <script>
@@ -33,7 +38,7 @@ export default {
     return {
       actors: data.actors,
       scene: Number(this.$route.params.id),
-      command: null,
+      command: 'inn',
       mode: null
     };
   },

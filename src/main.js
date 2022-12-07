@@ -17,10 +17,26 @@ import UiActor from '@/components/ui-actor.vue';
 import UiBar from '@/components/ui-bar.vue';
 import UiGrid from '@/components/ui-grid.vue';
 import UiItem from '@/components/ui-item.vue';
+import UiPopup from '@/components/ui-popup.vue';
 import UiThead from '@/components/ui-thead.vue';
 import UiWindow from '@/components/ui-window.vue';
 
-const components = [MenuActors, MenuAssets, MenuEquip, MenuItem, MenuMap, MenuStatus, ShopItem, UiActor, UiBar, UiGrid, UiItem, UiThead, UiWindow];
+const components = [
+  MenuActors,
+  MenuAssets,
+  MenuEquip,
+  MenuItem,
+  MenuMap,
+  MenuStatus,
+  ShopItem,
+  UiActor,
+  UiBar,
+  UiGrid,
+  UiItem,
+  UiPopup,
+  UiThead,
+  UiWindow
+];
 
 components.forEach(c => app.component(c.name, c));
 

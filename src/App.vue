@@ -14,6 +14,7 @@ export default {
       nav: [
         { label: '菜单', path: '/menu' },
         { label: '商店-装备/道具', path: '/shop/1' },
+        { label: '旅馆', path: '/shop/2' },
         { label: '战斗', path: '/battle' }
       ]
     };
