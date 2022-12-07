@@ -14,14 +14,14 @@
           <div class="compare">
             <template v-if="mode === 'actor'">
               <p v-for="n in 3" :key="n">
-                <span>武器{{ n }}：攻击</span>
+                <span>武器{{ n }}攻击</span>
                 <span>{{ $r.integer(100, 255) }}</span>
                 <span class="text-positive">+{{ $r.integer(50, 100) }}</span>
               </p>
             </template>
             <template v-if="mode === 'tank'">
               <p v-for="n in 4" :key="n">
-                <span>大炮{{ n }}：攻击</span>
+                <span>大炮{{ n }}攻击</span>
                 <span>{{ $r.integer(500, 800) }}</span>
                 <span class="text-positive">+{{ $r.integer(100, 200) }}</span>
               </p>

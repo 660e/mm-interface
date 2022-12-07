@@ -13,7 +13,7 @@ export default {
     return {
       nav: [
         { label: '菜单', path: '/menu' },
-        { label: '商店-装备', path: '/shop/1' },
+        { label: '商店-装备/道具', path: '/shop/1' },
         { label: '战斗', path: '/battle' }
       ]
     };
