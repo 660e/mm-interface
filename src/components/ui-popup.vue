@@ -1,13 +1,13 @@
 <template>
-  <div v-if="['inn'].includes(command)" class="ui-popup">
-    <ui-window class="text-center" style="width: 350px">
-      <ui-item>住宿</ui-item>
-      <hr class="q-mt q-mb" />
-      <ui-item>金额：100G</ui-item>
-      <ui-item>要住宿吗？</ui-item>
+  <div v-if="popup[2]" class="ui-popup">
+    <ui-window class="w-350 text-center">
+      <template v-if="popup[0]">
+        <ui-item class="title">{{ popup[0] }}</ui-item>
+        <hr class="q-mt q-mb" />
+      </template>
+      <ui-item v-for="p in popup[1]" :key="p">{{ p }}</ui-item>
       <div class="button">
-        <span>是</span>
-        <span>否</span>
+        <span v-for="b in popup[2]" :key="b" @click="$emit('selected')">{{ b }}</span>
       </div>
     </ui-window>
   </div>
@@ -16,8 +16,12 @@
 <script>
 export default {
   name: 'ui-popup',
+  emits: ['selected'],
   props: {
-    command: String
+    popup: {
+      type: Array,
+      default: () => []
+    }
   }
 };
 </script>
@@ -33,8 +37,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  .ui-item:first-child {
-    font-size: 24px;
+  .title {
+    font-size: $size-24;
   }
   .button {
     padding: $padding;
@@ -48,7 +52,7 @@ export default {
       box-sizing: border-box;
       padding: $padding;
       margin-bottom: $gap;
-      width: 120px;
+      width: 50%;
       &:last-child {
         margin-bottom: 0;
       }

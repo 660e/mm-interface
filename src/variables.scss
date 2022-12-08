@@ -3,7 +3,10 @@ $dark: rgba(0, 0, 0, $opacity);
 $border: rgba(200, 200, 200, $opacity);
 $gap: 5px;
 $padding: 10px;
-$size: 16px;
+$size-12: 12px;
+$size-14: 14px;
+$size-16: 16px;
+$size-24: 24px;
 hr {
   background-color: $border;
   border: 0;
@@ -31,7 +34,7 @@ hr {
   height: 72px;
 }
 .line-9 {
-  height: ($size + $padding * 2) * 9;
+  height: ($size-16 + $padding * 2) * 9;
 }
 .table-td {
   text-align: right;
@@ -50,6 +53,9 @@ hr {
 }
 .w-282 {
   width: 282px;
+}
+.w-350 {
+  width: 350px;
 }
 .w-530 {
   width: 530px;
@@ -105,9 +111,9 @@ hr {
 .compare {
   flex: 1;
   padding-left: $padding;
-  height: $size * 4 + $padding;
+  height: $size-16 * 4 + $padding;
   p {
-    font-size: 14px;
+    font-size: $size-14;
     padding-bottom: 6px;
     display: flex;
     &:last-child {

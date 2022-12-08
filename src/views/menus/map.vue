@@ -8,12 +8,13 @@
     <div class="pad-26"></div>
     <ui-item>犬系统</ui-item>
     <ui-thead :th="['地点', '委托任务']" />
-    <ui-item v-for="n in 12" :key="n" between hoverable>
+    <ui-item v-for="n in 12" :key="n" @click="popup = [null, [`要移动到村镇-${n}吗？`], ['是', '否']]" between hoverable>
       <span>村镇-{{ n }}</span>
       <span>{{ $r.integer(1, 5) }}</span>
     </ui-item>
     <div class="col"></div>
   </ui-window>
+  <ui-popup :popup="popup" @selected="popup = []" />
 </template>
 
 <script>
@@ -23,7 +24,8 @@ export default {
   name: 'menu-map',
   data() {
     return {
-      $r: mockjs.Random
+      $r: mockjs.Random,
+      popup: []
     };
   }
 };

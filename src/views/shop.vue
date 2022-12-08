@@ -5,11 +5,11 @@
         <template v-if="[1].includes(scene)">
           <ui-item @click="(command = 'buy'), (mode = null)" hoverable>买</ui-item>
           <ui-item @click="(command = 'sell'), (mode = null)" hoverable>卖</ui-item>
-          <ui-item @click="(command = null), (mode = null)" hoverable>离开商店</ui-item>
+          <ui-item @click="reset" hoverable>离开商店</ui-item>
         </template>
         <template v-if="[2].includes(scene)">
-          <ui-item @click="command = 'inn'" hoverable>住宿</ui-item>
-          <ui-item>离开旅馆</ui-item>
+          <ui-item @click="popup = ['住宿', ['金额：100G', '要住宿吗？'], ['是', '否']]" hoverable>住宿</ui-item>
+          <ui-item @click="reset" hoverable>离开旅馆</ui-item>
         </template>
       </ui-window>
     </div>
@@ -26,7 +26,7 @@
   <div v-else class="w-530 q-gap-x"></div>
 
   <menu-actors class="w-282" :mode="mode" />
-  <ui-popup :command="command" />
+  <ui-popup :popup="popup" @selected="reset" />
 </template>
 
 <script>
@@ -38,15 +38,22 @@ export default {
     return {
       actors: data.actors,
       scene: Number(this.$route.params.id),
-      command: 'inn',
-      mode: null
+      command: null,
+      mode: null,
+      popup: []
     };
+  },
+  methods: {
+    reset() {
+      this.command = null;
+      this.mode = null;
+      this.popup = [];
+    }
   },
   watch: {
     '$route.params.id'(n) {
       this.scene = Number(n);
-      this.command = null;
-      this.mode = null;
+      this.reset();
     }
   }
 };

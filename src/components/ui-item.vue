@@ -28,8 +28,8 @@ export default {
 
 <style lang="scss" scoped>
 .ui-item {
-  min-height: $size;
-  font-size: $size;
+  min-height: $size-16;
+  font-size: $size-16;
   padding: $padding;
   position: relative;
   &.between {
@@ -37,8 +37,8 @@ export default {
     justify-content: space-between;
   }
   & > .icon {
-    height: $size;
-    width: $size;
+    height: $size-16;
+    width: $size-16;
     position: absolute;
     top: $padding;
     left: $padding;

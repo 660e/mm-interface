@@ -27,7 +27,7 @@ export default {
 <style lang="scss" scoped>
 .ui-actor {
   background-image: url('@/assets/actors.png');
-  height: $size * 2;
-  width: $size * 2;
+  height: $size-16 * 2;
+  width: $size-16 * 2;
 }
 </style>

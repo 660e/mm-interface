@@ -5,7 +5,7 @@
     <ui-thead :th="['名称', type ? '持有数' : '重量']" />
     <div class="line-9">
       <template v-if="type">
-        <ui-item v-for="i in items[0]" :key="i" between hoverable icon>
+        <ui-item v-for="i in items[0]" :key="i" @click="popup = [i, [], ['使用', '丢弃']]" between hoverable icon>
           <span>{{ i }}</span>
           <span>{{ $r.integer(1, 10) }}</span>
         </ui-item>
@@ -15,7 +15,7 @@
         </ui-item>
       </template>
       <template v-else>
-        <ui-item v-for="(e, i) in equipments[1].slice(0, 3)" :key="i" :icon="[2, i + 1]" between hoverable>
+        <ui-item v-for="(e, i) in equipments[1].slice(0, 3)" :key="i" :icon="[2, i + 1]" @click="popup = [e, [], ['转交', '丢弃']]" between hoverable>
           <span>{{ e }}</span>
           <span>{{ $r.integer(5, 15) }}.00t</span>
         </ui-item>
@@ -30,6 +30,7 @@
     </ui-grid>
   </ui-window>
   <menu-actors class="w-282" />
+  <ui-popup :popup="popup" @selected="popup = []" />
 </template>
 
 <script>
@@ -46,7 +47,8 @@ export default {
       $r: mockjs.Random,
       items: data.items,
       equipments: data.equipments,
-      dict: data.dict
+      dict: data.dict,
+      popup: []
     };
   }
 };

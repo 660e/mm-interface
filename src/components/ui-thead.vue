@@ -23,7 +23,7 @@ export default {
   div {
     background-color: $dark;
     box-sizing: border-box;
-    font-size: 12px;
+    font-size: $size-12;
     text-align: right;
     padding: 2px $padding;
     margin-left: 1px;
