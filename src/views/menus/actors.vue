@@ -2,7 +2,7 @@
   <ui-window>
     <div class="pad-26"></div>
     <ui-item class="text-right q-mb">{{ $r.integer(1, 100000000) }}G</ui-item>
-    <template v-if="mode">
+    <template v-if="mode === 'actor' || mode === 'tank'">
       <div v-for="(a, i) in actors[mode === 'actor' ? 0 : 1]" :key="i" :style="{ marginBottom: `${i === 3 ? 0 : 2}px` }" class="hoverable">
         <ui-item between>
           <span>{{ a }}</span>

@@ -11,6 +11,8 @@
             return '酒吧';
           case 4:
             return '猎人办事处';
+          case 5:
+            return '修理店';
         }
       })()
     "
@@ -43,6 +45,11 @@
           <ui-item @click="command = 'task'" hoverable>委托任务</ui-item>
           <ui-item @click="reset" hoverable>离开</ui-item>
         </template>
+        <!-- 修理店 -->
+        <template v-if="scene === 5">
+          <ui-item @click="command = 'repair'" hoverable>修理</ui-item>
+          <ui-item @click="reset" hoverable>离开</ui-item>
+        </template>
       </ui-window>
     </div>
     <div>
@@ -51,12 +58,16 @@
         <ui-actor :icon="[3, 2]" @click="mode = 'actor'" class="q-mt" focusable />
         <ui-actor v-for="(a, i) in actors[1]" :key="i" :icon="[2, i + 1]" @click="mode = 'tank'" class="q-mt" focusable />
       </ui-window>
+      <ui-window v-if="command === 'repair'">
+        <ui-actor v-for="(a, i) in actors[1]" :key="i" :icon="[2, i + 1]" :class="{ 'q-mt': i > 0 }" @click="mode = 'repair'" focusable />
+      </ui-window>
     </div>
   </div>
 
   <shop-item v-if="command === 'buy' || command === 'sell'" :command="command" :mode="mode" @mode="m => (mode = m)" />
   <shop-bar v-else-if="command === 'bar'" />
   <shop-office v-else-if="command === 'info' || command === 'reward' || command === 'task'" :command="command" />
+  <shop-repair v-else-if="command === 'repair'" :command="command" :mode="mode" />
 
   <div v-else class="w-530 q-gap-x"></div>
   <menu-actors class="w-282" :mode="mode" />
@@ -73,7 +84,7 @@ export default {
     return {
       actors: data.actors,
       scene: Number(this.$route.params.id),
-      command: null,
+      command: 'repair',
       mode: null,
       popup: []
     };
