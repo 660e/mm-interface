@@ -13,6 +13,7 @@ import MenuStatus from '@/views/menus/status.vue';
 
 import ShopBar from '@/views/shops/bar.vue';
 import ShopItem from '@/views/shops/item.vue';
+import ShopOffice from '@/views/shops/office.vue';
 
 import UiActor from '@/components/ui-actor.vue';
 import UiBar from '@/components/ui-bar.vue';
@@ -32,6 +33,7 @@ const components = [
 
   ShopBar,
   ShopItem,
+  ShopOffice,
 
   UiActor,
   UiBar,

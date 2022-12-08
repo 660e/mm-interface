@@ -16,6 +16,7 @@ export default {
         { label: '装备/道具店', path: '/shop/1' },
         { label: '旅馆', path: '/shop/2' },
         { label: '酒吧', path: '/shop/3' },
+        { label: '猎人办事处', path: '/shop/4' },
         { label: '战斗', path: '/battle' }
       ]
     };

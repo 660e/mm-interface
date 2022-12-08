@@ -2,19 +2,29 @@
   <div class="w-282 flex" style="padding-top: 100px">
     <div class="col">
       <ui-window class="w-150">
-        <template v-if="[1].includes(scene)">
+        <!-- 装备/道具店 -->
+        <template v-if="scene === 1">
           <ui-item @click="(command = 'buy'), (mode = null)" hoverable>买</ui-item>
           <ui-item @click="(command = 'sell'), (mode = null)" hoverable>卖</ui-item>
           <ui-item @click="reset" hoverable>离开商店</ui-item>
         </template>
-        <template v-if="[2].includes(scene)">
+        <!-- 旅馆 -->
+        <template v-if="scene === 2">
           <ui-item @click="popup = ['住宿', ['金额：100G', '要住宿吗？'], ['是', '否']]" hoverable>住宿</ui-item>
           <ui-item @click="reset" hoverable>离开旅馆</ui-item>
         </template>
-        <template v-if="[3].includes(scene)">
+        <!-- 酒吧 -->
+        <template v-if="scene === 3">
           <ui-item @click="command = 'bar'" hoverable>喝一杯</ui-item>
           <ui-item>闲聊</ui-item>
           <ui-item @click="reset" hoverable>离开酒吧</ui-item>
+        </template>
+        <!-- 猎人办事处 -->
+        <template v-if="scene === 4">
+          <ui-item @click="command = 'info'" hoverable>询问情报</ui-item>
+          <ui-item @click="command = 'reward'" hoverable>领取赏金</ui-item>
+          <ui-item>委托任务</ui-item>
+          <ui-item @click="reset" hoverable>离开</ui-item>
         </template>
       </ui-window>
     </div>
@@ -29,9 +39,11 @@
 
   <shop-item v-if="command === 'buy' || command === 'sell'" :command="command" :mode="mode" @mode="m => (mode = m)" />
   <shop-bar v-else-if="command === 'bar'" />
-  <div v-else class="w-530 q-gap-x"></div>
+  <shop-office v-else-if="command === 'info' || command === 'reward'" :command="command" />
 
+  <div v-else class="w-530 q-gap-x"></div>
   <menu-actors class="w-282" :mode="mode" />
+
   <ui-popup :popup="popup" @selected="reset" />
 </template>
 
@@ -44,7 +56,7 @@ export default {
     return {
       actors: data.actors,
       scene: Number(this.$route.params.id),
-      command: null,
+      command: 'reward',
       mode: null,
       popup: []
     };
