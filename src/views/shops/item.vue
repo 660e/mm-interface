@@ -1,7 +1,7 @@
 <template>
   <ui-window class="w-530 q-gap-x">
     <div class="pad-26"></div>
-    <ui-item>装备/道具</ui-item>
+    <ui-item>{{ command === 'buy' ? '全部商品' : '道具/装备/战车名' }}</ui-item>
     <ui-thead :th="['名称', '持有数', '价格']" />
     <div v-if="command === 'buy' || command === 'sell'" class="line-9">
       <template v-if="command === 'buy' || (command === 'sell' && mode === null)">

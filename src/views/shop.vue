@@ -11,6 +11,11 @@
           <ui-item @click="popup = ['住宿', ['金额：100G', '要住宿吗？'], ['是', '否']]" hoverable>住宿</ui-item>
           <ui-item @click="reset" hoverable>离开旅馆</ui-item>
         </template>
+        <template v-if="[3].includes(scene)">
+          <ui-item @click="command = 'bar'" hoverable>喝一杯</ui-item>
+          <ui-item>闲聊</ui-item>
+          <ui-item @click="reset" hoverable>离开酒吧</ui-item>
+        </template>
       </ui-window>
     </div>
     <div>
@@ -23,6 +28,7 @@
   </div>
 
   <shop-item v-if="command === 'buy' || command === 'sell'" :command="command" :mode="mode" @mode="m => (mode = m)" />
+  <shop-bar v-else-if="command === 'bar'" />
   <div v-else class="w-530 q-gap-x"></div>
 
   <menu-actors class="w-282" :mode="mode" />

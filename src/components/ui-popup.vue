@@ -47,9 +47,10 @@ export default {
     align-items: center;
     span {
       display: block;
-      border: $border solid;
+      border: 1px $border solid;
       background-color: $dark;
       box-sizing: border-box;
+      font-size: $size-14;
       padding: $padding;
       margin-bottom: $gap;
       width: 50%;

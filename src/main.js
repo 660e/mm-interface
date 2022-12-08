@@ -11,6 +11,7 @@ import MenuItem from '@/views/menus/item.vue';
 import MenuMap from '@/views/menus/map.vue';
 import MenuStatus from '@/views/menus/status.vue';
 
+import ShopBar from '@/views/shops/bar.vue';
 import ShopItem from '@/views/shops/item.vue';
 
 import UiActor from '@/components/ui-actor.vue';
@@ -28,7 +29,10 @@ const components = [
   MenuItem,
   MenuMap,
   MenuStatus,
+
+  ShopBar,
   ShopItem,
+
   UiActor,
   UiBar,
   UiGrid,
