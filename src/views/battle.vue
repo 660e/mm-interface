@@ -1,5 +1,5 @@
 <template>
-  <div>battle</div>
+  <div class="flex-center">battle</div>
 </template>
 
 <script>

@@ -18,7 +18,7 @@
       <ui-item>Expedita, dignissimos accusantium ullam soluta!</ui-item>
       <ui-item>Mollitia placeat debitis, dolor suscipit.</ui-item>
     </template>
-    <template v-else-if="command === 'reward'">
+    <template v-if="command === 'reward'">
       <ui-item>领取赏金</ui-item>
       <ui-thead :th="['信物', '赏金']" />
       <div class="line-9">
@@ -31,6 +31,13 @@
           <span>{{ $r.integer(1000, 200000) }}</span>
         </ui-item>
       </div>
+    </template>
+    <template v-if="command === 'task'">
+      <ui-item>委托任务</ui-item>
+      <ui-thead :th="['名称']" />
+      <ui-item hoverable>Lorem, ipsum, dolor.</ui-item>
+      <ui-item hoverable>Reiciendis, natus, architecto.</ui-item>
+      <ui-item hoverable>Exercitationem, quia, voluptas.</ui-item>
     </template>
   </ui-window>
 </template>

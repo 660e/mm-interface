@@ -20,6 +20,7 @@ import UiBar from '@/components/ui-bar.vue';
 import UiGrid from '@/components/ui-grid.vue';
 import UiItem from '@/components/ui-item.vue';
 import UiPopup from '@/components/ui-popup.vue';
+import UiScene from '@/components/ui-scene.vue';
 import UiThead from '@/components/ui-thead.vue';
 import UiWindow from '@/components/ui-window.vue';
 
@@ -40,6 +41,7 @@ const components = [
   UiGrid,
   UiItem,
   UiPopup,
+  UiScene,
   UiThead,
   UiWindow
 ];

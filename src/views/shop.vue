@@ -1,4 +1,21 @@
 <template>
+  <ui-scene
+    :scene="
+      (() => {
+        switch (scene) {
+          case 1:
+            return '装备/道具店';
+          case 2:
+            return '旅馆';
+          case 3:
+            return '酒吧';
+          case 4:
+            return '猎人办事处';
+        }
+      })()
+    "
+  />
+
   <div class="w-282 flex" style="padding-top: 100px">
     <div class="col">
       <ui-window class="w-150">
@@ -23,7 +40,7 @@
         <template v-if="scene === 4">
           <ui-item @click="command = 'info'" hoverable>询问情报</ui-item>
           <ui-item @click="command = 'reward'" hoverable>领取赏金</ui-item>
-          <ui-item>委托任务</ui-item>
+          <ui-item @click="command = 'task'" hoverable>委托任务</ui-item>
           <ui-item @click="reset" hoverable>离开</ui-item>
         </template>
       </ui-window>
@@ -39,7 +56,7 @@
 
   <shop-item v-if="command === 'buy' || command === 'sell'" :command="command" :mode="mode" @mode="m => (mode = m)" />
   <shop-bar v-else-if="command === 'bar'" />
-  <shop-office v-else-if="command === 'info' || command === 'reward'" :command="command" />
+  <shop-office v-else-if="command === 'info' || command === 'reward' || command === 'task'" :command="command" />
 
   <div v-else class="w-530 q-gap-x"></div>
   <menu-actors class="w-282" :mode="mode" />
@@ -56,7 +73,7 @@ export default {
     return {
       actors: data.actors,
       scene: Number(this.$route.params.id),
-      command: 'reward',
+      command: null,
       mode: null,
       popup: []
     };

@@ -1,4 +1,6 @@
 <template>
+  <ui-scene scene="菜单" />
+
   <div class="w-282 flex" style="padding-top: 100px">
     <div class="col">
       <ui-window class="w-150">
