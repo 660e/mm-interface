@@ -13,10 +13,8 @@ export default {
 <style lang="scss" scoped>
 .app-index {
   background: url('@/assets/bg.png') no-repeat center center;
-  box-sizing: border-box;
-  height: 48px * 13;
-  width: 48px * 23;
-  display: flex;
+  height: $tile * 13;
+  width: $tile * 21;
   position: relative;
   &.battle {
     background-image: none;
