@@ -6,13 +6,20 @@ import mockjs from 'mockjs';
 
 const app = createApp(App);
 
+import QAvatar from '@/components/q-avatar.vue';
 import QText from '@/components/q-text.vue';
 import QWindow from '@/components/q-window.vue';
 
-const components = [QText, QWindow];
+const components = [QAvatar, QText, QWindow];
 
 components.forEach(c => app.component(c.name, c));
 
 app.config.globalProperties.$r = (min = 1, max = 255) => mockjs.Random.integer(min, max);
+app.config.globalProperties.$d = {
+  actors: [
+    ['雷班纳', '克里夫', '英格丽特'],
+    ['LEOPARD', 'ABRAMS', '99A', 'MERKAVA']
+  ]
+};
 
 app.use(store).use(router).mount('#app');

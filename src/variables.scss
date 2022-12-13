@@ -15,11 +15,17 @@ br {
 .flex {
   display: flex;
 }
+.column {
+  flex-direction: column;
+}
 .gap-x {
   margin: 0 $gap;
 }
-.hoverable:hover {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1 - $opacity));
+.padding-y {
+  margin: $padding 0;
+}
+.padding-t {
+  margin-top: $padding;
 }
 .w-150 {
   width: 150px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="q-text" :class="{ between, end, hoverable }">
+  <div class="q-text" :class="{ between, dense, end, hoverable }">
     <slot />
   </div>
 </template>
@@ -9,6 +9,7 @@ export default {
   name: 'q-text',
   props: {
     between: Boolean,
+    dense: Boolean,
     end: Boolean,
     hoverable: Boolean
   }
@@ -24,8 +25,14 @@ export default {
   &.between {
     justify-content: space-between;
   }
+  &.dense {
+    padding: 0;
+  }
   &.end {
     justify-content: flex-end;
+  }
+  &.hoverable:hover {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1 - $opacity));
   }
 }
 </style>
