@@ -10,11 +10,11 @@
       <hr />
       <div class="flex padding-b">
         <q-avatar :icon="[0, n - 1]" />
-        <q-bar class="col text-l" label="hp" />
+        <q-bar class="col padding-l" label="hp" />
       </div>
       <div class="flex">
         <q-avatar :icon="[1, n - 1]" />
-        <q-bar class="col text-l" label="sp" />
+        <q-bar class="col padding-l" label="sp" />
       </div>
     </q-text>
   </q-window>
