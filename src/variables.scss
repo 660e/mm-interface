@@ -31,11 +31,14 @@ hr {
 .gap-x {
   margin: 0 $gap;
 }
+.padding-a {
+  padding: $padding !important;
+}
 .padding-b {
-  margin-bottom: $padding;
+  margin-bottom: $padding !important;
 }
 .padding-l {
-  margin-left: $text;
+  margin-left: $text !important;
 }
 .w-150 {
   width: 150px;

@@ -14,8 +14,8 @@ export default {
       if (this.icon && this.icon.length) {
         return {
           backgroundImage: `url(${require('@/assets/actors.png')})`,
-          backgroundPositionX: `${32 * -this.icon[1]}px`,
-          backgroundPositionY: `${32 * -this.icon[0]}px`
+          backgroundPositionX: `${32 * -this.icon[0]}px`,
+          backgroundPositionY: `${32 * -this.icon[1]}px`
         };
       } else {
         return {

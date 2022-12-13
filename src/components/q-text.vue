@@ -20,8 +20,8 @@ export default {
       if (this.icon && this.icon.length) {
         return {
           backgroundImage: `url(${require('@/assets/icons.png')})`,
-          backgroundPositionX: `${16 * -this.icon[1]}px`,
-          backgroundPositionY: `${16 * -this.icon[0]}px`
+          backgroundPositionX: `${16 * -this.icon[0]}px`,
+          backgroundPositionY: `${16 * -this.icon[1]}px`
         };
       } else {
         return {
