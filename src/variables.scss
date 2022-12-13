@@ -21,3 +21,12 @@ br {
 .hoverable:hover {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1 - $opacity));
 }
+.w-150 {
+  width: 150px;
+}
+.w-250 {
+  width: 250px;
+}
+.w-500 {
+  width: 500px;
+}

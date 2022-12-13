@@ -1,19 +1,22 @@
 <template>
-  <div style="width: 250px" class="flex">
-    <div style="width: 150px">
+  <div class="w-250 flex">
+    <div class="w-150">
       <br />
       <br />
       <br />
-      <q-window :border="[1, 1, 1, 0]" dense><q-text hoverable>道具</q-text></q-window>
+      <q-window dense><q-text hoverable>道具</q-text></q-window>
     </div>
     <div></div>
   </div>
-  <q-window style="width: 500px" class="gap-x">2</q-window>
-  <q-window style="width: 250px">3</q-window>
+  <div class="w-500 gap-x"></div>
+  <menu-actor />
 </template>
 
 <script>
+import MenuActor from './actor.vue';
+
 export default {
-  name: 'scene-menu'
+  name: 'scene-menu',
+  components: { MenuActor }
 };
 </script>
