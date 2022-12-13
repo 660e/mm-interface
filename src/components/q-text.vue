@@ -1,5 +1,5 @@
 <template>
-  <div class="q-text" :class="{ hoverable }">
+  <div class="q-text" :class="{ between, end, hoverable }">
     <slot />
   </div>
 </template>
@@ -8,6 +8,8 @@
 export default {
   name: 'q-text',
   props: {
+    between: Boolean,
+    end: Boolean,
     hoverable: Boolean
   }
 };
@@ -18,5 +20,12 @@ export default {
   min-height: $text;
   font-size: $text;
   padding: $padding $text;
+  display: flex;
+  &.between {
+    justify-content: space-between;
+  }
+  &.end {
+    justify-content: flex-end;
+  }
 }
 </style>
