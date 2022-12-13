@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      value: this.$r(1000, 99999)
+      value: this.$r(10000, 99999)
     };
   }
 };

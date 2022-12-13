@@ -9,11 +9,11 @@
       </q-text>
       <hr />
       <div class="flex padding-b">
-        <q-avatar />
+        <q-avatar :icon="[0, n - 1]" />
         <q-bar class="col text-l" label="hp" />
       </div>
       <div class="flex">
-        <q-avatar />
+        <q-avatar :icon="[1, n - 1]" />
         <q-bar class="col text-l" label="sp" />
       </div>
     </q-text>
