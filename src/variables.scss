@@ -12,8 +12,17 @@ br {
   display: block;
   height: $avatar;
 }
+hr {
+  background-color: $border;
+  border: 0;
+  height: 1px;
+  margin: $padding 0;
+}
 .flex {
   display: flex;
+}
+.col {
+  flex: 1;
 }
 .column {
   flex-direction: column;
@@ -21,11 +30,11 @@ br {
 .gap-x {
   margin: 0 $gap;
 }
-.padding-y {
-  margin: $padding 0;
+.padding-b {
+  margin-bottom: $padding;
 }
-.padding-t {
-  margin-top: $padding;
+.text-l {
+  margin-left: $text;
 }
 .w-150 {
   width: 150px;

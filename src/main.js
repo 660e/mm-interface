@@ -7,10 +7,11 @@ import mockjs from 'mockjs';
 const app = createApp(App);
 
 import QAvatar from '@/components/q-avatar.vue';
+import QBar from '@/components/q-bar.vue';
 import QText from '@/components/q-text.vue';
 import QWindow from '@/components/q-window.vue';
 
-const components = [QAvatar, QText, QWindow];
+const components = [QAvatar, QBar, QText, QWindow];
 
 components.forEach(c => app.component(c.name, c));
 
