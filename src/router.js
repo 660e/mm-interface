@@ -6,7 +6,12 @@ export default createRouter({
     {
       path: '',
       component: () => import('@/views'),
-      children: []
+      children: [
+        {
+          path: 'menu',
+          component: () => import('@/views/menu')
+        }
+      ]
     }
   ]
 });

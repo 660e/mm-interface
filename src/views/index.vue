@@ -15,6 +15,7 @@ export default {
   background: url('@/assets/bg.png') no-repeat center center;
   height: $tile * 13;
   width: $tile * 21;
+  display: flex;
   position: relative;
   &.battle {
     background-image: none;

@@ -4,3 +4,20 @@ $padding: $bit * 2;
 $text: $bit * 4;
 $avatar: $bit * 8;
 $tile: $bit * 12;
+$opacity: 0.618;
+$dark: rgba(0, 0, 0, $opacity);
+$border: rgba(255, 255, 255, $opacity);
+br {
+  content: '';
+  display: block;
+  height: $avatar;
+}
+.flex {
+  display: flex;
+}
+.gap-x {
+  margin: 0 $gap;
+}
+.hoverable:hover {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1 - $opacity));
+}
