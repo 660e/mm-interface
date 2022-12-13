@@ -1,5 +1,6 @@
 <template>
-  <div class="q-text" :class="{ between, dense, end, hoverable }">
+  <div class="q-text" :class="{ between, dense, end, hoverable, icon }">
+    <i v-if="icon" class="icon" :style="style"></i>
     <slot />
   </div>
 </template>
@@ -11,7 +12,23 @@ export default {
     between: Boolean,
     dense: Boolean,
     end: Boolean,
-    hoverable: Boolean
+    hoverable: Boolean,
+    icon: [Array, Boolean]
+  },
+  computed: {
+    style() {
+      if (this.icon && this.icon.length) {
+        return {
+          backgroundImage: `url(${require('@/assets/icons.png')})`,
+          backgroundPositionX: `${16 * -this.icon[1]}px`,
+          backgroundPositionY: `${16 * -this.icon[0]}px`
+        };
+      } else {
+        return {
+          backgroundColor: 'red'
+        };
+      }
+    }
   }
 };
 </script>
@@ -22,6 +39,7 @@ export default {
   font-size: $text;
   padding: $padding $text;
   display: flex;
+  position: relative;
   &.between {
     justify-content: space-between;
   }
@@ -33,6 +51,17 @@ export default {
   }
   &.hoverable:hover {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1 - $opacity));
+  }
+  &.icon {
+    padding-left: $text * 2 + $padding;
+    & > i {
+      height: $text;
+      width: $text;
+      position: absolute;
+      top: $padding;
+      left: $text;
+      z-index: 1;
+    }
   }
 }
 </style>

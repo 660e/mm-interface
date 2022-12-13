@@ -22,6 +22,10 @@ app.config.globalProperties.$d = {
   actors: [
     ['雷班纳', '克里夫', '英格丽特'],
     ['LEOPARD', 'ABRAMS', '99A', 'MERKAVA']
+  ],
+  items: [
+    ['回复胶囊', '回复饮料', '能量胶囊', '全满饮料'],
+    ['装甲包40', '装甲包80', '装甲包L', '装甲包LL']
   ]
 };
 

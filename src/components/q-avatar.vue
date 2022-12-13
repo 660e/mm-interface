@@ -7,22 +7,19 @@ export default {
   name: 'q-avatar',
   props: {
     focusable: Boolean,
-    icon: {
-      type: Array,
-      default: () => []
-    }
+    icon: [Array, Boolean]
   },
   computed: {
     style() {
-      if (this.icon.length) {
+      if (this.icon && this.icon.length) {
         return {
+          backgroundImage: `url(${require('@/assets/actors.png')})`,
           backgroundPositionX: `${32 * -this.icon[1]}px`,
           backgroundPositionY: `${32 * -this.icon[0]}px`
         };
       } else {
         return {
-          backgroundColor: 'red',
-          backgroundImage: 'none'
+          backgroundColor: 'red'
         };
       }
     }
@@ -32,7 +29,6 @@ export default {
 
 <style lang="scss" scoped>
 .q-avatar {
-  background-image: url('@/assets/actors.png');
   height: $avatar;
   width: $avatar;
   &.focusable {
