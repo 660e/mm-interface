@@ -37,7 +37,16 @@
         </q-text>
       </q-grid>
     </q-window>
-    <q-window class="w-300">actor</q-window>
+    <q-window class="w-300">
+      <br />
+      <q-text>武器</q-text>
+      <q-banner :th="['名称', '持有数']" />
+      <q-text hoverable icon>卸下</q-text>
+      <q-text :icon="[0, 0]" between hoverable>
+        <span>{{ $d.equipments[0][0] }}</span>
+        <span>2</span>
+      </q-text>
+    </q-window>
   </template>
 
   <!-- 战车 -->
@@ -76,7 +85,22 @@
         </q-text>
       </q-grid>
     </q-window>
-    <q-window class="w-300">tank</q-window>
+    <q-window class="w-300 flex column">
+      <br />
+      <q-text>大炮</q-text>
+      <q-banner :th="['名称', '重量']" />
+      <q-grid :grid="[10, 1]">
+        <q-text hoverable icon>卸下</q-text>
+        <q-text :icon="[0, 1]" between hoverable>
+          <span>{{ $d.equipments[1][0] }}</span>
+          <span>15.00t</span>
+        </q-text>
+      </q-grid>
+      <q-banner :th="['持有者']" />
+      <div class="flex-center">
+        <q-avatar :icon="[3, 1]" />
+      </div>
+    </q-window>
   </template>
 </template>
 
