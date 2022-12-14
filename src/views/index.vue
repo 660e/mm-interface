@@ -14,7 +14,7 @@ export default {
 .app-index {
   background: url('@/assets/bg.png') no-repeat center center;
   height: $tile * 13;
-  width: $tile * 21;
+  width: $tile * 23;
   display: flex;
   position: relative;
   &.battle {

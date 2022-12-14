@@ -1,5 +1,5 @@
 <template>
-  <q-window class="w-500 gap-x">
+  <q-window class="w-500 bit-x" :border="[0, 1, 0, 1]">
     <br />
 
     <!-- 道具 -->

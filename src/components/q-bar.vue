@@ -36,7 +36,7 @@ export default {
     flex: 1;
     border: 1px $dark solid;
     box-sizing: border-box;
-    margin-top: $gap;
+    margin-top: $bit;
     display: flex;
     &.hp span {
       background-color: #166c18;

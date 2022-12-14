@@ -1,10 +1,9 @@
-$bit: 4px;
-$gap: $bit;
-$padding: $bit * 2;
-$text: $bit * 4;
-$avatar: $bit * 8;
-$tile: $bit * 12;
-$size-12: $bit * 3;
+$bit: 2px;
+$padding: $bit * 4;
+$text: $bit * 8;
+$avatar: $bit * 16;
+$tile: $bit * 24;
+$size-12: $bit * 6;
 $opacity: 0.618;
 $dark: rgba(0, 0, 0, $opacity);
 $border: rgba(255, 255, 255, $opacity);
@@ -22,14 +21,17 @@ hr {
 .flex {
   display: flex;
 }
+.justify-end {
+  justify-content: flex-end;
+}
 .col {
   flex: 1;
 }
 .column {
   flex-direction: column;
 }
-.gap-x {
-  margin: 0 $gap;
+.bit-x {
+  margin: 0 $bit;
 }
 .padding-a {
   padding: $padding !important;
@@ -45,6 +47,9 @@ hr {
 }
 .w-250 {
   width: 250px;
+}
+.w-300 {
+  width: 300px;
 }
 .w-500 {
   width: 500px;
