@@ -4,8 +4,13 @@
       <br />
       <br />
       <br />
+      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="scene = 1" hoverable>地图</q-text></q-window>
+      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text>乘降</q-text></q-window>
       <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="scene = 3" hoverable>道具</q-text></q-window>
       <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="scene = 4" hoverable>装备</q-text></q-window>
+      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text>状态</q-text></q-window>
+      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text>车库</q-text></q-window>
+      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text>选项</q-text></q-window>
     </div>
     <div v-if="[3, 4].includes(scene)">
       <br />
@@ -53,7 +58,7 @@ export default {
   components: { MenuActor, MenuEquip, MenuItem },
   data() {
     return {
-      scene: 4
+      scene: 0
     };
   }
 };

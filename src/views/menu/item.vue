@@ -39,6 +39,10 @@
           <span>{{ e }}</span>
           <span>{{ $r(5, 15) }}.00t</span>
         </q-text>
+        <q-text v-for="i in $d.items[1]" :key="i" between icon hoverable>
+          <span>{{ i }}</span>
+          <span>{{ $r(1, 5) }}.00t</span>
+        </q-text>
       </q-grid>
       <q-banner :th="['装备说明']" />
       <q-grid :grid="[5, 2]" column>

@@ -79,7 +79,7 @@
       <q-grid :grid="[5, 2]" column>
         <q-text v-for="(d, i) in $d.dicts[3]" :key="i" between icon>
           <span>{{ d }}</span>
-          <span :class="{ 'text-positive': [4].includes(i), 'text-negative': [0, 1, 8].includes(i) }">
+          <span :class="{ 'text-positive': [4, 8].includes(i), 'text-negative': [0, 1].includes(i) }">
             {{ $d.dicts[5][i] ? `(${$d.dicts[5][i]})` : '' }}{{ $d.dicts[4][i] }}
           </span>
         </q-text>
