@@ -30,9 +30,9 @@
       <q-text>道具说明...</q-text>
     </template>
 
-    <!-- 战车名 -->
+    <!-- 战车 -->
     <template v-if="$store.getters.active === 'tank'">
-      <q-text>战车名</q-text>
+      <q-text>战车</q-text>
       <q-banner :th="['名称', '重量']" />
       <q-grid :grid="[10, 1]">
         <q-text v-for="(e, i) in $d.equipments[1]" :key="i" :icon="[i, 1]" between hoverable>
@@ -41,10 +41,10 @@
         </q-text>
       </q-grid>
       <q-banner :th="['装备说明']" />
-      <q-grid :grid="[4, 2]" column>
-        <q-text v-for="(d, i) in $d.dicts[0]" :key="i" between icon>
+      <q-grid :grid="[5, 2]" column>
+        <q-text v-for="(d, i) in $d.dicts[3]" :key="i" between icon>
           <span>{{ d }}</span>
-          <span>{{ $d.dicts[1][i] }}</span>
+          <span>{{ $d.dicts[4][i] }}</span>
         </q-text>
       </q-grid>
     </template>
