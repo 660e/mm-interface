@@ -1,6 +1,6 @@
 <template>
   <div class="q-banner">
-    <div v-for="t in th" :key="t" class="text-info">{{ t }}</div>
+    <div v-for="t in th" :key="t" class="text-info text-12">{{ t }}</div>
   </div>
 </template>
 
@@ -23,7 +23,6 @@ export default {
   div {
     background-color: $dark;
     box-sizing: border-box;
-    font-size: $size-12;
     height: $text;
     width: 99px;
     margin-left: 1px;

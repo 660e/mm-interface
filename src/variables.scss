@@ -3,7 +3,6 @@ $padding: $bit * 4;
 $text: $bit * 8;
 $avatar: $bit * 16;
 $tile: $bit * 24;
-$size-12: $bit * 6;
 $opacity: 0.5;
 $dark: rgba(0, 0, 0, $opacity);
 $border: rgba(255, 255, 255, $opacity);
@@ -29,6 +28,9 @@ hr {
 }
 .justify-end {
   justify-content: flex-end;
+}
+.align-center {
+  align-items: center;
 }
 .col {
   flex: 1;
@@ -60,12 +62,24 @@ hr {
 .w-500 {
   width: 500px;
 }
+.text-12 {
+  font-size: $bit * 6;
+}
 .text-positive {
-  color: #7cf1fb;
+  color: #7cf1fb !important;
+  * {
+    color: #7cf1fb !important;
+  }
 }
 .text-negative {
-  color: #fd8b8b;
+  color: #fd8b8b !important;
+  * {
+    color: #fd8b8b !important;
+  }
 }
 .text-info {
-  color: #a3a3a3;
+  color: #a3a3a3 !important;
+  * {
+    color: #a3a3a3 !important;
+  }
 }
