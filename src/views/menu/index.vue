@@ -42,6 +42,7 @@
   </div>
 
   <div v-if="scene === 0" class="w-500 bit-x"></div>
+  <menu-map v-if="scene === 1" />
   <menu-item v-if="scene === 3" />
   <menu-equip v-if="scene === 4" />
 
@@ -52,10 +53,11 @@
 import MenuActor from './actor.vue';
 import MenuEquip from './equip.vue';
 import MenuItem from './item.vue';
+import MenuMap from './map.vue';
 
 export default {
   name: 'scene-menu',
-  components: { MenuActor, MenuEquip, MenuItem },
+  components: { MenuActor, MenuEquip, MenuItem, MenuMap },
   data() {
     return {
       scene: 0

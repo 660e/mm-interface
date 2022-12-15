@@ -42,11 +42,14 @@
       <br />
       <q-text>武器</q-text>
       <q-banner :th="['名称', '持有数']" />
-      <q-text hoverable icon>卸下</q-text>
-      <q-text :icon="[0, 0]" between hoverable>
-        <span>{{ $d.equipments[0][0] }}</span>
-        <span>2</span>
-      </q-text>
+      <q-grid :grid="[10, 1]">
+        <q-text hoverable icon>卸下</q-text>
+        <q-text :icon="[0, 0]" between hoverable>
+          <span>{{ $d.equipments[0][0] }}</span>
+          <span>2</span>
+        </q-text>
+      </q-grid>
+      <hr />
     </q-window>
   </template>
 
