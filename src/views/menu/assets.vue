@@ -27,18 +27,37 @@
 
     <!-- 装备 -->
     <template v-if="!command">
-      <q-banner :th="['武器']" />
-      <q-text v-for="n in 5" :key="n" icon>
-        <span>{{ n }}</span>
+      <q-banner :th="['名称', '攻击', '属性/范围', '弹仓', '命中/会心', '耐久', '重量']" />
+      <q-text :icon="[0, 1]" class="table">
+        <span>{{ $d.equipments[1][0] }}</span>
+        <span>2000</span>
+        <span class="flex justify-end"><i class="type"></i><b>单体</b></span>
+        <span>48/62</span>
+        <span>30%/30%</span>
+        <span>135</span>
+        <span>15.00t</span>
       </q-text>
-      <q-banner :th="['C装置']" />
-      <q-text v-for="n in 3" :key="n" icon>
-        <span>{{ n }}</span>
+      <br />
+      <br />
+      <br />
+      <br />
+      <q-banner :th="['名称', '特性', '耐久', '重量']" />
+      <q-text :icon="[0, 1]" class="table">
+        <span>{{ $d.equipments[1][3] }}</span>
+        <span>会心一击</span>
+        <span>100</span>
+        <span>10.00t</span>
       </q-text>
-      <q-banner :th="['引擎']" />
-      <q-text v-for="n in 2" :key="n" icon>
-        <span>{{ n }}</span>
+      <br />
+      <br />
+      <q-banner :th="['名称', '载重', '耐久', '重量']" />
+      <q-text :icon="[0, 1]" class="table">
+        <span>{{ $d.equipments[1][4] }}</span>
+        <span>58.00t</span>
+        <span>100</span>
+        <span>10.00t</span>
       </q-text>
+      <br />
     </template>
 
     <!-- 货架 -->

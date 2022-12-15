@@ -102,3 +102,24 @@ hr {
 .hoverable:hover {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1 - 0.618));
 }
+.table {
+  padding-right: 0 !important;
+  & > span {
+    box-sizing: border-box;
+    text-align: right;
+    padding: 0 $text;
+    width: 100px;
+    &:nth-child(2) {
+      flex: 1;
+      text-align: left;
+      padding: 0 $text 0 0;
+      width: auto;
+    }
+  }
+}
+.type {
+  background-color: red;
+  height: $text;
+  width: $text;
+  margin-right: $padding;
+}
