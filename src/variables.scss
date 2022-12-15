@@ -39,8 +39,8 @@ hr {
 .column {
   flex-direction: column;
 }
-.bit-x {
-  margin: 0 $bit;
+.gap {
+  margin-right: $bit;
 }
 .padding-a {
   padding: $padding !important;
@@ -68,6 +68,9 @@ hr {
 }
 .w-500 {
   width: 500px;
+}
+.w-802 {
+  width: 802px;
 }
 .text-12 {
   font-size: $bit * 6;

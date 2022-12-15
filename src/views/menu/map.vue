@@ -1,5 +1,5 @@
 <template>
-  <q-window class="w-500 bit-x menu-map" :border="[0, 1, 0, 1]" />
+  <q-window class="w-500 gap menu-map" :border="[0, 1, 0, 1]" />
   <div class="w-300 flex justify-end">
     <q-window class="w-250" :border="[0, 0, 0, 1]">
       <br />

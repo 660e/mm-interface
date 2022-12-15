@@ -1,7 +1,7 @@
 <template>
   <!-- 角色 -->
   <template v-if="$store.getters.active === 'actor'">
-    <q-window class="w-500 bit-x" :border="[0, 1, 0, 1]">
+    <q-window class="w-500 gap" :border="[0, 1, 0, 1]">
       <br />
       <q-text>角色</q-text>
       <q-banner :th="['装备部位']" />
@@ -55,7 +55,7 @@
 
   <!-- 战车 -->
   <template v-if="$store.getters.active === 'tank'">
-    <q-window class="w-500 bit-x" :border="[0, 1, 0, 1]">
+    <q-window class="w-500 gap" :border="[0, 1, 0, 1]">
       <br />
       <q-text>战车</q-text>
       <q-banner :th="['装备部位']" />
