@@ -32,7 +32,7 @@ export default {
   height: $avatar;
   width: $avatar;
   &.focusable {
-    opacity: 1 - $opacity;
+    opacity: $opacity;
     &:hover {
       opacity: 1;
     }

@@ -20,7 +20,7 @@ export default {
 <style lang="scss" scoped>
 .q-window {
   background-color: $dark;
-  backdrop-filter: blur($bit * 2);
+  backdrop-filter: blur($bit);
   border: $border solid;
   box-sizing: border-box;
   padding: $padding $text;

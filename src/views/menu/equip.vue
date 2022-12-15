@@ -37,7 +37,7 @@
         </q-text>
       </q-grid>
     </q-window>
-    <q-window class="w-300">
+    <q-window class="w-300" :border="[0, 0, 0, 1]">
       <br />
       <q-text>武器</q-text>
       <q-banner :th="['名称', '持有数']" />
@@ -85,7 +85,7 @@
         </q-text>
       </q-grid>
     </q-window>
-    <q-window class="w-300 flex column">
+    <q-window class="w-300 flex column" :border="[0, 0, 0, 1]">
       <br />
       <q-text>大炮</q-text>
       <q-banner :th="['名称', '重量']" />

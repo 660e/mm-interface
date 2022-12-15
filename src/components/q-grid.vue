@@ -30,7 +30,7 @@ export default {
 .q-grid {
   display: grid;
   &.hoverable:hover {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1 - $opacity));
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, $opacity));
   }
 }
 </style>
