@@ -9,7 +9,7 @@
       <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="scene = 3" hoverable>道具</q-text></q-window>
       <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="scene = 4" hoverable>装备</q-text></q-window>
       <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="scene = 5" hoverable>状态</q-text></q-window>
-      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text>车库</q-text></q-window>
+      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="scene = 6" hoverable>车库</q-text></q-window>
       <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text>选项</q-text></q-window>
     </div>
     <div v-if="[3, 4, 5, 6].includes(scene)">

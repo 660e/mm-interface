@@ -1,11 +1,15 @@
 <template>
   <q-window class="w-500 gap" :border="[0, 1, 0, 1]">
     <br />
-    <q-text>{{ $d.actors[0][0] }}</q-text>
-    <q-text>赏金猎人</q-text>
     <div class="flex">
-      <div class="flex-center"><img src="@/assets/actor1.png" /></div>
       <div class="col">
+        <q-text>{{ $d.actors[0][0] }}</q-text>
+        <q-text>赏金猎人</q-text>
+        <div class="flex-center"><img src="@/assets/actor1.png" /></div>
+      </div>
+      <div class="col">
+        <br />
+        <br />
         <q-text between icon>
           <span>当前等级</span>
           <span>{{ $r(1, 99) }}</span>
