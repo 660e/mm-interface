@@ -6,6 +6,7 @@ $tile: $bit * 24;
 $opacity: 0.5;
 $dark: rgba(0, 0, 0, $opacity);
 $border: rgba(255, 255, 255, $opacity);
+$bg: url('@/assets/bg2.png');
 br {
   content: '';
   display: block;
@@ -82,4 +83,13 @@ hr {
   * {
     color: #a3a3a3 !important;
   }
+}
+.focusable {
+  opacity: 1 - 0.618;
+  &:hover {
+    opacity: 1;
+  }
+}
+.hoverable:hover {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1 - 0.618));
 }

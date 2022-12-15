@@ -31,11 +31,5 @@ export default {
 .q-avatar {
   height: $avatar;
   width: $avatar;
-  &.focusable {
-    opacity: $opacity;
-    &:hover {
-      opacity: 1;
-    }
-  }
 }
 </style>

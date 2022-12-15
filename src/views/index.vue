@@ -12,7 +12,8 @@ export default {
 
 <style lang="scss" scoped>
 .app-index {
-  background: url('@/assets/bg2.png') no-repeat center center;
+  background: no-repeat center center;
+  background-image: $bg;
   height: $tile * 13;
   width: $tile * 23;
   display: flex;

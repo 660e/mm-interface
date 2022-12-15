@@ -49,9 +49,6 @@ export default {
   &.end {
     justify-content: flex-end;
   }
-  &.hoverable:hover {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, $opacity));
-  }
   &.icon {
     padding-left: $text * 2 + $padding;
     & > i {
