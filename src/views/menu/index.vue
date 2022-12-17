@@ -36,10 +36,14 @@
       <br />
       <br />
       <q-window class="padding-a" :border="[1, 1, 1, 1]">
-        <q-avatar v-show="[3].includes(scene)" :icon="[0, 2]" @click="$store.commit('active', 'item')" focusable />
-        <q-avatar v-show="[3].includes(scene)" :icon="[1, 2]" @click="$store.commit('active', 'important')" focusable />
-        <q-avatar v-show="[4, 5].includes(scene)" v-for="n in 3" :key="n" :icon="[n - 1, 0]" @click="$store.commit('active', 'actor')" focusable />
-        <q-avatar v-show="[3, 4, 6].includes(scene)" v-for="n in 4" :key="n" :icon="[n - 1, 1]" @click="$store.commit('active', 'tank')" focusable />
+        <q-avatar v-if="[3].includes(scene)" :icon="[0, 2]" @click="$store.commit('active', 'item')" focusable />
+        <q-avatar v-if="[3].includes(scene)" :icon="[1, 2]" @click="$store.commit('active', 'important')" focusable />
+        <template v-if="[4, 5].includes(scene)">
+          <q-avatar v-for="n in 3" :key="n" :icon="[n - 1, 0]" @click="$store.commit('active', 'actor')" focusable />
+        </template>
+        <template v-if="[3, 4, 6].includes(scene)">
+          <q-avatar v-for="n in 4" :key="n" :icon="[n - 1, 1]" @click="$store.commit('active', 'tank')" focusable />
+        </template>
       </q-window>
     </div>
   </div>
