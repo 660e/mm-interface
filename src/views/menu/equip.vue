@@ -22,11 +22,11 @@
       <q-grid :grid="[1, 2]" hoverable>
         <q-text>足</q-text><q-text :icon="[4, 0]">{{ $d.equipments[0][4] }}</q-text>
       </q-grid>
-      <br />
-      <br />
       <q-grid :grid="[1, 2]" hoverable>
         <q-text>饰</q-text><q-text :icon="[5, 0]">{{ $d.equipments[0][5] }}</q-text>
       </q-grid>
+      <br />
+      <br />
       <q-banner :th="['装备说明']" />
       <q-grid :grid="[4, 2]" column>
         <q-text v-for="(d, i) in $d.dicts[0]" :key="i" between icon>
@@ -60,25 +60,25 @@
       <q-text>战车</q-text>
       <q-banner :th="['装备部位']" />
       <q-grid :grid="[1, 2]" hoverable>
-        <q-text>大炮</q-text><q-text :icon="[0, 1]">{{ $d.equipments[1][0] }}</q-text>
+        <q-text>加农炮</q-text><q-text :icon="[0, 1]">{{ $d.equipments[1][0] }}</q-text>
       </q-grid>
       <q-grid :grid="[1, 2]" hoverable>
         <q-text>机枪</q-text><q-text :icon="[1, 1]">{{ $d.equipments[1][1] }}</q-text>
       </q-grid>
       <q-grid :grid="[1, 2]" hoverable>
-        <q-text>S-E</q-text><q-text :icon="[2, 1]">{{ $d.equipments[1][2] }}</q-text>
+        <q-text>特殊装备</q-text><q-text :icon="[2, 1]">{{ $d.equipments[1][2] }}</q-text>
       </q-grid>
       <br />
       <br />
       <q-grid :grid="[1, 2]" hoverable>
-        <q-text>C装置</q-text><q-text :icon="[3, 1]">{{ $d.equipments[1][3] }}</q-text>
+        <q-text>控制装置</q-text><q-text :icon="[3, 1]">{{ $d.equipments[1][3] }}</q-text>
       </q-grid>
-      <br />
       <br />
       <br />
       <q-grid :grid="[1, 2]" hoverable>
         <q-text>引擎</q-text><q-text :icon="[4, 1]">{{ $d.equipments[1][4] }}</q-text>
       </q-grid>
+      <br />
       <q-banner :th="['装备说明']" />
       <q-grid :grid="[5, 2]" column>
         <q-text v-for="(d, i) in $d.dicts[3]" :key="i" between icon>
@@ -92,7 +92,7 @@
     </q-window>
     <q-window class="w-300 flex column" :border="[0, 0, 0, 1]">
       <br />
-      <q-text>大炮</q-text>
+      <q-text>加农炮</q-text>
       <q-banner :th="['名称', '重量']" />
       <q-grid :grid="[10, 1]">
         <q-text hoverable icon>卸下</q-text>
