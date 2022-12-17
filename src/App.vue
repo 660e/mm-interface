@@ -11,7 +11,10 @@
 export default {
   data() {
     return {
-      nav: [{ label: '菜单', path: '/menu' }]
+      nav: [
+        { label: '菜单', path: '/menu' },
+        { label: '装备店/道具店', path: '/shop' }
+      ]
     };
   }
 };

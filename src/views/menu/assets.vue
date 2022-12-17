@@ -87,7 +87,7 @@
 
   <q-window v-if="command" class="w-300" :border="[0, 0, 0, 1]">
     <br />
-    <q-text between><span>备用炮弹</span><span>50/128</span></q-text>
+    <q-text between><span>备用弹仓</span><span>50/128</span></q-text>
     <q-banner :th="['名称', '持有数']" />
     <q-text v-for="i in $d.items[2]" :key="i" between icon>
       <span>{{ i }}</span>

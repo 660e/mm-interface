@@ -55,7 +55,7 @@ export default {
   },
   data() {
     return {
-      scene: 6
+      scene: 0
     };
   }
 };

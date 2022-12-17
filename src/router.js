@@ -10,6 +10,10 @@ export default createRouter({
         {
           path: 'menu',
           component: () => import('@/views/menu')
+        },
+        {
+          path: 'shop',
+          component: () => import('@/views/shop/shop.vue')
         }
       ]
     }
