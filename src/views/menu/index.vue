@@ -31,7 +31,7 @@
       <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="scene = 6" hoverable>车库</q-text></q-window>
       <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text>选项</q-text></q-window>
     </div>
-    <div v-if="[3, 4, 5, 6].includes(scene)">
+    <div v-if="[3, 4, 5, 6].includes(scene)" class="options">
       <br />
       <br />
       <br />
@@ -79,12 +79,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.q-window > .q-avatar {
-  margin-bottom: $padding;
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-</style>

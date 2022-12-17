@@ -136,3 +136,9 @@ hr {
   top: 0;
   left: 0;
 }
+.options > .q-window > .q-avatar {
+  margin-bottom: $padding;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
