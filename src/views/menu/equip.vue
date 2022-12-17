@@ -33,7 +33,7 @@
       <q-grid :grid="[3, 2]" column>
         <q-text v-for="(d, i) in $d.dicts[0]" :key="i" between icon>
           <span>{{ d }}</span>
-          <span :class="{ 'text-positive': [1].includes(i), 'text-negative': [0, 2, 3].includes(i) }" class="flex align-center">
+          <span :class="{ 'text-positive': [1].includes(i), 'text-negative': [0, 2, 3].includes(i) }">
             {{ $d.dicts[2][i] ? `(${$d.dicts[2][i]})` : '' }}{{ $d.dicts[1][i] }}
           </span>
         </q-text>
@@ -86,7 +86,7 @@
       <q-grid :grid="[3, 2]" column>
         <q-text v-for="(d, i) in $d.dicts[3]" :key="i" between icon>
           <span>{{ d }}</span>
-          <span :class="{ 'text-positive': [5].includes(i), 'text-negative': [0, 4].includes(i) }" class="flex align-center">
+          <span :class="{ 'text-positive': [5].includes(i), 'text-negative': [0, 4].includes(i) }">
             {{ $d.dicts[5][i] ? `(${$d.dicts[5][i]})` : '' }}{{ $d.dicts[4][i] }}
           </span>
         </q-text>

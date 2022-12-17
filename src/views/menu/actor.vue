@@ -24,6 +24,9 @@
 
 <script>
 export default {
-  name: 'menu-actor'
+  name: 'menu-actor',
+  props: {
+    compare: Boolean
+  }
 };
 </script>
