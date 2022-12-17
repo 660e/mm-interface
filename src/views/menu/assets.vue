@@ -27,13 +27,13 @@
 
     <!-- 装备 -->
     <template v-if="!command">
-      <q-banner :th="['名称', '攻击', '属性/范围', '弹仓', '命中/会心', '耐久', '重量']" />
+      <q-banner :th="['名称', '攻击', '范围', '弹仓', '命中', '耐久', '重量']" />
       <q-text :icon="[0, 1]" class="table">
         <span>{{ $d.equipments[1][0] }}</span>
         <span>800</span>
         <span class="flex justify-end"><i class="type"></i><b>单体</b></span>
         <span>48/62</span>
-        <span>30%/30%</span>
+        <span>30%</span>
         <span>86</span>
         <span>10.00t</span>
       </q-text>
@@ -42,7 +42,7 @@
         <span>400</span>
         <span class="flex justify-end"><i class="type"></i><b>全体</b></span>
         <span>∞</span>
-        <span>30%/30%</span>
+        <span>30%</span>
         <span>45</span>
         <span>3.00t</span>
       </q-text>
@@ -51,7 +51,7 @@
         <span>760</span>
         <span class="flex justify-end"><i class="type"></i><b>全体</b></span>
         <span>10/16</span>
-        <span>30%/30%</span>
+        <span>30%</span>
         <span>600</span>
         <span>11.00t</span>
       </q-text>
