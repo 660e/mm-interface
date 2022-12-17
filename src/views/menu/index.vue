@@ -1,4 +1,23 @@
 <template>
+  <div v-if="scene" class="scene">
+    {{
+      (() => {
+        switch (scene) {
+          case 1:
+            return '地图';
+          case 3:
+            return '道具';
+          case 4:
+            return '装备';
+          case 5:
+            return '状态';
+          case 6:
+            return '车库';
+        }
+      })()
+    }}
+  </div>
+
   <div class="w-300 gap flex">
     <div class="col">
       <br />
