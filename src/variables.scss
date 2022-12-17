@@ -53,6 +53,11 @@ hr {
 }
 .w-150 {
   width: 150px;
+  transition: width 0.2s;
+  & > .q-text {
+    padding-left: $text;
+    transition: padding-left 0.2s;
+  }
   &:hover {
     width: 150px + $text;
     & > .q-text {
