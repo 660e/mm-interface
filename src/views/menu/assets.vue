@@ -78,7 +78,7 @@
     <!-- 货架 -->
     <template v-if="command">
       <q-banner :th="['名称', '重量']" />
-      <q-text v-for="n in 10" :key="n" between icon>
+      <q-text v-for="n in 12" :key="n" between icon>
         <span>{{ $d.items[1][n - 1] || n }}</span>
         <span>{{ $r(1, 5) }}.00t</span>
       </q-text>
