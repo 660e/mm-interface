@@ -24,7 +24,7 @@ export default {
     background-color: $dark;
     box-sizing: border-box;
     height: $text;
-    width: 99px;
+    width: 89px;
     margin-left: 1px;
     padding: 0 $text 0 0;
     display: flex;

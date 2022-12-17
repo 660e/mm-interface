@@ -35,6 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 .q-text {
+  box-sizing: border-box;
   min-height: $text;
   font-size: $text;
   padding: $padding $text;

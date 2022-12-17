@@ -31,7 +31,7 @@ export default {
 }
 .app {
   background-color: #1d1d1d;
-  font-family: consolas, monaco, 'microsoft yahei';
+  font-family: kaiti;
   height: 100vh;
   display: flex;
   justify-content: center;
