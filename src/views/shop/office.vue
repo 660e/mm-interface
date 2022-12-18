@@ -22,7 +22,7 @@
     <q-grid :grid="[10, 1]">
       <q-text v-for="w in $d.wanted" :key="w" between hoverable>
         <span>{{ w }}</span>
-        <span>{{ $r(10000, 500000) }}</span>
+        <span>{{ $r(10000, 500000) }}G</span>
       </q-text>
     </q-grid>
     <q-banner :th="['详细情报']" />
@@ -37,7 +37,7 @@
     <q-banner :th="['信物', '赏金']" />
     <q-text v-for="i in $d.items[3]" :key="i" between hoverable>
       <span>{{ i }}</span>
-      <span>{{ $r(10000, 500000) }}</span>
+      <span>{{ $r(10000, 500000) }}G</span>
     </q-text>
   </q-window>
 
@@ -57,7 +57,7 @@
     <q-text>Quisquam ab ea harum rerum?</q-text>
   </q-window>
 
-  <menu-actor v-if="[2].includes(command)" />
+  <menu-actor v-if="command === 2" />
 </template>
 
 <script>

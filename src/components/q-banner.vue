@@ -1,5 +1,5 @@
 <template>
-  <div class="q-banner">
+  <div class="q-banner" :class="{ extend }">
     <div v-for="t in th" :key="t" class="text-info text-12">{{ t }}</div>
   </div>
 </template>
@@ -11,7 +11,8 @@ export default {
     th: {
       type: Array,
       default: () => ['-']
-    }
+    },
+    extend: Boolean
   }
 };
 </script>
@@ -20,7 +21,7 @@ export default {
 .q-banner {
   padding: $padding 0;
   display: flex;
-  div {
+  & > div {
     background-color: $dark;
     box-sizing: border-box;
     height: $text;
@@ -37,6 +38,9 @@ export default {
       margin-left: 0;
       width: auto;
     }
+  }
+  &.extend > div:last-child {
+    width: 130px;
   }
 }
 </style>

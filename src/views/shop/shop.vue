@@ -15,9 +15,9 @@
       <br />
       <br />
       <q-window class="padding-a" :border="[1, 1, 1, 1]">
-        <q-avatar :icon="[0, 2]" @click="$store.commit('active', 'item')" focusable />
-        <q-avatar :icon="[1, 2]" @click="$store.commit('active', 'important')" focusable />
-        <q-avatar v-for="n in 4" :key="n" :icon="[n - 1, 1]" @click="$store.commit('active', 'tank')" focusable />
+        <q-avatar :icon="[0, 2]" focusable />
+        <q-avatar :icon="[1, 2]" focusable />
+        <q-avatar v-for="n in 4" :key="n" :icon="[n - 1, 1]" focusable />
       </q-window>
     </div>
   </div>
@@ -30,7 +30,7 @@
     <q-grid :grid="[10, 1]">
       <q-text v-for="i in $d.items[1]" :key="i" between icon hoverable>
         <span>{{ i }}</span>
-        <span>{{ $r(1000, 5000) }}</span>
+        <span>{{ $r(1000, 5000) }}G</span>
       </q-text>
       <q-text v-for="e in $d.equipments[1]" :key="e" between icon hoverable>
         <span>{{ e }}</span>

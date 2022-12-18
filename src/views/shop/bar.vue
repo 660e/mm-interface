@@ -14,13 +14,13 @@
 
   <div v-if="command === 0" class="w-500 gap"></div>
 
-  <q-window v-if="command" class="w-500 gap" :border="[0, 1, 0, 1]">
+  <q-window v-if="command === 1" class="w-500 gap" :border="[0, 1, 0, 1]">
     <br />
     <q-text>全部饮料</q-text>
     <q-banner :th="['名称', '价格']" />
     <q-text v-for="d in $d.drinks" :key="d" between hoverable>
       <span>{{ d }}</span>
-      <span>{{ $r(10, 50) }}</span>
+      <span>{{ $r(10, 50) }}G</span>
     </q-text>
   </q-window>
 
