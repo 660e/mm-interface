@@ -22,6 +22,10 @@ export default createRouter({
         {
           path: 'bar',
           component: () => import('@/views/shop/bar.vue')
+        },
+        {
+          path: 'office',
+          component: () => import('@/views/shop/office.vue')
         }
       ]
     }

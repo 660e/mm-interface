@@ -12,6 +12,8 @@
     </div>
   </div>
 
+  <div v-if="command === 0" class="w-500 gap"></div>
+
   <q-window v-if="command" class="w-500 gap" :border="[0, 1, 0, 1]">
     <br />
     <q-text>全部饮料</q-text>
@@ -21,7 +23,6 @@
       <span>{{ $r(10, 50) }}</span>
     </q-text>
   </q-window>
-  <div v-else class="w-500 gap"></div>
 
   <menu-actor />
 </template>
