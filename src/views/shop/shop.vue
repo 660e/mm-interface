@@ -26,7 +26,7 @@
     <br />
     <q-text>{{ command ? '道具/装备/战车' : '全部商品' }}</q-text>
     <q-banner :th="['名称', '价格']" />
-    <q-grid :grid="[12, 1]">
+    <q-grid :grid="[10, 1]">
       <q-text v-for="i in $d.items[1]" :key="i" between icon hoverable>
         <span>{{ i }}</span>
         <span>{{ $r(1000, 5000) }}</span>
@@ -37,7 +37,7 @@
       </q-text>
     </q-grid>
     <q-banner :th="['装备说明']" />
-    <q-grid :grid="[3, 2]" column>
+    <q-grid :grid="[5, 2]" column>
       <q-text v-for="(d, i) in $d.dicts[3]" :key="i" between icon>
         <span>{{ d }}</span>
         <span>{{ $d.dicts[4][i] }}</span>

@@ -5,8 +5,8 @@
       <div>
         <q-text>{{ $d.actors[1][3] }}</q-text>
         <q-text>梅卡瓦主战坦克</q-text>
-        <div class="flex" style="width: 336px">
-          <div style="width: 130px">
+        <div class="flex" style="width: 346px">
+          <div style="width: 120px">
             <br />
             <q-text @click="command = 0" style="width: 100px" hoverable icon>装备</q-text>
             <q-text @click="command = 1" style="width: 100px" hoverable icon>货架</q-text>
@@ -27,13 +27,13 @@
 
     <!-- 装备 -->
     <template v-if="!command">
-      <q-banner :th="['名称', '攻击', '范围', '弹仓', '命中', '耐久', '重量']" />
+      <q-banner :th="['名称', '攻击', '属性/范围', '弹仓', '命中/会心', '耐久', '重量']" />
       <q-text :icon="[0, 1]" class="table">
         <span>{{ $d.equipments[1][0] }}</span>
         <span>800</span>
         <span class="flex justify-end"><i class="type"></i><b>单体</b></span>
         <span>48/62</span>
-        <span>30%</span>
+        <span>30%/15%</span>
         <span>86</span>
         <span>10.00t</span>
       </q-text>
@@ -42,7 +42,7 @@
         <span>400</span>
         <span class="flex justify-end"><i class="type"></i><b>全体</b></span>
         <span>∞</span>
-        <span>30%</span>
+        <span>30%/15%</span>
         <span>45</span>
         <span>3.00t</span>
       </q-text>
@@ -51,14 +51,14 @@
         <span>760</span>
         <span class="flex justify-end"><i class="type"></i><b>全体</b></span>
         <span>10/16</span>
-        <span>30%</span>
+        <span>30%/15%</span>
         <span>600</span>
         <span>11.00t</span>
       </q-text>
       <br />
       <br />
       <q-banner :th="['名称', '耐久', '重量']" />
-      <q-text :icon="[0, 1]" class="table">
+      <q-text :icon="[3, 1]" class="table">
         <span>{{ $d.equipments[1][3] }}</span>
         <span>100</span>
         <span>10.00t</span>
@@ -66,7 +66,7 @@
       <br />
       <br />
       <q-banner :th="['名称', '载重', '耐久', '重量']" />
-      <q-text :icon="[0, 1]" class="table">
+      <q-text :icon="[4, 1]" class="table">
         <span>{{ $d.equipments[1][4] }}</span>
         <span>58.00t</span>
         <span>100</span>
@@ -77,11 +77,16 @@
 
     <!-- 货架 -->
     <template v-if="command">
-      <q-banner :th="['名称', '重量']" />
-      <q-text v-for="n in 12" :key="n" between icon>
-        <span>{{ $d.items[1][n - 1] || n }}</span>
-        <span>{{ $r(1, 5) }}.00t</span>
-      </q-text>
+      <div class="flex">
+        <div class="col">
+          <q-banner :th="['名称']" />
+          <q-text v-for="n in 12" :key="n" icon>{{ $d.items[1][n - 1] || n }}</q-text>
+        </div>
+        <div class="col padding-l">
+          <q-banner :th="['名称']" />
+          <q-text v-for="n in 12" :key="n" icon>{{ n + 12 }}</q-text>
+        </div>
+      </div>
     </template>
   </q-window>
 

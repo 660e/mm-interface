@@ -10,7 +10,6 @@
       </q-grid>
       <br />
       <br />
-      <br />
       <q-grid :grid="[1, 2]" hoverable>
         <q-text>头</q-text><q-text :icon="[1, 0]">{{ $d.equipments[0][1] }}</q-text>
       </q-grid>
@@ -28,12 +27,11 @@
         <q-text>饰</q-text><q-text :icon="[5, 0]">{{ $d.equipments[0][5] }}</q-text>
       </q-grid>
       <br />
-      <br />
       <q-banner :th="['装备说明']" />
-      <q-grid :grid="[3, 2]" column>
+      <q-grid :grid="[3, 2]">
         <q-text v-for="(d, i) in $d.dicts[0]" :key="i" between icon>
           <span>{{ d }}</span>
-          <span :class="{ 'text-positive': [1].includes(i), 'text-negative': [0, 2, 3].includes(i) }">
+          <span :class="{ 'text-positive': [3].includes(i), 'text-negative': [0, 4].includes(i) }">
             {{ $d.dicts[2][i] ? `(${$d.dicts[2][i]})` : '' }}{{ $d.dicts[1][i] }}
           </span>
         </q-text>
@@ -43,7 +41,7 @@
       <br />
       <q-text>武器</q-text>
       <q-banner :th="['名称', '持有数']" />
-      <q-grid :grid="[12, 1]">
+      <q-grid :grid="[10, 1]">
         <q-text hoverable icon>卸下</q-text>
         <q-text :icon="[0, 0]" between hoverable>
           <span>{{ $d.equipments[0][0] }}</span>
@@ -71,11 +69,9 @@
       </q-grid>
       <br />
       <br />
-      <br />
       <q-grid :grid="[1, 2]" hoverable>
         <q-text>控制装置</q-text><q-text :icon="[3, 1]">{{ $d.equipments[1][3] }}</q-text>
       </q-grid>
-      <br />
       <br />
       <br />
       <q-grid :grid="[1, 2]" hoverable>
@@ -83,10 +79,10 @@
       </q-grid>
       <br />
       <q-banner :th="['装备说明']" />
-      <q-grid :grid="[3, 2]" column>
+      <q-grid :grid="[5, 2]" column>
         <q-text v-for="(d, i) in $d.dicts[3]" :key="i" between icon>
           <span>{{ d }}</span>
-          <span :class="{ 'text-positive': [5].includes(i), 'text-negative': [0, 4].includes(i) }">
+          <span :class="{ 'text-positive': [8].includes(i), 'text-negative': [0, 1, 5].includes(i) }">
             {{ $d.dicts[5][i] ? `(${$d.dicts[5][i]})` : '' }}{{ $d.dicts[4][i] }}
           </span>
         </q-text>
@@ -96,7 +92,7 @@
       <br />
       <q-text>加农炮</q-text>
       <q-banner :th="['名称', '重量']" />
-      <q-grid :grid="[12, 1]">
+      <q-grid :grid="[10, 1]">
         <q-text hoverable icon>卸下</q-text>
         <q-text :icon="[0, 1]" between hoverable>
           <span>{{ $d.equipments[1][0] }}</span>
