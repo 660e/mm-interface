@@ -6,11 +6,11 @@
       <br />
       <br />
       <br />
-      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="command = 0" hoverable>买</q-text></q-window>
-      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="command = 1" hoverable>卖</q-text></q-window>
-      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text>离开商店</q-text></q-window>
+      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="command = 1" hoverable>买</q-text></q-window>
+      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="command = 2" hoverable>卖</q-text></q-window>
+      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="command = 0" hoverable>离开商店</q-text></q-window>
     </div>
-    <div v-if="command" class="options">
+    <div v-if="command === 2" class="options">
       <br />
       <br />
       <br />
@@ -22,9 +22,10 @@
     </div>
   </div>
 
-  <q-window class="w-500 gap" :border="[0, 1, 0, 1]">
+  <q-window v-if="command" class="w-500 gap" :border="[0, 1, 0, 1]">
     <br />
-    <q-text>{{ command ? '道具/装备/战车' : '全部商品' }}</q-text>
+    <q-text v-if="command === 1">全部商品</q-text>
+    <q-text v-if="command === 2">道具/装备/战车</q-text>
     <q-banner :th="['名称', '价格']" />
     <q-grid :grid="[10, 1]">
       <q-text v-for="i in $d.items[1]" :key="i" between icon hoverable>
@@ -44,16 +45,14 @@
       </q-text>
     </q-grid>
   </q-window>
+  <div v-else class="w-500 gap"></div>
 
-  <menu-actor compare />
+  <menu-actor :compare="!!command" />
 </template>
 
 <script>
-import MenuActor from '../menu/actor.vue';
-
 export default {
   name: 'scene-shop',
-  components: { MenuActor },
   data() {
     return {
       command: 0

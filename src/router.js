@@ -14,6 +14,14 @@ export default createRouter({
         {
           path: 'shop',
           component: () => import('@/views/shop/shop.vue')
+        },
+        {
+          path: 'inn',
+          component: () => import('@/views/shop/inn.vue')
+        },
+        {
+          path: 'bar',
+          component: () => import('@/views/shop/bar.vue')
         }
       ]
     }

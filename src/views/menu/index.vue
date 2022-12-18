@@ -59,7 +59,6 @@
 </template>
 
 <script>
-import MenuActor from './actor.vue';
 import MenuAssets from './assets.vue';
 import MenuEquip from './equip.vue';
 import MenuItem from './item.vue';
@@ -69,7 +68,6 @@ import MenuStatus from './status.vue';
 export default {
   name: 'scene-menu',
   components: {
-    MenuActor,
     MenuAssets,
     MenuEquip,
     MenuItem,

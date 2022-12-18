@@ -13,7 +13,9 @@ export default {
     return {
       nav: [
         { label: '菜单', path: '/menu' },
-        { label: '装备店/道具店', path: '/shop' }
+        { label: '装备店/道具店', path: '/shop' },
+        { label: '旅馆', path: '/inn' },
+        { label: '酒吧', path: '/bar' }
       ]
     };
   }
