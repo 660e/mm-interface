@@ -26,9 +26,7 @@
       </q-text>
     </q-grid>
     <q-banner :th="['详细情报']" />
-    <q-text>Lorem ipsum dolor sit amet.</q-text>
-    <q-text>Magnam, dolores molestias praesentium maxime.</q-text>
-    <q-text>Quisquam ab ea harum rerum?</q-text>
+    <q-text>详细情报...</q-text>
   </q-window>
 
   <q-window v-if="command === 2" class="w-500 gap" :border="[0, 1, 0, 1]">
@@ -46,15 +44,10 @@
     <q-text>委托任务</q-text>
     <q-banner :th="['名称']" />
     <q-grid :grid="[10, 1]">
-      <q-text hoverable>Lorem, ipsum, dolor.</q-text>
-      <q-text hoverable>Atque vitae, eligendi.</q-text>
-      <q-text hoverable>Id, iusto, consequatur.</q-text>
-      <q-text hoverable>Vel inventore, veniam.</q-text>
+      <q-text v-for="n in 5" :key="n" hoverable>任务-{{ n }}</q-text>
     </q-grid>
     <q-banner :th="['详细信息']" />
-    <q-text>Lorem ipsum dolor sit amet.</q-text>
-    <q-text>Magnam, dolores molestias praesentium maxime.</q-text>
-    <q-text>Quisquam ab ea harum rerum?</q-text>
+    <q-text>详细信息...</q-text>
   </q-window>
 
   <menu-actor v-if="command === 2" />

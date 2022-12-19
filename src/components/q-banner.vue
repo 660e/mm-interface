@@ -40,7 +40,7 @@ export default {
     }
   }
   &.extend > div:last-child {
-    width: 130px;
+    width: 150px;
   }
 }
 </style>

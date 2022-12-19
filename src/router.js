@@ -30,6 +30,10 @@ export default createRouter({
         {
           path: 'supply',
           component: () => import('@/views/shop/supply.vue')
+        },
+        {
+          path: 'repair',
+          component: () => import('@/views/shop/repair.vue')
         }
       ]
     }
