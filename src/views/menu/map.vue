@@ -1,32 +1,41 @@
 <template>
-  <q-window class="w-500 gap menu-map" :border="[0, 1, 0, 1]" />
+  <q-window class="w-500 gap menu-map" :border="[0, 1, 0, 1]"><b></b></q-window>
   <div class="w-300 flex justify-end">
     <q-window class="w-250" :border="[0, 0, 0, 1]">
       <br />
       <q-text>犬系统</q-text>
       <q-banner :th="['地点']" />
-      <q-text v-for="n in 10" :key="n" hoverable>村镇-{{ n }}</q-text>
+      <q-text v-for="n in 10" :key="n" @click="content = [null, [`移动到村镇-${n}`], ['是', '否']]" hoverable>村镇-{{ n }}</q-text>
       <hr />
     </q-window>
   </div>
+  <q-popup :content="content" @selected="content = []" />
 </template>
 
 <script>
 export default {
-  name: 'menu-map'
+  name: 'menu-map',
+  data() {
+    return {
+      content: []
+    };
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .menu-map {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  &::before {
+  flex-direction: column;
+  & > b {
     flex: 1;
+    background-color: $dark;
+  }
+  &::before,
+  &::after {
     content: '';
-    background-color: #000;
-    height: $avatar * 15;
+    display: block;
+    height: $avatar * 2 + $padding;
   }
 }
 </style>

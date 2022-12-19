@@ -10,12 +10,13 @@ import QAvatar from '@/components/q-avatar.vue';
 import QBanner from '@/components/q-banner.vue';
 import QBar from '@/components/q-bar.vue';
 import QGrid from '@/components/q-grid.vue';
+import QPopup from '@/components/q-popup.vue';
 import QText from '@/components/q-text.vue';
 import QWindow from '@/components/q-window.vue';
 
 import MenuActor from '@/views/menu/actor.vue';
 
-const components = [QAvatar, QBanner, QBar, QGrid, QText, QWindow, MenuActor];
+const components = [QAvatar, QBanner, QBar, QGrid, QPopup, QText, QWindow, MenuActor];
 
 components.forEach(c => app.component(c.name, c));
 
