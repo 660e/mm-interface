@@ -43,7 +43,7 @@ export default {
     width: 300px;
     text-align: center;
     h4 {
-      font-size: 24px;
+      font-size: 20px;
     }
     .q-text {
       justify-content: center;
