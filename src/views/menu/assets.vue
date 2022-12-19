@@ -9,7 +9,7 @@
           <div style="width: 120px">
             <br />
             <q-text @click="command = 0" style="width: 100px" hoverable icon>装备</q-text>
-            <q-text @click="command = 1" style="width: 100px" hoverable icon>货架</q-text>
+            <q-text @click="command = 1" style="width: 100px" hoverable icon>货仓</q-text>
           </div>
           <div class="flex-center"><img src="@/assets/tank3.png" /></div>
         </div>
@@ -75,7 +75,7 @@
       <br />
     </template>
 
-    <!-- 货架 -->
+    <!-- 货仓 -->
     <template v-if="command">
       <div class="flex">
         <div class="col">

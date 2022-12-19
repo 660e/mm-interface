@@ -34,6 +34,10 @@ export default createRouter({
         {
           path: 'repair',
           component: () => import('@/views/shop/repair.vue')
+        },
+        {
+          path: 'upgrade',
+          component: () => import('@/views/shop/upgrade.vue')
         }
       ]
     }
