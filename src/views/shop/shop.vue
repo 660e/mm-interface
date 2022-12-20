@@ -24,20 +24,28 @@
 
   <q-window v-if="command" class="w-500 gap" :border="[0, 1, 0, 1]">
     <br />
-    <q-text v-if="command === 1">全部商品</q-text>
-    <q-text v-if="command === 2">道具/装备/战车</q-text>
-    <q-banner :th="['名称', '价格']" />
+    <template v-if="command === 1">
+      <q-text>全部商品</q-text>
+      <q-banner :th="['名称', '贩卖价格']" />
+    </template>
+    <template v-if="command === 2">
+      <q-text>道具/装备/战车</q-text>
+      <q-banner :th="['名称', '出售价格']" />
+    </template>
     <q-grid :grid="[10, 1]">
-      <q-text v-for="i in $d.items[1]" :key="i" between icon hoverable>
-        <span>{{ i }}</span>
-        <span>{{ $r(1000, 5000) }}G</span>
-      </q-text>
-      <q-text v-for="e in $d.equipments[1]" :key="e" between icon hoverable>
+      <q-text
+        v-for="e in $d.equipments[1]"
+        :key="e"
+        @click="content = [e, ['购买数量：10', '总计金额：1000000G', '要购买吗？'], ['是', '否']]"
+        between
+        icon
+        hoverable
+      >
         <span>{{ e }}</span>
         <span>{{ $r(10000, 100000) }}G</span>
       </q-text>
     </q-grid>
-    <q-banner :th="['装备说明']" />
+    <q-banner :th="['说明']" />
     <q-grid :grid="[5, 2]" column>
       <q-text v-for="(d, i) in $d.dicts[3]" :key="i" between icon>
         <span>{{ d }}</span>
@@ -48,6 +56,7 @@
   <div v-else class="w-500 gap"></div>
 
   <menu-actor :compare="!!command" />
+  <q-popup :content="content" @selected="content = []" />
 </template>
 
 <script>
@@ -55,7 +64,8 @@ export default {
   name: 'scene-shop',
   data() {
     return {
-      command: 0
+      command: 0,
+      content: []
     };
   }
 };
