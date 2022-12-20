@@ -5,7 +5,7 @@
       <br />
       <q-text>犬系统</q-text>
       <q-banner :th="['地点']" />
-      <q-text v-for="n in 12" :key="n" @click="content = [null, [`要移动到村镇-${n}吗？`], ['是', '否']]" hoverable>村镇-{{ n }}</q-text>
+      <q-text v-for="n in 12" :key="n" @click="content = [null, [`移动到村镇-${n}`], ['是', '否']]" hoverable>村镇-{{ n }}</q-text>
       <hr />
     </q-window>
   </div>

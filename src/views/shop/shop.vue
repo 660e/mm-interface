@@ -36,7 +36,7 @@
       <q-text
         v-for="e in $d.equipments[1]"
         :key="e"
-        @click="content = [e, ['购买数量：10', '总计金额：1000000G', '要购买吗？'], ['是', '否']]"
+        @click="content = [e, ['购买数量：10', '总计金额：1000000G'], ['是', '否']]"
         between
         icon
         hoverable

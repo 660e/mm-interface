@@ -7,7 +7,7 @@
       <br />
       <br />
       <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="command = 1" hoverable>喝一杯</q-text></q-window>
-      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text>闲聊</q-text></q-window>
+      <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text hoverable>闲聊</q-text></q-window>
       <q-window class="w-150 padding-b" :border="[1, 1, 1, 0]" dense><q-text @click="command = 0" hoverable>离开酒吧</q-text></q-window>
     </div>
   </div>
