@@ -40,7 +40,7 @@ export default {
   justify-content: center;
   align-items: center;
   & > .q-window {
-    width: 300px;
+    width: 350px;
     text-align: center;
     h4 {
       font-size: 20px;
@@ -58,7 +58,7 @@ export default {
         border: 1px $border solid;
         box-sizing: border-box;
         height: $avatar;
-        width: 50%;
+        width: 130px;
         margin-bottom: $padding;
         display: flex;
         justify-content: center;

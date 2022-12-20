@@ -8,7 +8,7 @@
         <div class="flex" style="width: 346px">
           <div style="width: 120px">
             <br />
-            <q-text @click="command = 0" style="width: 100px" hoverable icon>装备</q-text>
+            <q-text @click="command = 0" style="width: 100px" hoverable icon>总览</q-text>
             <q-text @click="command = 1" style="width: 100px" hoverable icon>货仓</q-text>
           </div>
           <div class="flex-center"><img src="@/assets/tank3.png" /></div>
@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <!-- 装备 -->
+    <!-- 总览 -->
     <template v-if="!command">
       <q-banner :th="['名称', '攻击', '属性/范围', '弹仓', '命中/会心', '耐久', '重量']" />
       <q-text :icon="[0, 1]" class="table">

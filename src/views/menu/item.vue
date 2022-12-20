@@ -12,13 +12,13 @@
           <span>{{ $r(1, 10) }}</span>
         </q-text>
       </q-grid>
-      <q-banner :th="['道具说明']" />
+      <q-banner :th="['说明']" />
       <q-text>道具说明...</q-text>
     </template>
 
-    <!-- 重要道具 -->
+    <!-- 贵重物品 -->
     <template v-if="$store.getters.active === 'important'">
-      <q-text>重要道具</q-text>
+      <q-text>贵重物品</q-text>
       <q-banner :th="['名称', '持有数']" />
       <q-grid :grid="[10, 1]">
         <q-text @click="content = ['万能钥匙', null, ['使用']]" between hoverable icon>
@@ -26,7 +26,7 @@
           <span>1</span>
         </q-text>
       </q-grid>
-      <q-banner :th="['道具说明']" />
+      <q-banner :th="['说明']" />
       <q-text>道具说明...</q-text>
     </template>
 
@@ -35,12 +35,12 @@
       <q-text>战车</q-text>
       <q-banner :th="['名称', '重量']" />
       <q-grid :grid="[10, 1]">
-        <q-text v-for="(e, i) in $d.equipments[1]" :key="i" :icon="[i, 1]" @click="content = [e, null, ['转交', '丢弃']]" between hoverable>
+        <q-text v-for="(e, i) in $d.equipments[1]" :key="i" :icon="[i, 1]" @click="content = [e, null, ['使用', '转交', '丢弃']]" between hoverable>
           <span>{{ e }}</span>
           <span>{{ $r(5, 15) }}.00t</span>
         </q-text>
       </q-grid>
-      <q-banner :th="['装备说明']" />
+      <q-banner :th="['说明']" />
       <q-grid :grid="[5, 2]">
         <q-text v-for="(d, i) in $d.dicts[3]" :key="i" between icon>
           <span>{{ d }}</span>

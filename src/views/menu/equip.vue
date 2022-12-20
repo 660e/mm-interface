@@ -27,7 +27,7 @@
         <q-text>饰</q-text><q-text :icon="[5, 0]">{{ $d.equipments[0][5] }}</q-text>
       </q-grid>
       <br />
-      <q-banner :th="['装备说明']" />
+      <q-banner :th="['说明']" />
       <q-grid :grid="[3, 2]">
         <q-text v-for="(d, i) in $d.dicts[0]" :key="i" between icon>
           <span>{{ d }}</span>
@@ -78,7 +78,7 @@
         <q-text>引擎</q-text><q-text :icon="[4, 1]">{{ $d.equipments[1][4] }}</q-text>
       </q-grid>
       <br />
-      <q-banner :th="['装备说明']" />
+      <q-banner :th="['说明']" />
       <q-grid :grid="[5, 2]" column>
         <q-text v-for="(d, i) in $d.dicts[3]" :key="i" between icon>
           <span>{{ d }}</span>
