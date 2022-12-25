@@ -38,6 +38,10 @@ export default createRouter({
         {
           path: 'upgrade',
           component: () => import('@/views/shop/upgrade.vue')
+        },
+        {
+          path: 'save',
+          component: () => import('@/views/shop/save.vue')
         }
       ]
     }

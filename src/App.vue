@@ -19,7 +19,8 @@ export default {
         { label: '猎人办事处', path: '/office' },
         { label: '补给店', path: '/supply' },
         { label: '修理店', path: '/repair' },
-        { label: '改造店', path: '/upgrade' }
+        { label: '改造店', path: '/upgrade' },
+        { label: '记录中心', path: '/save' }
       ]
     };
   }
@@ -40,7 +41,7 @@ export default {
 }
 .app {
   background-color: #1d1d1d;
-  font-family: kaiti;
+  font-family: consolas, 'microsoft yahei';
   height: 100vh;
   display: flex;
   justify-content: center;
