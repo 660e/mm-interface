@@ -1,5 +1,5 @@
 <template>
-  <div class="q-window" :class="{ dense }" :style="{ borderWidth: border.map(e => `${e}px`).join(' ') }">
+  <div class="q-window" :class="{ dense }" :style="{ borderWidth: border.map(() => `${0}px`).join(' ') }">
     <slot />
   </div>
 </template>
