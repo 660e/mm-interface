@@ -37,7 +37,7 @@ export default {
   cursor: default;
   user-select: none;
   text-decoration: none;
-  color: #fff;
+  color: #eee;
 }
 .app {
   background-color: #1d1d1d;
