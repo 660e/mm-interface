@@ -27,31 +27,41 @@
   <q-window v-if="command === 1" class="w-500 gap" :border="[0, 1, 0, 1]">
     <br />
     <q-text>选项</q-text>
-    <q-banner :th="['项目', '详情']" />
+    <q-banner :th="['项目', '改造度']" />
     <q-grid :grid="[10, 1]">
-      <q-text v-for="n in 5" :key="n" @click="content = [`穴-${n}`, null, ['机枪', '特殊装备', '封闭']]" between hoverable>
-        <span>穴-{{ n }}</span>
-        <span>加农炮</span>
+      <q-text between hoverable icon>
+        <span>梅卡瓦主战坦克</span>
+        <span>{{ $r(0, 100) }}%</span>
       </q-text>
-      <q-text @click="content = [null, ['货仓容量：+2', '金额：1000G'], ['是', '否']]" between hoverable>
-        <span>扩大货仓</span><span>10/24</span>
-      </q-text>
-      <q-text @click="content = [null, ['备用弹仓：+8', '金额：1000G'], ['是', '否']]" between hoverable>
-        <span>扩大备用弹仓</span><span>64/128</span>
-      </q-text>
-      <q-text between hoverable><span>调整守备力</span><span>200/500</span></q-text>
+      <q-text v-for="n in 5" :key="n" @click="content = [`穴-${n}`, null, ['机枪', '特殊装备', '封闭']]" hoverable icon>穴-{{ n }}：加农炮</q-text>
     </q-grid>
     <q-banner :th="['改造']" />
+    <q-upgrade
+      :td="[
+        [$d.dicts[3][1], 6, 3],
+        [$d.dicts[3][7], 4, 1],
+        ['货仓', 8, 3]
+      ]"
+    />
   </q-window>
 
   <q-window v-if="[2, 3].includes(command)" class="w-500 gap" :border="[0, 1, 0, 1]">
     <br />
     <q-text>选项</q-text>
-    <q-banner :th="['名称']" />
+    <q-banner :th="['名称', '改造度']" />
     <q-grid :grid="[10, 1]">
-      <q-text hoverable icon>气仙型</q-text>
-      <q-text hoverable icon>OHC卡门型</q-text>
-      <q-text hoverable icon>V48金刚型</q-text>
+      <q-text between hoverable icon>
+        <span>气仙型</span>
+        <span>{{ $r(0, 100) }}%</span>
+      </q-text>
+      <q-text between hoverable icon>
+        <span>OHC卡门型</span>
+        <span>{{ $r(0, 100) }}%</span>
+      </q-text>
+      <q-text between hoverable icon>
+        <span>V48金刚型</span>
+        <span>{{ $r(0, 100) }}%</span>
+      </q-text>
     </q-grid>
     <template v-if="command === 2">
       <q-banner :th="['说明']" />
@@ -62,17 +72,28 @@
     </template>
     <template v-if="command === 3">
       <q-banner :th="['改造']" />
+      <q-upgrade :td="[[$d.dicts[3][1], 6, 3]]" />
     </template>
   </q-window>
 
   <q-window v-if="command === 4" class="w-500 gap" :border="[0, 1, 0, 1]">
     <br />
     <q-text>选项</q-text>
-    <q-banner :th="['名称']" />
+    <q-banner :th="['名称', '改造度']" />
     <q-grid :grid="[10, 1]">
-      <q-text v-for="e in $d.equipments[1]" :key="e" hoverable icon>{{ e }}</q-text>
+      <q-text v-for="e in $d.equipments[1]" :key="e" between hoverable icon>
+        <span>{{ e }}</span>
+        <span>{{ $r(0, 100) }}%</span>
+      </q-text>
     </q-grid>
     <q-banner :th="['改造']" />
+    <q-upgrade
+      :td="[
+        [$d.dicts[3][0], 8, 3],
+        [$d.dicts[3][1], 6, 3],
+        [$d.dicts[3][7], 4, 1]
+      ]"
+    />
   </q-window>
 
   <menu-actor v-if="[0, 1, 3, 4].includes(command)" />

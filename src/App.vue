@@ -57,7 +57,7 @@ export default {
       margin-bottom: 20px;
       &:hover,
       &.active {
-        color: #e05000;
+        color: $positive;
       }
     }
   }

@@ -7,6 +7,8 @@ $opacity: 0.618;
 $dark: rgba(0, 0, 0, $opacity);
 $border: rgba(255, 255, 255, 1 - $opacity);
 $bg: url('@/assets/bg1.png');
+$positive: #7cf1fb;
+$negative: #fd8b8b;
 br {
   content: '';
   display: block;
@@ -81,15 +83,15 @@ hr {
   font-size: $bit * 6;
 }
 .text-positive {
-  color: #7cf1fb !important;
+  color: $positive !important;
   * {
-    color: #7cf1fb !important;
+    color: $positive !important;
   }
 }
 .text-negative {
-  color: #fd8b8b !important;
+  color: $negative !important;
   * {
-    color: #fd8b8b !important;
+    color: $negative !important;
   }
 }
 .text-info {
